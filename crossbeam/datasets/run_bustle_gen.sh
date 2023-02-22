@@ -1,18 +1,16 @@
 #!/bin/bash
 
-# Copyright 2021 Google LLC
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     https://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+#SBATCH --cpus-per-task=1   # maximum CPU cores per GPU request: 6 on Cedar, 16 on Graham.
+#SBATCH --mem=32000M        # memory per node
+#SBATCH --time=10:00:00     # time of the task
+#SBATCH --account=def-lelis
+#SBATCH --output=%N-%j.out
+#SBATCH --mail-user=emireddy@ualberta.ca
+#SBATCH --mail-type=ALL
+
+module load python/3.8
+module load scipy-stack/2020b
+source ~/scratch/crossbeam_env/bin/activate
 
 data_dir=$HOME/data/crossbeam/bustle
 
