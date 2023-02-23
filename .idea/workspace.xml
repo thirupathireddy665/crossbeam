@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8cce236b-76a8-4461-9c9e-b07a47f9c98c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crossbeam/experiment/bustle/bustle_main_dist.sh" beforeDir="false" afterPath="$PROJECT_DIR$/crossbeam/experiment/bustle/bustle_main_dist.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scratch_env_setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scratch_env_setup.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

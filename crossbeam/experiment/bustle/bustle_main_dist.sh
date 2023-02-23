@@ -9,6 +9,8 @@
 #SBATCH --mail-user=emireddy@ualberta.ca
 #SBATCH --mail-type=ALL
 
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
 module load python/3.8
 module load scipy-stack/2020b
 source ~/scratch/crossbeam_env/bin/activate
