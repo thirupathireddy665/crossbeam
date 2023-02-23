@@ -57,8 +57,8 @@ python3 -m crossbeam.experiment.run_crossbeam \
     --save_dir $save_dir \
     --grad_accumulate $grad_acc \
     --beam_size $beam_size \
-    --gpu_list=0,1,2,3,4,5,6,7 \
-    --num_proc=8 \
+    --gpu_list=0 \
+    --num_proc=1 \
     --embed_dim=512 \
     --eval_every 10000 \
     --use_ur=False \
