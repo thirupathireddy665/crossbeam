@@ -16,6 +16,9 @@ module load scipy-stack/2020b
 source ~/scratch/crossbeam_env/bin/activate
 module load cuda/11.1.1 cudnn
 
+# export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+export CUDA_VISIBLE_DEVICES=0
+
 XLA_FLAGS=--xla_gpu_cuda_data_dir=$CUDA_PATH
 
 tout=120
