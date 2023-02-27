@@ -1,35 +1,27 @@
 #!/bin/bash
 
-# Copyright 2021 Google LLC
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     https://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=1   # maximum CPU cores per GPU request: 6 on Cedar, 16 on Graham.
+#SBATCH --mem=64000M        # memory per node
+#SBATCH --time=00:10:00     # time of the task
+#SBATCH --account=def-lelis
+#SBATCH --output=%N-%j.out
+#SBATCH --mail-user=emireddy@ualberta.ca
+#SBATCH --mail-type=ALL
 
-# Run from the root crossbeam/ directory.
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+module load python/3.8
+module load scipy-stack/2020b
+source ~/scratch/crossbeam_env/bin/activate
+module load cuda/11.1.1 cudnn
+
+# export CUDA_VISIBLE_DEVICES=0,1,2,3
+export CUDA_VISIBLE_DEVICES=0
+
+XLA_FLAGS=--xla_gpu_cuda_data_dir=$CUDA_PATH
 
 results_dir=iclr2022/bustle_results
-if [ -d "$results_dir" ]; then
-  echo "WARNING: The results directory ${results_dir} already exists. If you continue, results may be overwritten."
-  while true; do
-    read -p "Continue? [y/n] " yn
-    case $yn in
-      [Yy]* ) break;;
-      [Nn]* ) echo "Exiting."; exit;;
-      * ) echo "Please answer yes or no.";;
-    esac
-  done
-else
-  mkdir -p ${results_dir}
-fi
 
 # Baseline
 python3 -m crossbeam.experiment.run_baseline_synthesizer \
@@ -52,7 +44,6 @@ maxsw=20
 beam_size=10
 data_root=crossbeam/data
 models_dir=trained_models/bustle/
-export CUDA_VISIBLE_DEVICES=0
 
 for run in 1 2 3 4 5 ; do
   for model in vw-bustle_sig-vsize randbeam ; do

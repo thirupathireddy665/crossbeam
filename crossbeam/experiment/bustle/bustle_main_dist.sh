@@ -3,7 +3,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=1   # maximum CPU cores per GPU request: 6 on Cedar, 16 on Graham.
 #SBATCH --mem=64000M        # memory per node
-#SBATCH --time=03:00:00     # time of the task
+#SBATCH --time=110:00:00     # time of the task
 #SBATCH --account=def-lelis
 #SBATCH --output=%N-%j.out
 #SBATCH --mail-user=emireddy@ualberta.ca
@@ -16,7 +16,7 @@ module load scipy-stack/2020b
 source ~/scratch/crossbeam_env/bin/activate
 module load cuda/11.1.1 cudnn
 
-# export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+# export CUDA_VISIBLE_DEVICES=0,1,2,3
 export CUDA_VISIBLE_DEVICES=0
 
 XLA_FLAGS=--xla_gpu_cuda_data_dir=$CUDA_PATH
