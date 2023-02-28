@@ -50,6 +50,7 @@ for run in 1 2 3 4 5 ; do
           --train_steps=0 \
           --do_test=True \
           --use_ur=True \
+          --timeout=-1 \
           --max_values_explored=1000000 \
           --load_model=${model}/model-best-valid.ckpt \
           --io_encoder=bustle_sig --value_encoder=bustle_sig --encode_weight=True \

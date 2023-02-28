@@ -84,6 +84,7 @@ def synthesize(task, domain, model, device,
 
     verbose = False
     end_time = None if timeout is None or timeout < 0 else timeit.default_timer() + timeout
+    print("timeout: ", timeout)
     print("end time: ", end_time)
     print("max values to explore: ", max_values_explored)
     if trace is None:
