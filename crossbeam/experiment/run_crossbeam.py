@@ -69,6 +69,7 @@ def main(argv):
     model_dump = os.path.join(FLAGS.save_dir, FLAGS.load_model)
     print('loading model from', model_dump)
     model.load_state_dict(torch.load(model_dump))
+    # model.load_state_dict(torch.load(model_dump, map_location=torch.device('cpu')))
     print('model loaded.')
   if FLAGS.do_test:
     eval_prefix = 'test-tasks'
@@ -81,6 +82,9 @@ def main(argv):
     with open(os.path.join(FLAGS.data_folder, fname), 'rb') as f:
       eval_tasks += cp.load(f)
 
+  print("number of eval tasks:", len(eval_tasks))
+  eval_tasks = [eval_tasks[FLAGS.task_id-1]]
+  print("number of eval tasks:", len(eval_tasks))
   proc_args = argparse.Namespace(**FLAGS.flag_values_dict())
   if FLAGS.train_data_glob is not None:
     task_gen_func = None

@@ -4,12 +4,12 @@
 #SBATCH --gres=gpu:1
 #SBATCH --ntasks-per-node=4
 #SBATCH --mem=64000M        # memory per node
-#SBATCH --time=10:00:00     # time of the task
+#SBATCH --time=20:00:00     # time of the task
 #SBATCH --account=def-lelis
 #SBATCH --output=%N-%j.out
 #SBATCH --mail-user=emireddy@ualberta.ca
 #SBATCH --mail-type=ALL
-#SBATCH --array=1-38
+#SBATCH --array=1-89
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
@@ -34,7 +34,7 @@ models_dir=trained_models/bustle/
 
 for run in 1 2 3 4 5 ; do
   for model in vw-bustle_sig-vsize ; do
-    for dataset in new ; do
+    for dataset in sygus ; do
       # Normal CrossBeam with UR for evaluation
       python3 -m crossbeam.experiment.run_crossbeam \
           --seed=${run} \
@@ -53,7 +53,7 @@ for run in 1 2 3 4 5 ; do
           --use_ur=True \
           --timeout=-1 \
           --task_id=$SLURM_ARRAY_TASK_ID \
-          --max_values_explored=10000000 \
+          --max_values_explored=1000000 \
           --load_model=${model}/model-best-valid.ckpt \
           --io_encoder=bustle_sig --value_encoder=bustle_sig --encode_weight=True \
           --json_results_file=${results_dir}/run_${run}.${model}.${dataset}.${SLURM_ARRAY_TASK_ID}.json

@@ -45,6 +45,7 @@ flags.DEFINE_integer('gpu', -1, '')
 flags.DEFINE_string('port', '29500', 'port for distributed training')
 flags.DEFINE_string('gpu_list', None, 'list of gpu ids to be used')
 flags.DEFINE_integer('num_proc', 1, '# processes for training')
+flags.DEFINE_integer('task_id', 0, 'task id of the eval problem')
 
 
 def get_torch_device(device_id):
