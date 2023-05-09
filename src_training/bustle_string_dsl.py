@@ -1,0 +1,1685 @@
+import copy
+import itertools
+
+from cfg import BustlePCFG
+from utils import *
+
+
+class Str:
+    def __init__(self):
+        self.size = 0
+
+    def getReturnType(self):
+        return STR_TYPES['type']
+
+    @classmethod
+    def name(cls):
+        return cls.__name__
+
+
+class StrLiteral(Str):
+    def __init__(self, value):
+        self.value = value
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+
+    def toString(self):
+        return '\"' + self.value + '\"'
+
+    def interpret(self, env):
+        return self.value
+
+    def getProgramIds(self, program_ids):
+        pass
+
+
+class StrVar(Str):
+    def __init__(self, name):
+        self.value = name
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+
+    def toString(self):
+        return self.value
+
+    def interpret(self, env):
+        return copy.deepcopy(env[self.value])
+
+    def getProgramIds(self, program_ids):
+        pass
+
+
+class StrConcat(Str):
+    ARITY = 2
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = x.size + y.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.x.increment_occurence()
+        self.y.increment_occurence()
+
+    def toString(self):
+        return 'concat(' + self.x.toString() + ", " + self.y.toString() + ")"
+
+    def interpret(self, env):
+        try:
+            return self.x.interpret(env) + self.y.interpret(env)
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.x.getProgramIds(program_ids)
+        self.y.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+
+        combinations = list(itertools.product(range(1, size - 1), repeat=2))
+
+        for combination in combinations:
+            # skip if the cost combination exceeds the limit
+            layer1, layer2 = combination
+            if layer1 + layer2 + BustlePCFG.get_instance().get_cost_by_name(StrConcat.name()) != size:
+                continue
+
+            # retrive bank of programs with costs c[0] and c[1]
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, STR_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrLiteral) and prog1.toString() == EMPTY_STRING: continue
+                for prog2 in layer2_prog:
+                    if isinstance(prog2, StrLiteral) and prog2.toString() == EMPTY_STRING: continue
+                    program = StrConcat(prog1, prog2)
+                    program.increment_occurence()
+                    yield program
+
+
+class StrReplace(Str):
+    ARITY = 3
+
+    def __init__(self, input_str, old, new):
+        self.str = input_str
+        self.old = old
+        self.new = new
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + old.size + new.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+        self.old.increment_occurence()
+        self.new.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + '.replace(' + self.old.toString() + ", " + self.new.toString() + ")"
+
+    def interpret(self, env):
+        try:
+            return self.str.interpret(env).replace(self.old.interpret(env), self.new.interpret(env), 1)
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.str.getProgramIds(program_ids)
+        self.old.getProgramIds(program_ids)
+        self.new.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 2), repeat=3))
+        for combination in combinations:
+            layer1, layer2, layer3 = combination
+            if layer1 + layer2 + layer3 + BustlePCFG.get_instance().get_cost_by_name(StrReplace.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, STR_TYPES['type'])
+            layer3_prog = plist.get_programs(layer3, STR_TYPES['type'])
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrLiteral):
+                    continue
+                for prog2 in layer2_prog:
+                    p2_str = prog2.toString()
+                    if p2_str == EMPTY_STRING:
+                        continue
+                    is_p2_var = isinstance(prog2, StrVar)
+                    if is_p2_var:
+                        continue
+                    for prog3 in layer3_prog:
+                        if prog3.toString() == p2_str:
+                            continue
+                        program = StrReplace(prog1, prog2, prog3)
+                        program.increment_occurence()
+                        yield program
+
+
+class StrSubstr(Str):
+    ARITY = 3
+
+    def __init__(self, input_str, start, end):
+        self.str = input_str
+        self.start = start
+        self.end = end
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + start.size + end.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+        self.start.increment_occurence()
+        self.end.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + ".Substr(" + self.start.toString() + "," + self.end.toString() + ")"
+
+    def interpret(self, env):
+        try:
+            return self.str.interpret(env)[self.start.interpret(env): self.end.interpret(env)]
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.str.getProgramIds(program_ids)
+        self.start.getProgramIds(program_ids)
+        self.end.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 2), repeat=3))
+        for combination in combinations:
+            layer1, layer2, layer3 = combination
+            if layer1 + layer2 + layer3 + BustlePCFG.get_instance().get_cost_by_name(StrSubstr.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, INT_TYPES['type'])
+            layer3_prog = plist.get_programs(layer3, INT_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrLiteral):
+                    continue
+                for prog2 in layer2_prog:
+                    for prog3 in layer3_prog:
+                        if prog2.toString() == prog3.toString():
+                            continue
+                        program = StrSubstr(prog1, prog2, prog3)
+                        program.increment_occurence()
+                        yield program
+
+
+class StrIte(Str):
+    ARITY = 3
+
+    def __init__(self, condition, true_case, false_case):
+        self.condition = condition
+        self.true_case = true_case
+        self.false_case = false_case
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = condition.size + true_case.size + false_case.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.condition.increment_occurence()
+        self.true_case.increment_occurence()
+        self.false_case.increment_occurence()
+
+    def toString(self):
+        return "(if" + self.condition.toString() + " then " + self.true_case.toString() + " else " + self.false_case.toString() + ")"
+
+    def interpret(self, env):
+        try:
+            if self.condition.interpret(env):
+                return self.true_case.interpret(env)
+            else:
+                return self.false_case.interpret(env)
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.condition.getProgramIds(program_ids)
+        self.true_case.getProgramIds(program_ids)
+        self.false_case.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 2), repeat=3))
+        for combination in combinations:
+            layer1, layer2, layer3 = combination
+            if layer1 + layer2 + layer3 + BustlePCFG.get_instance().get_cost_by_name(StrIte.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, BOOL_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, STR_TYPES['type'])
+            layer3_prog = plist.get_programs(layer3, STR_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                for prog2 in layer2_prog:
+                    for prog3 in layer3_prog:
+                        program = StrIte(prog1, prog2, prog3)
+                        program.increment_occurence()
+                        yield program
+
+
+class StrIntToStr(Str):
+    ARITY = 1
+
+    def __init__(self, input_int):
+        self.int = input_int
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_int.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.int.increment_occurence()
+
+    def toString(self):
+        return self.int.toString() + ".IntToStr()"
+
+    def interpret(self, env):
+        try:
+            return str(self.int.interpret(env))
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.int.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = range(1, size)
+        for combination in combinations:
+            layer1 = combination
+            if layer1 + BustlePCFG.get_instance().get_cost_by_name(StrIntToStr.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, INT_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                yield StrIntToStr(prog1)
+
+
+# bustle additional classes
+class StrReplaceAdd(Str):
+    ARITY = 4
+
+    def __init__(self, input_str, start, end, add_str):
+        self.str = input_str
+        self.start = start
+        self.end = end
+        self.add_str = add_str
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + start.size + end.size + add_str.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+        self.start.increment_occurence()
+        self.end.increment_occurence()
+        self.add_str.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + "[:" + self.start.toString() + "] + " + self.add_str.toString() + " + " + self.str.toString() + "[" + self.end.toString() + ":]"
+
+    def interpret(self, env):
+        try:
+            return self.str.interpret(env)[:self.start.interpret(env)] + self.add_str.interpret(env) + self.str.interpret(
+            env)[self.end.interpret(env):]
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.str.getProgramIds(program_ids)
+        self.start.getProgramIds(program_ids)
+        self.end.getProgramIds(program_ids)
+        self.add_str.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 3), repeat=4))
+        for combination in combinations:
+            layer1, layer2, layer3, layer4 = combination
+            if layer1 + layer2 + layer3 + layer4 + BustlePCFG.get_instance().get_cost_by_name(StrSubstr.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, INT_TYPES['type'])
+            layer3_prog = plist.get_programs(layer3, INT_TYPES['type'])
+            layer4_prog = plist.get_programs(layer4, STR_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrLiteral):
+                    continue
+                for prog2 in layer2_prog:
+                    for prog3 in layer3_prog:
+                        if prog2.toString() == prog3.toString():
+                            continue
+                        for prog4 in layer4_prog:
+                            program = StrReplaceAdd(prog1, prog2, prog3, prog4)
+                            program.increment_occurence()
+                            yield program
+
+
+class StrReplaceMulti(Str):
+    ARITY = 4
+
+    def __init__(self, input_str, old, new, count):
+        self.str = input_str
+        self.old = old
+        self.new = new
+        self.count = count
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + old.size + new.size + count.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+        self.old.increment_occurence()
+        self.new.increment_occurence()
+        self.count.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + '.replace(' + self.old.toString() + ", " + self.new.toString() + "," + self.count.toString() + ")"
+
+    def interpret(self, env):
+        try:
+            return self.str.interpret(env).replace(self.old.interpret(env), self.new.interpret(env),
+                                               self.count.interpret(env))
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.str.getProgramIds(program_ids)
+        self.old.getProgramIds(program_ids)
+        self.new.getProgramIds(program_ids)
+        self.count.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 3), repeat=4))
+        for combination in combinations:
+            layer1, layer2, layer3, layer4 = combination
+            if layer1 + layer2 + layer3 + layer4 + BustlePCFG.get_instance().get_cost_by_name(
+                    StrReplaceMulti.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, STR_TYPES['type'])
+            layer3_prog = plist.get_programs(layer3, STR_TYPES['type'])
+            layer4_prog = plist.get_programs(layer4, INT_TYPES['type'])
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrLiteral):
+                    continue
+                for prog2 in layer2_prog:
+                    p2_str = prog2.toString()
+                    if p2_str == EMPTY_STRING:
+                        continue
+                    is_p2_var = isinstance(prog2, StrVar)
+                    if is_p2_var:
+                        continue
+                    for prog3 in layer3_prog:
+                        if prog3.toString() == p2_str:
+                            continue
+                        for prog4 in layer4_prog:
+                            program = StrReplaceMulti(prog1, prog2, prog3, prog4)
+                            program.increment_occurence()
+                            yield program
+
+
+class StrTrim(Str):
+    ARITY = 1
+
+    def __init__(self, input_str):
+        self.str = input_str
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + ".strip()"
+
+    def interpret(self, env):
+        try:
+            interpreted_string = self.str.interpret(env)
+            if interpreted_string is None:
+                return None
+            return self.str.interpret(env).strip()
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.str.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = range(1, size)
+        for combination in combinations:
+            layer1 = combination
+            if layer1 + BustlePCFG.get_instance().get_cost_by_name(StrTrim.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrTrim):
+                    continue
+                program = StrTrim(prog1)
+                program.increment_occurence()
+                yield program
+
+
+class StrLower(Str):
+    ARITY = 1
+
+    def __init__(self, input_str):
+        self.str = input_str
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + ".lower()"
+
+    def interpret(self, env):
+        try:
+            return self.str.interpret(env).lower()
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.str.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = range(1, size)
+        for combination in combinations:
+            layer1 = combination
+            if layer1 + BustlePCFG.get_instance().get_cost_by_name(StrLower.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrLower):
+                    continue
+                program = StrLower(prog1)
+                program.increment_occurence()
+                yield program
+
+
+class StrUpper(Str):
+    ARITY = 1
+
+    def __init__(self, input_str):
+        self.str = input_str
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + ".upper()"
+
+    def interpret(self, env):
+        try:
+            return self.str.interpret(env).upper()
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.str.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = range(1, size)
+        for combination in combinations:
+            layer1 = combination
+            if layer1 + BustlePCFG.get_instance().get_cost_by_name(StrUpper.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrUpper):
+                    continue
+                program = StrUpper(prog1)
+                program.increment_occurence()
+                yield program
+
+
+class StrProper(Str):
+    ARITY = 1
+
+    def __init__(self, input_str):
+        self.str = input_str
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + ".title()"
+
+    def interpret(self, env):
+        try:
+            return self.str.interpret(env).title()
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.str.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = range(1, size)
+        for combination in combinations:
+            layer1 = combination
+            if layer1 + BustlePCFG.get_instance().get_cost_by_name(StrProper.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrProper):
+                    continue
+                program = StrProper(prog1)
+                program.increment_occurence()
+                yield program
+
+
+class StrRepeat(Str):
+    ARITY = 2
+
+    def __init__(self, input_str, input_int):
+        self.str = input_str
+        self.int = input_int
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_int.size + input_str.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+        self.int.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + "*" + self.int.toString()
+
+    def interpret(self, env):
+        try:
+            string_element = self.str.interpret(env)
+            integer_element = self.int.interpret(env)
+            if len(string_element) > 1000 or integer_element > 1000:
+                return None
+            if len(string_element) * integer_element > 1000:
+                return None
+            return self.str.interpret(env) * self.int.interpret(env)
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.str.getProgramIds(program_ids)
+        self.int.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 1), repeat=2))
+        for combination in combinations:
+            layer1, layer2 = combination
+            if layer1 + layer2 + BustlePCFG.get_instance().get_cost_by_name(StrRepeat.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, INT_TYPES['type'])
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrLiteral) and prog1.toString() == EMPTY_STRING:
+                    continue
+                for prog2 in layer2_prog:
+                    program = StrRepeat(prog1, prog2)
+                    program.increment_occurence()
+                    yield program
+
+
+class StrLeftSubstr(Str):
+    ARITY = 2
+
+    def __init__(self, input_str, input_int):
+        self.str = input_str
+        self.int = input_int
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_int.size + input_str.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+        self.int.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + "[:" + self.int.toString() + "]"
+
+    def interpret(self, env):
+        try:
+            return self.str.interpret(env)[:self.int.interpret(env)]
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.str.getProgramIds(program_ids)
+        self.int.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 1), repeat=2))
+        for combination in combinations:
+            layer1, layer2 = combination
+            if layer1 + layer2 + BustlePCFG.get_instance().get_cost_by_name(StrLeftSubstr.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, INT_TYPES['type'])
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrLiteral) and prog1.toString() == EMPTY_STRING:
+                    continue
+                for prog2 in layer2_prog:
+                    program = StrLeftSubstr(prog1, prog2)
+                    program.increment_occurence()
+                    yield program
+
+
+class StrRightSubstr(Str):
+    ARITY = 2
+
+    def __init__(self, input_str, input_int):
+        self.str = input_str
+        self.int = input_int
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_int.size + input_str.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+        self.int.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + "[" + self.int.toString() + ":]"
+
+    def interpret(self, env):
+        try:
+            return self.str.interpret(env)[self.int.interpret(env):]
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.str.getProgramIds(program_ids)
+        self.int.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 1), repeat=2))
+        for combination in combinations:
+            layer1, layer2 = combination
+            if layer1 + layer2 + BustlePCFG.get_instance().get_cost_by_name(StrRightSubstr.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, INT_TYPES['type'])
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrLiteral) and prog1.toString() == EMPTY_STRING:
+                    continue
+                for prog2 in layer2_prog:
+                    program = StrRightSubstr(prog1, prog2)
+                    program.increment_occurence()
+                    yield program
+
+
+# end bustle additional classes
+
+class StrCharAt(Str):
+    ARITY = 2
+
+    def __init__(self, input_str, pos):
+        self.str = input_str
+        self.pos = pos
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + pos.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+        self.pos.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + ".CharAt(" + self.pos.toString() + ")"
+
+    def interpret(self, env):
+        try:
+            index = self.pos.interpret(env)
+            string_element = self.str.interpret(env)
+            if 0 <= index < len(string_element):
+                return string_element[index]
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, program_ids):
+        program_ids.add(self)
+        self.str.getProgramIds(program_ids)
+        self.pos.getProgramIds(program_ids)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 1), repeat=2))
+        for combination in combinations:
+            layer1, layer2 = combination
+            if layer1 + layer2 + BustlePCFG.get_instance().get_cost_by_name(StrCharAt.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, INT_TYPES['type'])
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrLiteral) and prog1.toString() == EMPTY_STRING:
+                    continue
+                for prog2 in layer2_prog:
+                    program = StrCharAt(prog1, prog2)
+                    program.increment_occurence()
+                    yield program
+
+
+# String type and classes
+STR_TYPES = {'type': 'str', 'classes': (StrLiteral, StrVar, StrConcat, StrReplace,
+                                        StrSubstr, StrIte, StrIntToStr, StrCharAt, StrTrim, StrLower, StrUpper,
+                                        StrProper, StrLeftSubstr, StrRightSubstr,
+                                        StrReplaceMulti, StrReplaceAdd, StrRepeat)}
+
+
+# Contains all operations with return type int
+
+class Int:
+    def __init__(self):
+        self.size = 0
+
+    def getReturnType(self):
+        return INT_TYPES['type']
+
+    @classmethod
+    def name(cls):
+        return cls.__name__
+
+
+class IntLiteral(Int):
+    def __init__(self, value):
+        self.value = value
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+
+    def toString(self):
+        return str(self.value)
+
+    def interpret(self, env):
+        return self.value
+
+    def getProgramIds(self, programIds):
+        pass
+
+
+class IntVar(Int):
+    def __init__(self, name):
+        self.value = name
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+
+    def toString(self):
+        return self.value
+
+    def interpret(self, env):
+        return copy.deepcopy(env[self.value])
+
+    def getProgramIds(self, programIds):
+        pass
+
+
+class IntStrToInt(Int):
+    ARITY = 1
+
+    def __init__(self, input_str):
+        self.str = input_str
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + ".StrToInt()"
+
+    def interpret(self, env):
+        try:
+            value = self.str.interpret(env)
+            if regex_only_digits.search(value) is not None:
+                return int(value)
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, programIds):
+        programIds.add(self)
+        self.str.getProgramIds(programIds)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = range(1, size)
+        for combination in combinations:
+            layer1 = combination
+            if layer1 + BustlePCFG.get_instance().get_cost_by_name(IntStrToInt.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                program = IntStrToInt(prog1)
+                program.increment_occurence()
+                yield program
+
+
+class IntPlus(Int):
+    ARITY = 2
+
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = left.size + right.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.left.increment_occurence()
+        self.right.increment_occurence()
+
+    def toString(self):
+        return "(" + self.left.toString() + " + " + self.right.toString() + ")"
+
+    def interpret(self, env):
+        try:
+            return self.left.interpret(env) + self.right.interpret(env)
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, programIds):
+        programIds.add(self)
+        self.left.getProgramIds(programIds)
+        self.right.getProgramIds(programIds)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 1), repeat=2))
+        for combination in combinations:
+            layer1, layer2 = combination
+            if layer1 + layer2 + BustlePCFG.get_instance().get_cost_by_name(IntPlus.name()) != size:
+                continue
+
+            layer1_prog = plist.get_programs(layer1, INT_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, INT_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                for prog2 in layer2_prog:
+                    program = IntPlus(prog1, prog2)
+                    program.increment_occurence()
+                    yield program
+
+
+class IntMinus(Int):
+    ARITY = 2
+
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = left.size + right.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.left.increment_occurence()
+        self.right.increment_occurence()
+
+    def toString(self):
+        return "(" + self.left.toString() + " - " + self.right.toString() + ")"
+
+    def interpret(self, env):
+        try:
+            return self.left.interpret(env) - self.right.interpret(env)
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, programIds):
+        programIds.add(self)
+        self.left.getProgramIds(programIds)
+        self.right.getProgramIds(programIds)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 1), repeat=2))
+        for combination in combinations:
+            layer1, layer2 = combination
+            if layer1 + layer2 + BustlePCFG.get_instance().get_cost_by_name(IntMinus.name()) != size:
+                continue
+
+            layer1_prog = plist.get_programs(layer1, INT_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, INT_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                for prog2 in layer2_prog:
+                    program = IntMinus(prog1, prog2)
+                    program.increment_occurence()
+                    yield program
+
+
+class IntLength(Int):
+    ARITY = 1
+
+    def __init__(self, input_str):
+        self.str = input_str
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + ".Length()"
+
+    def interpret(self, env):
+        try:
+            return len(self.str.interpret(env))
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, programIds):
+        programIds.add(self)
+        self.str.getProgramIds(programIds)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = range(1, size)
+        for combination in combinations:
+            layer1 = combination
+            if layer1 + BustlePCFG.get_instance().get_cost_by_name(IntLength.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                program = IntLength(prog1)
+                program.increment_occurence()
+                yield program
+
+
+class IntIteInt(Int):
+    ARITY = 3
+
+    def __init__(self, condition, true_case, false_case):
+        self.condition = condition
+        self.true_case = true_case
+        self.false_case = false_case
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = condition.size + true_case.size + false_case.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.condition.increment_occurence()
+        self.true_case.increment_occurence()
+        self.false_case.increment_occurence()
+
+    def toString(self):
+        return "(if" + self.condition.toString() + " then " + self.true_case.toString() + " else " + self.false_case.toString() + ")"
+
+    def interpret(self, env):
+        try:
+            if self.condition.interpret(env):
+                return self.true_case.interpret(env)
+            else:
+                return self.false_case.interpret(env)
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, programIds):
+        programIds.add(self)
+        self.condition.getProgramIds(programIds)
+        self.true_case.getProgramIds(programIds)
+        self.false_case.getProgramIds(programIds)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 2), repeat=3))
+        for combination in combinations:
+            layer1, layer2, layer3 = combination
+            if layer1 + layer2 + layer3 + BustlePCFG.get_instance().get_cost_by_name(IntMinus.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, BOOL_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, INT_TYPES['type'])
+            layer3_prog = plist.get_programs(layer3, INT_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                for prog2 in layer2_prog:
+                    for prog3 in layer3_prog:
+                        program = IntIteInt(prog1, prog2, prog3)
+                        program.increment_occurence()
+                        yield program
+
+
+class IntIndexOf(Int):
+    ARITY = 3
+
+    def __init__(self, input_str, substr, start):
+        self.input_str = input_str
+        self.substr = substr
+        self.start = start
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + substr.size + start.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.input_str.increment_occurence()
+        self.substr.increment_occurence()
+        self.start.increment_occurence()
+
+    def toString(self):
+        return self.input_str.toString() + ".IndexOf(" + self.substr.toString() + "," + self.start.toString() + ")"
+
+    def interpret(self, env):
+        start_position = self.start.interpret(env)
+        sub_string = self.substr.interpret(env)
+        super_string = self.input_str.interpret(env)
+        index = None
+        try:
+            index = super_string.index(sub_string, start_position)
+        except:
+            pass
+        return index
+
+    def getProgramIds(self, programIds):
+        programIds.add(self)
+        self.input_str.getProgramIds(programIds)
+        self.substr.getProgramIds(programIds)
+        self.start.getProgramIds(programIds)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 2), repeat=3))
+        for combination in combinations:
+            layer1, layer2, layer3 = combination
+            if layer1 + layer2 + layer3 + BustlePCFG.get_instance().get_cost_by_name(IntMinus.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, STR_TYPES['type'])
+            layer3_prog = plist.get_programs(layer3, INT_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrLiteral) and prog1.toString() == EMPTY_STRING:
+                    continue
+                for prog2 in layer2_prog:
+                    if isinstance(prog2, StrLiteral) and prog2.toString() == EMPTY_STRING:
+                        continue
+                    for prog3 in layer3_prog:
+                        program = IntIndexOf(prog1, prog2, prog3)
+                        program.increment_occurence()
+                        yield program
+
+
+# bustle additional integer classes
+class IntFirstIndexOf(Int):
+    ARITY = 2
+
+    def __init__(self, input_str, substr):
+        self.input_str = input_str
+        self.substr = substr
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + substr.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.input_str.increment_occurence()
+        self.substr.increment_occurence()
+
+    def toString(self):
+        return self.input_str.toString() + ".IndexOf(" + self.substr.toString() + ")"
+
+    def interpret(self, env):
+        sub_string = self.substr.interpret(env)
+        super_string = self.input_str.interpret(env)
+        index = None
+        try:
+            index = super_string.index(sub_string)
+        except:
+            pass
+        return index
+
+    def getProgramIds(self, programIds):
+        programIds.add(self)
+        self.input_str.getProgramIds(programIds)
+        self.substr.getProgramIds(programIds)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 1), repeat=2))
+        for combination in combinations:
+            layer1, layer2 = combination
+            if layer1 + layer2 + BustlePCFG.get_instance().get_cost_by_name(IntFirstIndexOf.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, STR_TYPES['type'])
+
+            for prog1 in layer1_prog:
+                if isinstance(prog1, StrLiteral) and prog1.toString() == EMPTY_STRING:
+                    continue
+                for prog2 in layer2_prog:
+                    if isinstance(prog2, StrLiteral) and prog2.toString() == EMPTY_STRING:
+                        continue
+                    program = IntFirstIndexOf(prog1, prog2)
+                    program.increment_occurence()
+                    yield program
+
+
+# Integer type and classes
+INT_TYPES = {'type': 'integer', 'classes': (IntLiteral, IntVar, IntStrToInt, IntPlus,
+                                            IntMinus, IntLength, IntIteInt, IntIndexOf, IntFirstIndexOf)}
+
+
+# Contains all operations with return type bool
+
+class Bool:
+    def __init__(self):
+        self.size = 0
+
+    def getReturnType(self):
+        return BOOL_TYPES['type']
+
+    @classmethod
+    def name(cls):
+        return cls.__name__
+
+
+class BoolLiteral(Bool):
+    def __init__(self, boolean):
+        self.bool = True if boolean is True else False
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+
+    def toString(self):
+        return str(self.bool)
+
+    def interpret(self, env):
+        return self.bool
+
+    def getProgramIds(self, programIds):
+        pass
+
+
+class BoolEqual(Bool):
+    ARITY = 2
+
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = left.size + right.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.left.increment_occurence()
+        self.right.increment_occurence()
+
+    def toString(self):
+        return "Equal(" + self.left.toString() + "," + self.right.toString() + ")"
+
+    def interpret(self, env):
+        try:
+            return True if self.left.interpret(env) == self.right.interpret(env) else False
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, programIds):
+        programIds.add(self)
+        self.left.getProgramIds(programIds)
+        self.right.getProgramIds(programIds)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 1), repeat=2))
+        for combination in combinations:
+            layer1, layer2 = combination
+            if layer1 + layer2 + BustlePCFG.get_instance().get_cost_by_name(BoolEqual.name()) != size:
+                continue
+            layer1_prog = plist.get_programs_all(layer1)
+            layer2_prog = plist.get_programs_all(layer2)
+            for prog1 in layer1_prog:
+                for prog2 in layer2_prog:
+                    if (
+                            (isinstance(prog1, STR_TYPES['classes']) and isinstance(prog2, INT_TYPES['classes'])) or
+                            (isinstance(prog1, INT_TYPES['classes']) and isinstance(prog2, STR_TYPES['classes'])) or
+                            (isinstance(prog1, BOOL_TYPES['classes']) and isinstance(prog2, STR_TYPES['classes'])) or
+                            (isinstance(prog1, STR_TYPES['classes']) and isinstance(prog2, BOOL_TYPES['classes']))
+                    ):
+                        yield None
+                    else:
+                        program = BoolEqual(prog1, prog2)
+                        program.increment_occurence()
+                        yield program
+
+
+class BoolContain(Bool):
+    ARITY = 2
+
+    def __init__(self, input_str, substr):
+        self.str = input_str
+        self.substr = substr
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + substr.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+        self.substr.increment_occurence()
+
+    def toString(self):
+        return self.str.toString() + ".Contain(" + self.substr.toString() + ")"
+
+    def interpret(self, env):
+        try:
+            return True if self.substr.interpret(env) in self.str.interpret(env) else False
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, programIds):
+        programIds.add(self)
+        self.str.getProgramIds(programIds)
+        self.substr.getProgramIds(programIds)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 1), repeat=2))
+        for combination in combinations:
+            layer1, layer2 = combination
+            if layer1 + layer2 + BustlePCFG.get_instance().get_cost_by_name(IntMinus.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, STR_TYPES['type'])
+            for prog1 in layer1_prog:
+                for prog2 in layer2_prog:
+                    program = BoolContain(prog1, prog2)
+                    program.increment_occurence()
+                    yield program
+
+
+class BoolSuffixof(Bool):
+    ARITY = 2
+
+    def __init__(self, input_str, suffix):
+        self.str = input_str
+        self.suffix = suffix
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + suffix.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+        self.suffix.increment_occurence()
+
+    def toString(self):
+        return self.suffix.toString() + ".SuffixOf(" + self.str.toString() + ")"
+
+    def interpret(self, env):
+        try:
+            return True if self.str.interpret(env).endswith(self.suffix.interpret(env)) else False
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, programIds):
+        programIds.add(self)
+        self.str.getProgramIds(programIds)
+        self.suffix.getProgramIds(programIds)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 1), repeat=2))
+        for combination in combinations:
+            layer1, layer2 = combination
+            if layer1 + layer2 + BustlePCFG.get_instance().get_cost_by_name(IntMinus.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, STR_TYPES['type'])
+            for prog1 in layer1_prog:
+                for prog2 in layer2_prog:
+                    program = BoolSuffixof(prog1, prog2)
+                    program.increment_occurence()
+                    yield program
+
+
+class BoolPrefixof(Bool):
+    ARITY = 2
+
+    def __init__(self, input_str, prefix):
+        self.str = input_str
+        self.prefix = prefix
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = input_str.size + prefix.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.str.increment_occurence()
+        self.prefix.increment_occurence()
+
+    def toString(self):
+        return self.prefix.toString() + ".Prefixof(" + self.str.toString() + ")"
+
+    def interpret(self, env):
+        try:
+            return True if self.str.interpret(env).startswith(self.prefix.interpret(env)) else False
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, programIds):
+        programIds.add(self)
+        self.str.getProgramIds(programIds)
+        self.prefix.getProgramIds(programIds)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 1), repeat=2))
+        for combination in combinations:
+            layer1, layer2 = combination
+            if layer1 + layer2 + BustlePCFG.get_instance().get_cost_by_name(IntMinus.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, STR_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, STR_TYPES['type'])
+            for prog1 in layer1_prog:
+                for prog2 in layer2_prog:
+                    program = BoolPrefixof(prog1, prog2)
+                    program.increment_occurence()
+                    yield program
+
+
+# bustle additional bool classes
+
+class BoolGreaterThan(Bool):
+    ARITY = 2
+
+    def __init__(self, first_int, second_int):
+        self.first_int = first_int
+        self.second_int = second_int
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = first_int.size + second_int.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.first_int.increment_occurence()
+        self.second_int.increment_occurence()
+
+    def toString(self):
+        return self.first_int.toString() + " > " + self.second_int.toString()
+
+    def interpret(self, env):
+        try:
+            return True if self.first_int.interpret(env) > self.second_int.interpret(env) else False
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, programIds):
+        programIds.add(self)
+        self.first_int.getProgramIds(programIds)
+        self.second_int.getProgramIds(programIds)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 1), repeat=2))
+        for combination in combinations:
+            layer1, layer2 = combination
+            if layer1 + layer2 + BustlePCFG.get_instance().get_cost_by_name(BoolGreaterThan.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, INT_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, INT_TYPES['type'])
+            for prog1 in layer1_prog:
+                for prog2 in layer2_prog:
+                    if prog1.toString() == prog2.toString():
+                        continue
+                    program = BoolGreaterThan(prog1, prog2)
+                    program.increment_occurence()
+                    yield program
+
+
+class BoolGreaterThanEqual(Bool):
+    ARITY = 2
+
+    def __init__(self, first_int, second_int):
+        self.first_int = first_int
+        self.second_int = second_int
+        self.id = BustlePCFG.get_instance().get_program_id()
+        self.size = first_int.size + second_int.size + BustlePCFG.get_instance().get_cost(self)
+        self.occurence_count = 0
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def get_occurence_count(self):
+        return self.occurence_count
+
+    def increment_occurence(self):
+        self.occurence_count += 1
+        self.first_int.increment_occurence()
+        self.second_int.increment_occurence()
+
+    def toString(self):
+        return self.first_int.toString() + " >= " + self.second_int.toString()
+
+    def interpret(self, env):
+        try:
+            return True if self.first_int.interpret(env) >= self.second_int.interpret(env) else False
+        except:
+            pass
+        return None
+
+    def getProgramIds(self, programIds):
+        programIds.add(self)
+        self.first_int.getProgramIds(programIds)
+        self.second_int.getProgramIds(programIds)
+
+    @staticmethod
+    def grow(plist, size):
+        combinations = list(itertools.product(range(1, size - 1), repeat=2))
+        for combination in combinations:
+            layer1, layer2 = combination
+            if layer1 + layer2 + BustlePCFG.get_instance().get_cost_by_name(BoolGreaterThanEqual.name()) != size:
+                continue
+            layer1_prog = plist.get_programs(layer1, INT_TYPES['type'])
+            layer2_prog = plist.get_programs(layer2, INT_TYPES['type'])
+            for prog1 in layer1_prog:
+                for prog2 in layer2_prog:
+                    program = BoolGreaterThanEqual(prog1, prog2)
+                    program.increment_occurence()
+                    yield program
+
+
+# Boolean classes and terminals
+
+BOOL_TYPES = {'type': 'boolean', 'classes': (BoolLiteral, BoolEqual, BoolContain,
+                                             BoolSuffixof, BoolPrefixof, BoolGreaterThan, BoolGreaterThanEqual)}
+TERMINALS = [StrLiteral, StrVar, IntLiteral, IntVar, BoolLiteral]

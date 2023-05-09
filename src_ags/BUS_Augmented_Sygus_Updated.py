@@ -1,0 +1,427 @@
+import logging
+import os
+import sys
+from datetime import datetime
+
+import numpy as np
+
+from bustle_properties import *
+from bustle_string_dsl import *
+from sygus_parser import StrParser
+from utils import *
+
+outputsPartialProgs = set()
+from Levenshtein import distance
+
+added_partialprogs = []
+
+
+def populate_property_value(property_signature, property_encoding):
+    for encoding in property_encoding:
+        property_signature.append(encoding)
+
+
+class ProgramList:
+
+    def __init__(self, string_variables_list, integer_variables_list, input_output):
+        self.plist = {}
+        self.number_programs = 0
+        self.parent_input_output = input_output
+        self.string_variables = string_variables_list
+        self.integer_variables = integer_variables_list
+        self.parent_ps = []
+        self.batch_jobs = []
+
+    def insert(self, program):
+        self.batch_jobs.append(program)
+
+    def process_batch_jobs(self):
+
+        batch_size = 100000
+        total_jobs = len(self.batch_jobs)
+
+        for job_index in range(0, total_jobs, batch_size):
+
+            current_batch = self.batch_jobs[job_index:job_index + batch_size]
+            current_batch_ps = []
+
+            for program in current_batch:
+
+                test_row = self.parent_ps.copy()
+                child_input_outputs = []
+
+                for index, parent_input in enumerate(self.parent_input_output):
+                    child_input_output = parent_input.copy()
+                    child_output = program.interpret(child_input_output)
+                    child_input_output['cout'] = child_output
+                    child_input_output['out'] = self.parent_input_output[index]['out']
+                    child_input_outputs.append(child_input_output)
+
+                outputs = [output['cout'] for output in child_input_outputs]
+
+            for program_index, program in enumerate(current_batch):
+
+                # program_size = program.size
+
+                # Reweighing the size of the program as per BUSTLE algorithm using the neural model
+
+                # program.size = program_size
+
+                if program.size not in self.plist:
+                    self.plist[program.size] = {}
+
+                if program.getReturnType() not in self.plist[program.size]:
+                    self.plist[program.size][program.getReturnType()] = []
+
+                self.plist[program.size][program.getReturnType()].append(program)
+                self.number_programs += 1
+
+        self.batch_jobs.clear()
+
+    def init_insert(self, program):
+
+        if program.size not in self.plist:
+            self.plist[program.size] = {}
+
+        if program.getReturnType() not in self.plist[program.size]:
+            self.plist[program.size][program.getReturnType()] = []
+
+        self.plist[program.size][program.getReturnType()].append(program)
+        self.number_programs += 1
+
+    def init_plist(self, string_literals_list, integer_literals_list,
+                   string_variables_list, integer_variables_list, added_partialprogs):
+        for string_literal in string_literals_list:
+            init_program = StrLiteral(string_literal)
+            self.init_insert(init_program)
+
+        for integer_literal in integer_literals_list:
+            init_program = IntLiteral(integer_literal)
+            self.init_insert(init_program)
+
+        for str_var in string_variables_list:
+            init_program = StrVar(str_var)
+            self.init_insert(init_program)
+
+        for int_var in integer_variables_list:
+            init_program = IntVar(int_var)
+            self.init_insert(init_program)
+
+        if len(added_partialprogs) > 0:
+            for pprog in added_partialprogs:
+                pprog.size = 1
+                self.init_insert(pprog)
+
+    def get_programs_all(self, size):
+
+        if size in self.plist:
+            programs = []
+            for value in self.plist[size].values():
+                programs.extend(value)
+            return programs
+
+        return []
+
+    def get_programs(self, size, return_type):
+
+        if size in self.plist:
+            if return_type in self.plist[size]:
+                return self.plist[size][return_type]
+
+        return []
+
+    def get_number_programs(self):
+        return self.number_programs
+
+
+class BottomUpSearch:
+
+    def __init__(self, string_variables_list, integer_variables_list, input_output):
+        self._variables = string_variables_list + integer_variables_list
+        self._input_output = input_output
+        self.plist = ProgramList(string_variables_list, integer_variables_list, input_output)
+        self._outputs = set()
+        self.closed_list = set()
+        self.number_evaluations = 0
+        self.unique_evaluations = 0
+
+    def is_correct(self, p):
+        is_program_correct = True
+
+        for inout in self._input_output:
+            env = self.init_env(inout)
+            out = p.interpret(env)
+            if out != inout['out']:
+                is_program_correct = False
+
+        return is_program_correct
+
+    def is_partial_solution(self, p):
+
+        is_partial_program = False
+        average_scores = float('inf')
+
+        for inout in self._input_output:
+            env = self.init_env(inout)
+            out = p.interpret(env)
+            if out == inout['out']:
+                is_partial_program = True
+
+        if is_partial_program:
+
+            eval_scores = []
+            for inout in self._input_output:
+                env = self.init_env(inout)
+                out = p.interpret(env)
+
+                if not type(out) == str:
+                    out = str(out)
+                if not type(inout['out']) == str:
+                    inout['out'] = str(inout['out'])
+
+                eval_scores.append(distance(out, inout['out']))
+            average_scores = sum(eval_scores) / len(eval_scores)
+
+        return is_partial_program, average_scores
+
+    def init_env(self, inout):
+        env = {}
+        for v in self._variables:
+            env[v] = inout[v]
+        return env
+
+    def has_equivalent(self, program):
+        p_out = []
+        for inout in self._input_output:
+            env = self.init_env(inout)
+            out = program.interpret(env)
+            if out is not None:
+                p_out.append(out)
+            else:
+                return False, True
+
+        tuple_out = tuple(p_out)
+
+        if tuple_out not in self._outputs:
+            self._outputs.add(tuple_out)
+            return True, False
+        return True, True
+
+    def has_equivalent_partialprogs(self, program):
+        p_out = []
+        for inout in self._input_output:
+            env = self.init_env(inout)
+            out = program.interpret(env)
+            if out is not None:
+                p_out.append(out)
+            else:
+                return True
+
+        tuple_out = tuple(p_out)
+
+        if tuple_out not in outputsPartialProgs:
+            outputsPartialProgs.add(tuple_out)
+            return False
+        return True
+
+    def grow(self, operations, size):
+        new_programs = []
+        for operation in operations:
+            for new_program in operation.grow(self.plist, size):
+                # print(p.toString)
+                is_valid, has_equivalent = self.has_equivalent(new_program)
+                if is_valid:
+                    self.number_evaluations += 1
+                if new_program.toString() not in self.closed_list and not has_equivalent:
+                    self.closed_list.add(new_program)
+                    new_programs.append(new_program)
+                    yield new_program
+
+        for new_program in new_programs:
+            self.plist.insert(new_program)
+
+        self.plist.process_batch_jobs()
+
+    def search(self, bound, operations, string_literals_list, integer_literals_list,
+               string_variables_list,
+               integer_variables_list, added_partialprogs):
+
+        self.plist.init_plist(string_literals_list, integer_literals_list, string_variables_list,
+                              integer_variables_list, added_partialprogs)
+
+        logging.info('Number of programs: ' + str(self.plist.get_number_programs()))
+
+        number_evaluations_Onesearch = 0
+        current_size = 0
+        partialprog_number = 0
+        candidate_partialprogram_list = []
+        candidate_pprog_scores = []
+
+        while current_size <= bound:
+
+            number_evaluations_bound = 0
+
+            for new_program in self.grow(operations, current_size):
+
+                self.unique_evaluations += 1
+                number_evaluations_bound += 1
+                number_evaluations_Onesearch += 1
+
+                is_p_correct = self.is_correct(new_program)
+                if is_p_correct:
+                    return new_program, self.number_evaluations, candidate_partialprogram_list, candidate_pprog_scores, partialprog_number, current_size, self.unique_evaluations
+
+
+                else:
+                    is_p_partial_program, sc = self.is_partial_solution(new_program)
+
+                    if is_p_partial_program:
+
+                        if not self.has_equivalent_partialprogs(new_program):
+                            candidate_pprog_scores.append(sc)
+
+                            partialprog_number += 1
+                            candidate_partialprogram_list.append(new_program)
+
+                if number_evaluations_Onesearch > 14000000:
+                    return None, self.number_evaluations, candidate_partialprogram_list, candidate_pprog_scores, partialprog_number, current_size, self.unique_evaluations
+
+            logging.info('Size: ' + str(current_size) + ' Evaluations: ' + str(number_evaluations_bound))
+            current_size += 1
+
+        return None, self.number_evaluations, candidate_partialprogram_list, candidate_pprog_scores, partialprog_number, current_size, self.unique_evaluations
+
+    def synthesize(self, bound, operations, string_literals_list, integer_literals_list,
+                   string_variables_list,
+                   integer_variables_list, added_partialprogs):
+
+        BustlePCFG.initialize(operations, string_literals_list, integer_literals_list,
+                              string_variables_list)
+
+        program_solution, evaluations, candidate_partialprogram_list, candidate_pprog_scores, partialprog_number, depth, unique_evaluations = self.search(
+            bound, operations, string_literals_list, integer_literals_list,
+            string_variables_list, integer_variables_list, added_partialprogs)
+
+        return program_solution, evaluations, candidate_partialprogram_list, candidate_pprog_scores, partialprog_number, depth, unique_evaluations
+
+
+if __name__ == "__main__":
+
+    TaskId = None
+    log_filename = logs_directory + "BUS_Augmented_Sygus.log"
+    os.makedirs(os.path.dirname(log_filename), exist_ok=True)
+
+    if len(sys.argv) == 2:
+        slurm_task_id = sys.argv[1]
+        TaskId = int(slurm_task_id) - 1
+        logging.basicConfig(filename=log_filename,
+                            filemode='a',
+                            format="[Task: " + str(TaskId) + "] " + '%(message)s',
+                            datefmt='%H:%M:%S',
+                            level=logging.DEBUG)
+    else:
+        logging.basicConfig(filename=log_filename,
+                            filemode='a',
+                            format='%(message)s',
+                            datefmt='%H:%M:%S',
+                            level=logging.DEBUG)
+
+    with open(config_directory + "bustle_benchmarks.txt") as f:
+        benchmarks = f.read().splitlines()
+
+    logging.info('TaskId: ' + str(TaskId))
+    benchmark = None
+    for count, filename in enumerate(benchmarks):
+
+        if TaskId is not None and TaskId != count:
+            continue
+
+        benchmark = filename
+
+        specification_parser = StrParser(benchmark)
+        specifications = specification_parser.parse()
+        logging.info('Count: ' + str(count))
+        logging.info("\n")
+
+        dsl_functions = [IntPlus, StrConcat, IntFirstIndexOf, IntIndexOf, StrLeftSubstr,
+                         IntLength, StrSubstr, IntMinus, StrReplaceAdd, StrRightSubstr,
+                         StrTrim, StrLower, StrUpper, StrProper, StrRepeat, StrReplace,
+                         StrReplaceOccurence, StrIntToStr, StrIte, BoolEqual, BoolGreaterThan,
+                         BoolGreaterThanEqual]
+
+        string_variables = specifications[0]
+        string_literals = specifications[1]
+        integer_variables = specifications[2]
+        integer_literals = specifications[3]
+
+        input_output_examples = specifications[4]
+
+        synthesizer = BottomUpSearch(string_variables, integer_variables, input_output_examples)
+        logging.info(str(datetime.now()))
+        begin_time = datetime.now()
+        solution, num_evaluations, candidate_partialprogram_list, candidate_pprog_scores, partialprog_number, depth, unique_evaluations = synthesizer.synthesize(
+            40, dsl_functions,
+            string_literals,
+            integer_literals,
+            string_variables,
+            integer_variables, added_partialprogs)
+
+        if solution is not None:
+            logging.info("Benchmark: " + str(benchmark))
+            logging.info("Result: Success")
+            logging.info("Program: " + solution.toString())
+            logging.info("Number of evaluations: " + str(num_evaluations))
+            logging.info("Number of unique evaluations: " + str(unique_evaluations))
+            logging.info(str(datetime.now()))
+            logging.info("Time taken: " + str(datetime.now() - begin_time))
+        else:
+
+            for i in range(10):
+
+                logging.info('Iteration number : ' + str(i))
+                logging.info('Num of total candidate partial progs: ' + str(partialprog_number))
+
+                logging.info("\n")
+
+                min_ind = (np.array(candidate_pprog_scores)).argsort()[:(i + 1)]
+
+                for counter in range(len(min_ind)):
+                    added_partialprogs.append(candidate_partialprogram_list[min_ind[counter]])
+
+                    logging.info('partial program added to the DSL: ' + candidate_partialprogram_list[
+                        min_ind[counter]].toString())
+                    logging.info("\n")
+
+                synthesizer = BottomUpSearch(string_variables, integer_variables, input_output_examples)
+                logging.info(str(datetime.now()))
+                begin_time = datetime.now()
+                solution, num_evaluations, candidate_partialprogram_list, candidate_pprog_scores, partialprog_number, depth, unique_evaluations = synthesizer.synthesize(
+                    40, dsl_functions,
+                    string_literals,
+                    integer_literals,
+                    string_variables,
+                    integer_variables, added_partialprogs)
+
+                logging.info("The depth of augmented BUS: " + str(depth))
+                logging.info("\n")
+
+                if solution is not None:
+                    logging.info("Benchmark: " + str(benchmark))
+                    logging.info("Result: Success/AugmentedBUS")
+                    logging.info("Program: " + solution.toString())
+                    logging.info("Number of evaluations: " + str(num_evaluations))
+                    logging.info("Number of unique evaluations: " + str(unique_evaluations))
+                    logging.info(str(datetime.now()))
+                    logging.info("Time taken: " + str(datetime.now() - begin_time))
+                    break
+
+            if solution is None:
+                logging.info("Benchmark: " + str(benchmark))
+                logging.info("Result: Fail/AugmentedBUS")
+                logging.info("Program: None")
+                logging.info("Number of evaluations: " + str(num_evaluations))
+                logging.info("Number of unique evaluations: " + str(unique_evaluations))
+                logging.info(str(datetime.now()))
+                logging.info("Time taken: " + str(datetime.now() - begin_time))
+
+            logging.info("\n\n")

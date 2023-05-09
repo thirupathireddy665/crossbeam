@@ -1,0 +1,1865 @@
+[Task: 0] Loading bustle model....
+[Task: 0] Count: 0
+[Task: 0] 
+[Task: 0] 2021-09-09 06:56:39.123181
+[Task: 0] Number of programs: 10
+[Task: 0] Size: 0 Evaluations: 0
+[Task: 0] Size: 1 Evaluations: 0
+[Task: 0] Size: 2 Evaluations: 17
+[Task: 0] Size: 3 Evaluations: 34
+[Task: 0] Size: 4 Evaluations: 50
+[Task: 0] Size: 5 Evaluations: 160
+[Task: 0] Size: 6 Evaluations: 529
+[Task: 0] Size: 7 Evaluations: 1587
+[Task: 0] Benchmark: 11440431.sl
+[Task: 0] Result: Success
+[Task: 0] Program: _arg_0.replace("US", "").replace("CAN", "").strip()
+[Task: 0] Number of evaluations: 5340
+[Task: 0] 2021-09-09 06:56:41.314639
+[Task: 0] Time taken: 0:00:02.191449
+[Task: 0] 
+[Task: 1] Loading bustle model....
+[Task: 1] Count: 1
+[Task: 1] 
+[Task: 1] 2021-09-09 06:58:47.973092
+[Task: 1] Number of programs: 10
+[Task: 1] Size: 0 Evaluations: 0
+[Task: 1] Size: 1 Evaluations: 0
+[Task: 1] Size: 2 Evaluations: 12
+[Task: 1] Size: 3 Evaluations: 20
+[Task: 1] Size: 4 Evaluations: 55
+[Task: 1] Size: 5 Evaluations: 141
+[Task: 1] Size: 6 Evaluations: 489
+[Task: 1] Size: 7 Evaluations: 1534
+[Task: 1] Size: 8 Evaluations: 5663
+[Task: 1] Size: 9 Evaluations: 19012
+[Task: 1] Size: 10 Evaluations: 72611
+[Task: 1] Size: 11 Evaluations: 262274
+[Task: 1] Size: 12 Evaluations: 1018002
+[Task: 1] Benchmark: 11604909.sl
+[Task: 1] Result: Success
+[Task: 1] Program: _arg_0.Substr((-1 + _arg_0.IndexOf(".")),concat(-1.IntToStr(), _arg_0).IndexOf("."))
+[Task: 1] Number of evaluations: 3915697
+[Task: 1] 2021-09-09 07:29:46.245519
+[Task: 1] Time taken: 0:30:58.271863
+[Task: 1] 
+[Task: 2] Loading bustle model....
+[Task: 2] Count: 2
+[Task: 2] 
+[Task: 2] 2021-09-09 06:58:47.973631
+[Task: 2] Number of programs: 9
+[Task: 2] Size: 0 Evaluations: 0
+[Task: 2] Size: 1 Evaluations: 0
+[Task: 2] Size: 2 Evaluations: 10
+[Task: 2] Size: 3 Evaluations: 17
+[Task: 2] Size: 4 Evaluations: 25
+[Task: 2] Size: 5 Evaluations: 47
+[Task: 2] Size: 6 Evaluations: 115
+[Task: 2] Size: 7 Evaluations: 259
+[Task: 2] Size: 8 Evaluations: 635
+[Task: 2] Size: 9 Evaluations: 1620
+[Task: 2] Size: 10 Evaluations: 3897
+[Task: 2] Size: 11 Evaluations: 9825
+[Task: 2] Size: 12 Evaluations: 24516
+[Task: 2] Size: 13 Evaluations: 62452
+[Task: 2] Benchmark: 17212077.sl
+[Task: 2] Result: Success
+[Task: 2] Program: _arg_0[:1] + _arg_0.CharAt(1) + _arg_0[_arg_0.replace("/", " ").IndexOf("/"):]
+[Task: 2] Number of evaluations: 228550
+[Task: 2] 2021-09-09 07:00:25.865768
+[Task: 2] Time taken: 0:01:37.891253
+[Task: 2] 
+[Task: 3] Loading bustle model....
+[Task: 3] Count: 3
+[Task: 3] 
+[Task: 3] 2021-09-09 06:58:48.011098
+[Task: 3] Number of programs: 8
+[Task: 3] Size: 0 Evaluations: 0
+[Task: 3] Size: 1 Evaluations: 0
+[Task: 3] Size: 2 Evaluations: 11
+[Task: 3] Size: 3 Evaluations: 14
+[Task: 3] Size: 4 Evaluations: 12
+[Task: 3] Size: 5 Evaluations: 35
+[Task: 3] Size: 6 Evaluations: 39
+[Task: 3] Benchmark: 2171308.sl
+[Task: 3] Result: Success
+[Task: 3] Program: _arg_0[:1] + "" + _arg_0[_arg_0.IndexOf(" "):]
+[Task: 3] Number of evaluations: 158
+[Task: 3] 2021-09-09 06:58:48.561641
+[Task: 3] Time taken: 0:00:00.550469
+[Task: 3] 
+[Task: 4] Loading bustle model....
+[Task: 4] Count: 4
+[Task: 4] 
+[Task: 4] 2021-09-09 06:58:47.963682
+[Task: 4] Number of programs: 14
+[Task: 4] Size: 0 Evaluations: 0
+[Task: 4] Size: 1 Evaluations: 0
+[Task: 4] Size: 2 Evaluations: 30
+[Task: 4] Size: 3 Evaluations: 99
+[Task: 4] Size: 4 Evaluations: 60
+[Task: 4] Size: 5 Evaluations: 282
+[Task: 4] Size: 6 Evaluations: 556
+[Task: 4] Size: 7 Evaluations: 894
+[Task: 4] Size: 8 Evaluations: 2118
+[Task: 4] Size: 9 Evaluations: 4746
+[Task: 4] Benchmark: 25239569.sl
+[Task: 4] Result: Success
+[Task: 4] Program: _arg_0.replace("BRD", "Branding").replace("DRS", "Direct Response").replace("LDS", "Leads")
+[Task: 4] Number of evaluations: 16588
+[Task: 4] 2021-09-09 06:58:51.901534
+[Task: 4] Time taken: 0:00:03.937827
+[Task: 4] 
+[Task: 5] Loading bustle model....
+[Task: 5] Count: 5
+[Task: 5] 
+[Task: 5] 2021-09-09 06:58:48.025658
+[Task: 5] Number of programs: 10
+[Task: 5] Size: 0 Evaluations: 0
+[Task: 5] Size: 1 Evaluations: 0
+[Task: 5] Size: 2 Evaluations: 13
+[Task: 5] Size: 3 Evaluations: 27
+[Task: 5] Size: 4 Evaluations: 58
+[Task: 5] Size: 5 Evaluations: 185
+[Task: 5] Size: 6 Evaluations: 626
+[Task: 5] Size: 7 Evaluations: 1951
+[Task: 5] Size: 8 Evaluations: 7181
+[Task: 5] Benchmark: 28627624_1.sl
+[Task: 5] Result: Success
+[Task: 5] Program: _arg_0[:concat(_arg_0, _arg_0)[1:].IndexOf("-")]
+[Task: 5] Number of evaluations: 30414
+[Task: 5] 2021-09-09 06:58:53.592589
+[Task: 5] Time taken: 0:00:05.566866
+[Task: 5] 
+[Task: 6] Loading bustle model....
+[Task: 6] Count: 6
+[Task: 6] 
+[Task: 6] 2021-09-09 06:58:47.984202
+[Task: 6] Number of programs: 9
+[Task: 6] Size: 0 Evaluations: 0
+[Task: 6] Size: 1 Evaluations: 0
+[Task: 6] Size: 2 Evaluations: 11
+[Task: 6] Size: 3 Evaluations: 19
+[Task: 6] Size: 4 Evaluations: 39
+[Task: 6] Size: 5 Evaluations: 89
+[Task: 6] Size: 6 Evaluations: 289
+[Task: 6] Benchmark: 30732554.sl
+[Task: 6] Result: Success
+[Task: 6] Program: _arg_0[:concat(_arg_0, "|").IndexOf("|")]
+[Task: 6] Number of evaluations: 1025
+[Task: 6] 2021-09-09 06:58:48.686947
+[Task: 6] Time taken: 0:00:00.702686
+[Task: 6] 
+[Task: 7] Loading bustle model....
+[Task: 7] Count: 7
+[Task: 7] 
+[Task: 7] 2021-09-09 16:01:27.192229
+[Task: 7] Number of programs: 13
+[Task: 7] Size: 0 Evaluations: 0
+[Task: 7] Size: 1 Evaluations: 0
+[Task: 7] Size: 2 Evaluations: 15
+[Task: 7] Size: 3 Evaluations: 37
+[Task: 7] Size: 4 Evaluations: 74
+[Task: 7] Size: 5 Evaluations: 277
+[Task: 7] Size: 6 Evaluations: 967
+[Task: 7] Size: 7 Evaluations: 3592
+[Task: 7] Size: 8 Evaluations: 15328
+[Task: 7] Size: 9 Evaluations: 62786
+[Task: 7] Size: 10 Evaluations: 278790
+[Task: 7] Size: 11 Evaluations: 1154277
+[Task: 8] Loading bustle model....
+[Task: 8] Count: 8
+[Task: 8] 
+[Task: 8] 2021-09-09 16:01:27.155297
+[Task: 8] Number of programs: 12
+[Task: 8] Size: 0 Evaluations: 0
+[Task: 8] Size: 1 Evaluations: 0
+[Task: 8] Size: 2 Evaluations: 26
+[Task: 8] Size: 3 Evaluations: 66
+[Task: 8] Size: 4 Evaluations: 88
+[Task: 8] Size: 5 Evaluations: 345
+[Task: 8] Size: 6 Evaluations: 1293
+[Task: 8] Size: 7 Evaluations: 4466
+[Task: 8] Size: 8 Evaluations: 16481
+[Task: 8] Size: 9 Evaluations: 62087
+[Task: 8] Size: 10 Evaluations: 235519
+[Task: 8] Size: 11 Evaluations: 907461
+[Task: 8] Size: 12 Evaluations: 3604974
+[Task: 8] Benchmark: 33619752.sl
+[Task: 8] Result: Success
+[Task: 8] Program: _arg_0[:concat(_arg_0, " ").IndexOf(" ","Enterprises".IndexOf("Enterprises"[-1:]))]
+[Task: 8] Number of evaluations: 16485160
+[Task: 8] 2021-09-09 17:20:18.113828
+[Task: 8] Time taken: 1:18:50.958912
+[Task: 8] 
+[Task: 9] Loading bustle model....
+[Task: 9] Count: 9
+[Task: 9] 
+[Task: 9] 2021-09-09 06:58:47.858722
+[Task: 9] Number of programs: 10
+[Task: 9] Size: 0 Evaluations: 0
+[Task: 9] Size: 1 Evaluations: 0
+[Task: 9] Size: 2 Evaluations: 16
+[Task: 9] Size: 3 Evaluations: 32
+[Task: 9] Size: 4 Evaluations: 49
+[Task: 9] Size: 5 Evaluations: 165
+[Task: 9] Size: 6 Evaluations: 590
+[Task: 9] Size: 7 Evaluations: 1810
+[Task: 9] Benchmark: 34801680.sl
+[Task: 9] Result: Success
+[Task: 9] Program: _arg_0[_arg_0.IndexOf(" "):].strip()
+[Task: 9] Number of evaluations: 7178
+[Task: 9] 2021-09-09 06:58:49.577451
+[Task: 9] Time taken: 0:00:01.718678
+[Task: 9] 
+[Task: 10] Loading bustle model....
+[Task: 10] Count: 10
+[Task: 10] 
+[Task: 10] 2021-09-09 06:58:47.880918
+[Task: 10] Number of programs: 10
+[Task: 10] Size: 0 Evaluations: 0
+[Task: 10] Size: 1 Evaluations: 0
+[Task: 10] Size: 2 Evaluations: 17
+[Task: 10] Size: 3 Evaluations: 30
+[Task: 10] Size: 4 Evaluations: 41
+[Task: 10] Size: 5 Evaluations: 145
+[Task: 10] Benchmark: 35016216.sl
+[Task: 10] Result: Success
+[Task: 10] Program: _arg_0.replace(_arg_0.lower(), _arg_1)
+[Task: 10] Number of evaluations: 377
+[Task: 10] 2021-09-09 06:58:48.339735
+[Task: 10] Time taken: 0:00:00.458735
+[Task: 10] 
+[Task: 11] Loading bustle model....
+[Task: 11] Count: 11
+[Task: 11] 
+[Task: 11] 2021-09-09 06:58:47.850411
+[Task: 11] Number of programs: 13
+[Task: 11] Size: 0 Evaluations: 0
+[Task: 11] Size: 1 Evaluations: 0
+[Task: 11] Size: 2 Evaluations: 23
+[Task: 11] Size: 3 Evaluations: 79
+[Task: 11] Size: 4 Evaluations: 102
+[Task: 11] Size: 5 Evaluations: 462
+[Task: 11] Size: 6 Evaluations: 1708
+[Task: 11] Size: 7 Evaluations: 5978
+[Task: 11] Size: 8 Evaluations: 25515
+[Task: 11] Size: 9 Evaluations: 98939
+[Task: 11] Size: 10 Evaluations: 438900
+[Task: 11] Benchmark: 35744094.sl
+[Task: 11] Result: Success
+[Task: 11] Program: (if_arg_0.Contain("windows") then "windows" else (if_arg_0.Contain("microsoft") then "microsoft" else "mac"))
+[Task: 11] Number of evaluations: 1850712
+[Task: 11] 2021-09-09 07:04:38.335871
+[Task: 11] Time taken: 0:05:50.483990
+[Task: 11] 
+[Task: 12] Loading bustle model....
+[Task: 12] Count: 12
+[Task: 12] 
+[Task: 12] 2021-09-09 06:58:47.780463
+[Task: 12] Number of programs: 9
+[Task: 12] Size: 0 Evaluations: 0
+[Task: 12] Size: 1 Evaluations: 0
+[Task: 12] Size: 2 Evaluations: 11
+[Task: 12] Size: 3 Evaluations: 18
+[Task: 12] Size: 4 Evaluations: 13
+[Task: 12] Size: 5 Evaluations: 68
+[Task: 12] Size: 6 Evaluations: 103
+[Task: 12] Size: 7 Evaluations: 383
+[Task: 12] Size: 8 Evaluations: 778
+[Task: 12] Size: 9 Evaluations: 2820
+[Task: 12] Size: 10 Evaluations: 6640
+[Task: 12] Size: 11 Evaluations: 23063
+[Task: 12] Size: 12 Evaluations: 61408
+[Task: 12] Size: 13 Evaluations: 206320
+[Task: 12] Benchmark: 36462127.sl
+[Task: 12] Result: Success
+[Task: 12] Program: _arg_0[concat(" ", _arg_0.replace("/", " ").replace("/", " ")).IndexOf("/"):]
+[Task: 12] Number of evaluations: 775790
+[Task: 12] 2021-09-09 07:02:23.558631
+[Task: 12] Time taken: 0:03:35.778135
+[Task: 12] 
+[Task: 13] Loading bustle model....
+[Task: 13] Count: 13
+[Task: 13] 
+[Task: 13] 2021-09-09 06:58:47.800741
+[Task: 13] Number of programs: 10
+[Task: 13] Size: 0 Evaluations: 0
+[Task: 13] Size: 1 Evaluations: 0
+[Task: 13] Size: 2 Evaluations: 18
+[Task: 13] Size: 3 Evaluations: 32
+[Task: 13] Size: 4 Evaluations: 20
+[Task: 13] Size: 5 Evaluations: 118
+[Task: 13] Size: 6 Evaluations: 59
+[Task: 13] Size: 7 Evaluations: 238
+[Task: 13] Size: 8 Evaluations: 292
+[Task: 13] Benchmark: 37534494.sl
+[Task: 13] Result: Success
+[Task: 13] Program: (if_arg_0.Contain(_arg_2) then _arg_0 else _arg_1)
+[Task: 13] Number of evaluations: 1029
+[Task: 13] 2021-09-09 06:58:48.630958
+[Task: 13] Time taken: 0:00:00.830197
+[Task: 13] 
+[Task: 14] Loading bustle model....
+[Task: 14] Count: 14
+[Task: 14] 
+[Task: 14] 2021-09-09 06:58:47.850557
+[Task: 14] Number of programs: 9
+[Task: 14] Size: 0 Evaluations: 0
+[Task: 14] Size: 1 Evaluations: 0
+[Task: 14] Size: 2 Evaluations: 13
+[Task: 14] Size: 3 Evaluations: 26
+[Task: 14] Size: 4 Evaluations: 36
+[Task: 14] Size: 5 Evaluations: 98
+[Task: 14] Size: 6 Evaluations: 370
+[Task: 14] Size: 7 Evaluations: 872
+[Task: 14] Size: 8 Evaluations: 3020
+[Task: 14] Size: 9 Evaluations: 8448
+[Task: 14] Benchmark: 38664547.sl
+[Task: 14] Result: Success
+[Task: 14] Program: _arg_0.replace("that".strip().replace(_arg_0.strip(), "that".upper()), "")
+[Task: 14] Number of evaluations: 25164
+[Task: 14] 2021-09-09 06:58:57.703644
+[Task: 14] Time taken: 0:00:09.851445
+[Task: 14] 
+[Task: 15] Loading bustle model....
+[Task: 15] Count: 15
+[Task: 15] 
+[Task: 15] 2021-09-09 06:58:47.947770
+[Task: 15] Number of programs: 10
+[Task: 15] Size: 0 Evaluations: 0
+[Task: 15] Size: 1 Evaluations: 0
+[Task: 15] Size: 2 Evaluations: 13
+[Task: 15] Size: 3 Evaluations: 28
+[Task: 15] Size: 4 Evaluations: 20
+[Task: 15] Size: 5 Evaluations: 61
+[Task: 15] Size: 6 Evaluations: 59
+[Task: 15] Size: 7 Evaluations: 87
+[Task: 15] Size: 8 Evaluations: 199
+[Task: 15] Size: 9 Evaluations: 298
+[Task: 15] Size: 10 Evaluations: 723
+[Task: 15] Size: 11 Evaluations: 1564
+[Task: 15] Size: 12 Evaluations: 2794
+[Task: 15] Benchmark: 38871714.sl
+[Task: 15] Result: Success
+[Task: 15] Program: _arg_0.replace("<", "",-1).replace(">", "",-1)
+[Task: 15] Number of evaluations: 8859
+[Task: 15] 2021-09-09 06:58:51.065732
+[Task: 15] Time taken: 0:00:03.117949
+[Task: 15] 
+[Task: 16] Loading bustle model....
+[Task: 16] Count: 16
+[Task: 16] 
+[Task: 16] 2021-09-09 06:58:47.949965
+[Task: 16] Number of programs: 9
+[Task: 16] Size: 0 Evaluations: 0
+[Task: 16] Size: 1 Evaluations: 0
+[Task: 16] Size: 2 Evaluations: 12
+[Task: 16] Size: 3 Evaluations: 20
+[Task: 16] Size: 4 Evaluations: 11
+[Task: 16] Size: 5 Evaluations: 51
+[Task: 16] Size: 6 Evaluations: 35
+[Task: 16] Size: 7 Evaluations: 114
+[Task: 16] Size: 8 Evaluations: 108
+[Task: 16] Size: 9 Evaluations: 404
+[Task: 16] Size: 10 Evaluations: 653
+[Task: 16] Size: 11 Evaluations: 1657
+[Task: 16] Size: 12 Evaluations: 3435
+[Task: 16] Size: 13 Evaluations: 7363
+[Task: 16] Size: 14 Evaluations: 16189
+[Task: 16] Size: 15 Evaluations: 34603
+[Task: 16] Size: 16 Evaluations: 81288
+[Task: 16] Benchmark: 39060015.sl
+[Task: 16] Result: Success
+[Task: 16] Program: _arg_0.replace("/", _arg_0[:_arg_0.IndexOf("/")],-1)[_arg_0.Length():]
+[Task: 16] Number of evaluations: 260366
+[Task: 16] 2021-09-09 07:00:01.202225
+[Task: 16] Time taken: 0:01:13.252207
+[Task: 16] 
+[Task: 17] Loading bustle model....
+[Task: 17] Count: 17
+[Task: 17] 
+[Task: 17] 2021-09-09 06:58:47.934278
+[Task: 17] Number of programs: 9
+[Task: 17] Size: 0 Evaluations: 0
+[Task: 17] Size: 1 Evaluations: 0
+[Task: 17] Size: 2 Evaluations: 14
+[Task: 17] Size: 3 Evaluations: 23
+[Task: 17] Size: 4 Evaluations: 34
+[Task: 17] Size: 5 Evaluations: 115
+[Task: 17] Size: 6 Evaluations: 343
+[Task: 17] Size: 7 Evaluations: 960
+[Task: 17] Size: 8 Evaluations: 3474
+[Task: 17] Size: 9 Evaluations: 10592
+[Task: 17] Size: 10 Evaluations: 38601
+[Task: 17] Size: 11 Evaluations: 127041
+[Task: 17] Benchmark: 41503046.sl
+[Task: 17] Result: Success
+[Task: 17] Program: _arg_0[:_arg_0.IndexOf(" ",concat("ssp.", concat("ssp.", _arg_0)).IndexOf(_arg_0))]
+[Task: 17] Number of evaluations: 543432
+[Task: 17] 2021-09-09 07:02:41.201373
+[Task: 17] Time taken: 0:03:53.267092
+[Task: 17] 
+[Task: 18] Loading bustle model....
+[Task: 18] Count: 18
+[Task: 18] 
+[Task: 18] 2021-09-09 16:01:27.089898
+[Task: 18] Number of programs: 17
+[Task: 18] Size: 0 Evaluations: 0
+[Task: 18] Size: 1 Evaluations: 0
+[Task: 18] Size: 2 Evaluations: 28
+[Task: 18] Size: 3 Evaluations: 151
+[Task: 18] Size: 4 Evaluations: 99
+[Task: 18] Size: 5 Evaluations: 237
+[Task: 18] Size: 6 Evaluations: 994
+[Task: 18] Size: 7 Evaluations: 556
+[Task: 18] Size: 8 Evaluations: 1940
+[Task: 18] Size: 9 Evaluations: 4220
+[Task: 18] Size: 10 Evaluations: 9634
+[Task: 18] Size: 11 Evaluations: 19514
+[Task: 18] Size: 12 Evaluations: 52635
+[Task: 18] Size: 13 Evaluations: 127192
+[Task: 18] Size: 14 Evaluations: 243238
+[Task: 18] Size: 15 Evaluations: 518312
+[Task: 18] Size: 16 Evaluations: 1150543
+[Task: 18] Size: 17 Evaluations: 2444037
+[Task: 19] Loading bustle model....
+[Task: 19] Count: 19
+[Task: 19] 
+[Task: 19] 2021-09-09 06:58:47.925690
+[Task: 19] Number of programs: 9
+[Task: 19] Size: 0 Evaluations: 0
+[Task: 19] Size: 1 Evaluations: 0
+[Task: 19] Size: 2 Evaluations: 11
+[Task: 19] Size: 3 Evaluations: 17
+[Task: 19] Size: 4 Evaluations: 16
+[Task: 19] Size: 5 Evaluations: 63
+[Task: 19] Size: 6 Evaluations: 133
+[Task: 19] Size: 7 Evaluations: 386
+[Task: 19] Size: 8 Evaluations: 1067
+[Task: 19] Size: 9 Evaluations: 2822
+[Task: 19] Size: 10 Evaluations: 9155
+[Task: 19] Size: 11 Evaluations: 23823
+[Task: 19] Size: 12 Evaluations: 83020
+[Task: 19] Size: 13 Evaluations: 220446
+[Task: 19] Size: 14 Evaluations: 790547
+[Task: 19] Benchmark: 43606446.sl
+[Task: 19] Result: Success
+[Task: 19] Program: _arg_0.Substr(_arg_0[1:][1:].Substr(1,-1).Length(),-1)
+[Task: 19] Number of evaluations: 2533752
+[Task: 19] 2021-09-09 07:31:28.618827
+[Task: 19] Time taken: 0:32:40.693165
+[Task: 19] 
+[Task: 20] Loading bustle model....
+[Task: 20] Count: 20
+[Task: 20] 
+[Task: 20] 2021-09-09 06:58:47.861802
+[Task: 20] Number of programs: 11
+[Task: 20] Size: 0 Evaluations: 0
+[Task: 20] Size: 1 Evaluations: 0
+[Task: 20] Size: 2 Evaluations: 22
+[Task: 20] Size: 3 Evaluations: 47
+[Task: 20] Size: 4 Evaluations: 70
+[Task: 20] Size: 5 Evaluations: 304
+[Task: 20] Size: 6 Evaluations: 450
+[Task: 20] Size: 7 Evaluations: 1534
+[Task: 20] Size: 8 Evaluations: 2502
+[Task: 20] Benchmark: add-a-line-break-with-a-formula.sl
+[Task: 20] Result: Success
+[Task: 20] Program: concat(_arg_0, concat("/n", concat(_arg_1, concat("/n", _arg_2))))
+[Task: 20] Number of evaluations: 5085
+[Task: 20] 2021-09-09 06:58:49.940207
+[Task: 20] Time taken: 0:00:02.078390
+[Task: 20] 
+[Task: 21] Loading bustle model....
+[Task: 21] Count: 21
+[Task: 21] 
+[Task: 21] 2021-09-09 08:23:38.541622
+[Task: 21] Number of programs: 10
+[Task: 21] Size: 0 Evaluations: 0
+[Task: 21] Size: 1 Evaluations: 0
+[Task: 21] Size: 2 Evaluations: 13
+[Task: 21] Size: 3 Evaluations: 35
+[Task: 21] Size: 4 Evaluations: 44
+[Task: 21] Size: 5 Evaluations: 143
+[Task: 21] Benchmark: bikes.sl
+[Task: 21] Result: Success
+[Task: 21] Program: name[:(name.Length() - 3)]
+[Task: 21] Number of evaluations: 447
+[Task: 21] 2021-09-09 08:23:39.264564
+[Task: 21] Time taken: 0:00:00.722924
+[Task: 21] 
+[Task: 22] Loading bustle model....
+[Task: 22] Count: 22
+[Task: 22] 
+[Task: 22] 2021-09-09 08:23:38.543641
+[Task: 22] Number of programs: 9
+[Task: 22] Size: 0 Evaluations: 0
+[Task: 22] Size: 1 Evaluations: 0
+[Task: 22] Size: 2 Evaluations: 10
+[Task: 22] Size: 3 Evaluations: 19
+[Task: 22] Benchmark: change-negative-numbers-to-positive.sl
+[Task: 22] Result: Success
+[Task: 22] Program: _arg_0.replace("-", "")
+[Task: 22] Number of evaluations: 41
+[Task: 22] 2021-09-09 08:23:39.002672
+[Task: 22] Time taken: 0:00:00.459022
+[Task: 22] 
+[Task: 23] Loading bustle model....
+[Task: 23] Count: 23
+[Task: 23] 
+[Task: 23] 2021-09-09 16:01:26.971748
+[Task: 23] Number of programs: 13
+[Task: 23] Size: 0 Evaluations: 0
+[Task: 23] Size: 1 Evaluations: 0
+[Task: 23] Size: 2 Evaluations: 14
+[Task: 23] Size: 3 Evaluations: 61
+[Task: 23] Size: 4 Evaluations: 86
+[Task: 23] Size: 5 Evaluations: 356
+[Task: 23] Size: 6 Evaluations: 717
+[Task: 23] Size: 7 Evaluations: 2172
+[Task: 23] Size: 8 Evaluations: 5627
+[Task: 23] Size: 9 Evaluations: 16313
+[Task: 23] Size: 10 Evaluations: 51894
+[Task: 23] Size: 11 Evaluations: 150005
+[Task: 23] Size: 12 Evaluations: 534399
+[Task: 23] Size: 13 Evaluations: 1685824
+[Task: 24] Loading bustle model....
+[Task: 24] Count: 24
+[Task: 24] 
+[Task: 24] 2021-09-09 08:26:48.097739
+[Task: 24] Number of programs: 10
+[Task: 24] Size: 0 Evaluations: 0
+[Task: 24] Size: 1 Evaluations: 0
+[Task: 24] Size: 2 Evaluations: 16
+[Task: 24] Size: 3 Evaluations: 37
+[Task: 24] Size: 4 Evaluations: 45
+[Task: 24] Size: 5 Evaluations: 185
+[Task: 24] Size: 6 Evaluations: 353
+[Task: 24] Benchmark: create-email-address-from-name.sl
+[Task: 24] Result: Success
+[Task: 24] Program: concat(_arg_1.CharAt(0), concat(_arg_0, "_acme.com"))
+[Task: 24] Number of evaluations: 784
+[Task: 24] 2021-09-09 08:26:49.247748
+[Task: 24] Time taken: 0:00:01.149983
+[Task: 24] 
+[Task: 25] Loading bustle model....
+[Task: 25] Count: 25
+[Task: 25] 
+[Task: 25] 2021-09-09 08:26:48.100443
+[Task: 25] Number of programs: 11
+[Task: 25] Size: 0 Evaluations: 0
+[Task: 25] Size: 1 Evaluations: 0
+[Task: 25] Size: 2 Evaluations: 17
+[Task: 25] Size: 3 Evaluations: 46
+[Task: 25] Size: 4 Evaluations: 48
+[Task: 25] Size: 5 Evaluations: 257
+[Task: 25] Size: 6 Evaluations: 516
+[Task: 25] Size: 7 Evaluations: 1224
+[Task: 25] Size: 8 Evaluations: 3241
+[Task: 25] Benchmark: create-email-address-with-name-and-domain.sl
+[Task: 25] Result: Success
+[Task: 25] Program: concat(_arg_0.CharAt(0), concat(_arg_1, concat("_", _arg_2)))
+[Task: 25] Number of evaluations: 5972
+[Task: 25] 2021-09-09 08:26:52.774075
+[Task: 25] Time taken: 0:00:04.673603
+[Task: 25] 
+[Task: 26] Loading bustle model....
+[Task: 26] Count: 26
+[Task: 26] 
+[Task: 26] 2021-09-09 08:26:48.123000
+[Task: 26] Number of programs: 9
+[Task: 26] Size: 0 Evaluations: 0
+[Task: 26] Size: 1 Evaluations: 0
+[Task: 26] Size: 2 Evaluations: 15
+[Task: 26] Size: 3 Evaluations: 32
+[Task: 26] Size: 4 Evaluations: 30
+[Task: 26] Size: 5 Evaluations: 125
+[Task: 26] Size: 6 Evaluations: 190
+[Task: 26] Size: 7 Evaluations: 401
+[Task: 26] Size: 8 Evaluations: 746
+[Task: 26] Size: 9 Evaluations: 1299
+[Task: 26] Size: 10 Evaluations: 2911
+[Task: 26] Size: 11 Evaluations: 6394
+[Task: 26] Size: 12 Evaluations: 19522
+[Task: 26] Size: 13 Evaluations: 47377
+[Task: 26] Benchmark: dr-name.sl
+[Task: 26] Result: Success
+[Task: 26] Program: concat("Dr.", concat(" ", name[:name.IndexOf(" ")]))
+[Task: 26] Number of evaluations: 95313
+[Task: 26] 2021-09-09 08:28:05.023622
+[Task: 26] Time taken: 0:01:16.900780
+[Task: 26] 
+[Task: 27] Loading bustle model....
+[Task: 27] Count: 27
+[Task: 27] 
+[Task: 27] 2021-09-09 08:26:48.125649
+[Task: 27] Number of programs: 10
+[Task: 27] Size: 0 Evaluations: 0
+[Task: 27] Size: 1 Evaluations: 0
+[Task: 27] Size: 2 Evaluations: 14
+[Task: 27] Size: 3 Evaluations: 32
+[Task: 27] Size: 4 Evaluations: 38
+[Task: 27] Size: 5 Evaluations: 166
+[Task: 27] Size: 6 Evaluations: 346
+[Task: 27] Benchmark: exceljet1.sl
+[Task: 27] Result: Success
+[Task: 27] Program: _arg_1[(1 + _arg_1.IndexOf("_")):]
+[Task: 27] Number of evaluations: 1389
+[Task: 27] 2021-09-09 08:26:48.873153
+[Task: 27] Time taken: 0:00:00.747438
+[Task: 27] 
+[Task: 28] Loading bustle model....
+[Task: 28] Count: 28
+[Task: 28] 
+[Task: 28] 2021-09-09 08:26:48.091508
+[Task: 28] Number of programs: 9
+[Task: 28] Size: 0 Evaluations: 0
+[Task: 28] Size: 1 Evaluations: 0
+[Task: 28] Size: 2 Evaluations: 11
+[Task: 28] Size: 3 Evaluations: 18
+[Task: 28] Size: 4 Evaluations: 15
+[Task: 28] Size: 5 Evaluations: 72
+[Task: 28] Size: 6 Evaluations: 113
+[Task: 28] Size: 7 Evaluations: 462
+[Task: 28] Size: 8 Evaluations: 918
+[Task: 28] Size: 9 Evaluations: 3776
+[Task: 28] Size: 10 Evaluations: 8402
+[Task: 28] Size: 11 Evaluations: 33339
+[Task: 28] Size: 12 Evaluations: 82589
+[Task: 28] Benchmark: exceljet2.sl
+[Task: 28] Result: Success
+[Task: 28] Program: _arg_0[_arg_0[_arg_0.IndexOf("."):].Length():].replace(".", "")
+[Task: 28] Number of evaluations: 305803
+[Task: 28] 2021-09-09 08:28:25.909700
+[Task: 28] Time taken: 0:01:37.818165
+[Task: 28] 
+[Task: 29] Loading bustle model....
+[Task: 29] Count: 29
+[Task: 29] 
+[Task: 29] 2021-09-09 08:37:46.943521
+[Task: 29] Number of programs: 9
+[Task: 29] Size: 0 Evaluations: 0
+[Task: 29] Size: 1 Evaluations: 0
+[Task: 29] Size: 2 Evaluations: 11
+[Task: 29] Size: 3 Evaluations: 19
+[Task: 29] Size: 4 Evaluations: 18
+[Task: 29] Size: 5 Evaluations: 72
+[Task: 29] Size: 6 Evaluations: 140
+[Task: 29] Size: 7 Evaluations: 489
+[Task: 29] Benchmark: exceljet3.sl
+[Task: 29] Result: Success
+[Task: 29] Program: _arg_0[(1 + _arg_0.IndexOf("=")):].strip()
+[Task: 29] Number of evaluations: 1359
+[Task: 29] 2021-09-09 08:37:48.055323
+[Task: 29] Time taken: 0:00:01.111792
+[Task: 29] 
+[Task: 30] Loading bustle model....
+[Task: 30] Count: 30
+[Task: 30] 
+[Task: 30] 2021-09-09 08:40:02.617879
+[Task: 30] Number of programs: 10
+[Task: 30] Size: 0 Evaluations: 0
+[Task: 30] Size: 1 Evaluations: 0
+[Task: 30] Size: 2 Evaluations: 12
+[Task: 30] Size: 3 Evaluations: 26
+[Task: 30] Size: 4 Evaluations: 35
+[Task: 30] Size: 5 Evaluations: 110
+[Task: 30] Size: 6 Evaluations: 297
+[Task: 30] Size: 7 Evaluations: 1016
+[Task: 30] Size: 8 Evaluations: 3154
+[Task: 30] Size: 9 Evaluations: 10575
+[Task: 30] Size: 10 Evaluations: 35814
+[Task: 30] Size: 11 Evaluations: 122874
+[Task: 30] Benchmark: exceljet4.sl
+[Task: 30] Result: Success
+[Task: 30] Program: _arg_0[1:][1:][_arg_0.IndexOf("/"):]
+[Task: 30] Number of evaluations: 531210
+[Task: 30] 2021-09-09 08:43:00.577177
+[Task: 30] Time taken: 0:02:57.957239
+[Task: 30] 
+[Task: 31] Loading bustle model....
+[Task: 31] Count: 31
+[Task: 31] 
+[Task: 31] 2021-09-09 16:01:26.957306
+[Task: 31] Number of programs: 14
+[Task: 31] Size: 0 Evaluations: 0
+[Task: 31] Size: 1 Evaluations: 0
+[Task: 31] Size: 2 Evaluations: 15
+[Task: 31] Size: 3 Evaluations: 45
+[Task: 31] Size: 4 Evaluations: 49
+[Task: 31] Size: 5 Evaluations: 327
+[Task: 31] Size: 6 Evaluations: 726
+[Task: 31] Size: 7 Evaluations: 3927
+[Task: 31] Size: 8 Evaluations: 12729
+[Task: 31] Size: 9 Evaluations: 63186
+[Task: 31] Size: 10 Evaluations: 234596
+[Task: 31] Size: 11 Evaluations: 1111889
+[Task: 31] Size: 12 Evaluations: 4709173
+[Task: 32] Loading bustle model....
+[Task: 32] Count: 32
+[Task: 32] 
+[Task: 32] 2021-09-09 16:01:26.941832
+[Task: 32] Number of programs: 11
+[Task: 32] Size: 0 Evaluations: 0
+[Task: 32] Size: 1 Evaluations: 0
+[Task: 32] Size: 2 Evaluations: 12
+[Task: 32] Size: 3 Evaluations: 25
+[Task: 32] Size: 4 Evaluations: 35
+[Task: 32] Size: 5 Evaluations: 124
+[Task: 32] Size: 6 Evaluations: 313
+[Task: 32] Size: 7 Evaluations: 1095
+[Task: 32] Size: 8 Evaluations: 3528
+[Task: 32] Size: 9 Evaluations: 12475
+[Task: 32] Size: 10 Evaluations: 44969
+[Task: 32] Size: 11 Evaluations: 158790
+[Task: 32] Size: 12 Evaluations: 610015
+[Task: 32] Size: 13 Evaluations: 2197122
+[Task: 33] Loading bustle model....
+[Task: 33] Count: 33
+[Task: 33] 
+[Task: 33] 2021-09-09 08:40:02.646028
+[Task: 33] Number of programs: 7
+[Task: 33] Size: 0 Evaluations: 0
+[Task: 33] Size: 1 Evaluations: 0
+[Task: 33] Size: 2 Evaluations: 10
+[Task: 33] Size: 3 Evaluations: 17
+[Task: 33] Size: 4 Evaluations: 19
+[Task: 33] Benchmark: firstname.sl
+[Task: 33] Result: Success
+[Task: 33] Program: name[:name.IndexOf(" ")]
+[Task: 33] Number of evaluations: 78
+[Task: 33] 2021-09-09 08:40:02.981802
+[Task: 33] Time taken: 0:00:00.321779
+[Task: 33] 
+[Task: 34] Loading bustle model....
+[Task: 34] Count: 34
+[Task: 34] 
+[Task: 34] 2021-09-09 08:40:02.606250
+[Task: 34] Number of programs: 10
+[Task: 34] Size: 0 Evaluations: 0
+[Task: 34] Size: 1 Evaluations: 0
+[Task: 34] Size: 2 Evaluations: 14
+[Task: 34] Size: 3 Evaluations: 30
+[Task: 34] Size: 4 Evaluations: 25
+[Task: 34] Benchmark: get-domain-from-email-address_2.sl
+[Task: 34] Result: Success
+[Task: 34] Program: _arg_1[:_arg_1.IndexOf("_")]
+[Task: 34] Number of evaluations: 145
+[Task: 34] 2021-09-09 08:40:02.948058
+[Task: 34] Time taken: 0:00:00.341790
+[Task: 34] 
+[Task: 35] Loading bustle model....
+[Task: 35] Count: 35
+[Task: 35] 
+[Task: 35] 2021-09-09 16:01:26.999280
+[Task: 35] Number of programs: 11
+[Task: 35] Size: 0 Evaluations: 0
+[Task: 35] Size: 1 Evaluations: 0
+[Task: 35] Size: 2 Evaluations: 13
+[Task: 35] Size: 3 Evaluations: 29
+[Task: 35] Size: 4 Evaluations: 27
+[Task: 35] Size: 5 Evaluations: 159
+[Task: 35] Size: 6 Evaluations: 302
+[Task: 35] Size: 7 Evaluations: 1264
+[Task: 35] Size: 8 Evaluations: 3659
+[Task: 35] Size: 9 Evaluations: 13617
+[Task: 35] Size: 10 Evaluations: 49602
+[Task: 35] Size: 11 Evaluations: 167696
+[Task: 35] Size: 12 Evaluations: 698207
+[Task: 35] Size: 13 Evaluations: 2337309
+[Task: 36] Loading bustle model....
+[Task: 36] Count: 36
+[Task: 36] 
+[Task: 36] 2021-09-09 08:40:02.684690
+[Task: 36] Number of programs: 8
+[Task: 36] Size: 0 Evaluations: 0
+[Task: 36] Size: 1 Evaluations: 0
+[Task: 36] Size: 2 Evaluations: 11
+[Task: 36] Size: 3 Evaluations: 13
+[Task: 36] Size: 4 Evaluations: 24
+[Task: 36] Benchmark: get-first-name-from-name.sl
+[Task: 36] Result: Success
+[Task: 36] Program: _arg_0[:_arg_0.IndexOf(" ")]
+[Task: 36] Number of evaluations: 84
+[Task: 36] 2021-09-09 08:40:03.183392
+[Task: 36] Time taken: 0:00:00.498685
+[Task: 36] 
+[Task: 37] Loading bustle model....
+[Task: 37] Count: 37
+[Task: 37] 
+[Task: 37] 2021-09-09 08:40:02.612288
+[Task: 37] Number of programs: 8
+[Task: 37] Size: 0 Evaluations: 0
+[Task: 37] Size: 1 Evaluations: 0
+[Task: 37] Size: 2 Evaluations: 11
+[Task: 37] Size: 3 Evaluations: 13
+[Task: 37] Size: 4 Evaluations: 10
+[Task: 37] Size: 5 Evaluations: 38
+[Task: 37] Size: 6 Evaluations: 43
+[Task: 37] Size: 7 Evaluations: 122
+[Task: 37] Size: 8 Evaluations: 171
+[Task: 37] Size: 9 Evaluations: 496
+[Task: 37] Size: 10 Evaluations: 805
+[Task: 37] Size: 11 Evaluations: 2288
+[Task: 37] Benchmark: get-first-word.sl
+[Task: 37] Result: Success
+[Task: 37] Program: (if_arg_0.Contain(" ") then _arg_0[:concat(_arg_0, " ").IndexOf(" ")] else "")
+[Task: 37] Number of evaluations: 5658
+[Task: 37] 2021-09-09 08:40:04.883976
+[Task: 37] Time taken: 0:00:02.271688
+[Task: 37] 
+[Task: 38] Loading bustle model....
+[Task: 38] Count: 38
+[Task: 38] 
+[Task: 38] 2021-09-09 16:01:27.066079
+[Task: 38] Number of programs: 9
+[Task: 38] Size: 0 Evaluations: 0
+[Task: 38] Size: 1 Evaluations: 0
+[Task: 38] Size: 2 Evaluations: 14
+[Task: 38] Size: 3 Evaluations: 19
+[Task: 38] Size: 4 Evaluations: 48
+[Task: 38] Size: 5 Evaluations: 117
+[Task: 38] Size: 6 Evaluations: 396
+[Task: 38] Size: 7 Evaluations: 1118
+[Task: 38] Size: 8 Evaluations: 3634
+[Task: 38] Size: 9 Evaluations: 11622
+[Task: 38] Size: 10 Evaluations: 39693
+[Task: 38] Size: 11 Evaluations: 133917
+[Task: 38] Size: 12 Evaluations: 467586
+[Task: 38] Size: 13 Evaluations: 1637900
+[Task: 38] Size: 14 Evaluations: 5826597
+[Task: 39] Loading bustle model....
+[Task: 39] Count: 39
+[Task: 39] 
+[Task: 39] 2021-09-09 08:40:02.667925
+[Task: 39] Number of programs: 8
+[Task: 39] Size: 0 Evaluations: 0
+[Task: 39] Size: 1 Evaluations: 0
+[Task: 39] Size: 2 Evaluations: 11
+[Task: 39] Size: 3 Evaluations: 14
+[Task: 39] Size: 4 Evaluations: 27
+[Task: 39] Size: 5 Evaluations: 54
+[Task: 39] Benchmark: get-last-name-from-name.sl
+[Task: 39] Result: Success
+[Task: 39] Program: _arg_0[_arg_0.IndexOf(" "):].strip()
+[Task: 39] Number of evaluations: 184
+[Task: 39] 2021-09-09 08:40:03.284625
+[Task: 39] Time taken: 0:00:00.613107
+[Task: 39] 
+[Task: 40] Loading bustle model....
+[Task: 40] Count: 40
+[Task: 40] 
+[Task: 40] 2021-09-09 08:40:02.652260
+[Task: 40] Number of programs: 9
+[Task: 40] Size: 0 Evaluations: 0
+[Task: 40] Size: 1 Evaluations: 0
+[Task: 40] Size: 2 Evaluations: 11
+[Task: 40] Size: 3 Evaluations: 19
+[Task: 40] Size: 4 Evaluations: 13
+[Task: 40] Size: 5 Evaluations: 47
+[Task: 40] Size: 6 Evaluations: 53
+[Task: 40] Size: 7 Evaluations: 150
+[Task: 40] Size: 8 Evaluations: 230
+[Task: 40] Size: 9 Evaluations: 583
+[Task: 40] Size: 10 Evaluations: 1195
+[Task: 40] Size: 11 Evaluations: 2549
+[Task: 40] Size: 12 Evaluations: 5300
+[Task: 40] Size: 13 Evaluations: 12633
+[Task: 40] Benchmark: get-last-name-from-name-with-comma.sl
+[Task: 40] Result: Success
+[Task: 40] Program: concat(concat(_arg_0[(1 + _arg_0.IndexOf(",")):], ","), _arg_0)[:_arg_0.Length()]
+[Task: 40] Number of evaluations: 41632
+[Task: 40] 2021-09-09 08:40:19.563196
+[Task: 40] Time taken: 0:00:16.903691
+[Task: 40] 
+[Task: 41] Loading bustle model....
+[Task: 41] Count: 41
+[Task: 41] 
+[Task: 41] 2021-09-09 08:40:02.638501
+[Task: 41] Number of programs: 8
+[Task: 41] Size: 0 Evaluations: 0
+[Task: 41] Size: 1 Evaluations: 0
+[Task: 41] Size: 2 Evaluations: 10
+[Task: 41] Size: 3 Evaluations: 13
+[Task: 41] Size: 4 Evaluations: 12
+[Task: 41] Size: 5 Evaluations: 49
+[Task: 41] Size: 6 Evaluations: 75
+[Task: 41] Size: 7 Evaluations: 260
+[Task: 41] Size: 8 Evaluations: 527
+[Task: 41] Size: 9 Evaluations: 1901
+[Task: 41] Size: 10 Evaluations: 4212
+[Task: 41] Size: 11 Evaluations: 14933
+[Task: 41] Size: 12 Evaluations: 36339
+[Task: 41] Size: 13 Evaluations: 126450
+[Task: 41] Size: 14 Evaluations: 329144
+[Task: 41] Size: 15 Evaluations: 1119340
+[Task: 41] Benchmark: get-last-word.sl
+[Task: 41] Result: Success
+[Task: 41] Program: concat(_arg_0, _arg_0).replace(concat(_arg_0, _arg_0)[:-1][:-1][:-1][:-1], "")
+[Task: 41] Number of evaluations: 2987452
+[Task: 41] 2021-09-09 09:01:32.861474
+[Task: 41] Time taken: 0:21:30.217758
+[Task: 41] 
+[Task: 42] Loading bustle model....
+[Task: 42] Count: 42
+[Task: 42] 
+[Task: 42] 2021-09-09 08:40:02.625100
+[Task: 42] Number of programs: 8
+[Task: 42] Size: 0 Evaluations: 0
+[Task: 42] Size: 1 Evaluations: 0
+[Task: 42] Size: 2 Evaluations: 10
+[Task: 42] Size: 3 Evaluations: 13
+[Task: 42] Size: 4 Evaluations: 3
+[Task: 42] Size: 5 Evaluations: 20
+[Task: 42] Size: 6 Evaluations: 13
+[Task: 42] Size: 7 Evaluations: 6
+[Task: 42] Size: 8 Evaluations: 50
+[Task: 42] Size: 9 Evaluations: 51
+[Task: 42] Size: 10 Evaluations: 92
+[Task: 42] Size: 11 Evaluations: 195
+[Task: 42] Size: 12 Evaluations: 299
+[Task: 42] Size: 13 Evaluations: 258
+[Task: 42] Size: 14 Evaluations: 617
+[Task: 42] Size: 15 Evaluations: 868
+[Task: 42] Size: 16 Evaluations: 1139
+[Task: 42] Size: 17 Evaluations: 2977
+[Task: 42] Benchmark: get-middle-name-from-full-name.sl
+[Task: 42] Result: Success
+[Task: 42] Program: _arg_0.Substr(_arg_0.IndexOf(" "),-1)[:-1][:-1][:-1][:-1].Substr(1,-1)
+[Task: 42] Number of evaluations: 8291
+[Task: 42] 2021-09-09 08:40:06.887029
+[Task: 42] Time taken: 0:00:04.258683
+[Task: 42] 
+[Task: 43] Loading bustle model....
+[Task: 43] Count: 43
+[Task: 43] 
+[Task: 43] 2021-09-09 08:40:02.646638
+[Task: 43] Number of programs: 8
+[Task: 43] Size: 0 Evaluations: 0
+[Task: 43] Size: 1 Evaluations: 0
+[Task: 43] Size: 2 Evaluations: 11
+[Task: 43] Size: 3 Evaluations: 23
+[Task: 43] Size: 4 Evaluations: 13
+[Task: 43] Size: 5 Evaluations: 50
+[Task: 43] Size: 6 Evaluations: 75
+[Task: 43] Size: 7 Evaluations: 142
+[Task: 43] Size: 8 Evaluations: 234
+[Task: 43] Size: 9 Evaluations: 458
+[Task: 43] Size: 10 Evaluations: 624
+[Task: 43] Size: 11 Evaluations: 1210
+[Task: 43] Size: 12 Evaluations: 2094
+[Task: 43] Size: 13 Evaluations: 3827
+[Task: 43] Size: 14 Evaluations: 7026
+[Task: 43] Benchmark: initials.sl
+[Task: 43] Result: Success
+[Task: 43] Program: concat(name.CharAt(0), concat(".", concat(name.CharAt((1 + name.IndexOf(" "))), ".")))
+[Task: 43] Number of evaluations: 16688
+[Task: 43] 2021-09-09 08:40:12.108337
+[Task: 43] Time taken: 0:00:09.455337
+[Task: 43] 
+[Task: 44] Loading bustle model....
+[Task: 44] Count: 44
+[Task: 44] 
+[Task: 44] 2021-09-09 08:40:02.614651
+[Task: 44] Number of programs: 11
+[Task: 44] Size: 0 Evaluations: 0
+[Task: 44] Size: 1 Evaluations: 0
+[Task: 44] Size: 2 Evaluations: 17
+[Task: 44] Size: 3 Evaluations: 42
+[Task: 44] Size: 4 Evaluations: 17
+[Task: 44] Size: 5 Evaluations: 186
+[Task: 44] Size: 6 Evaluations: 114
+[Task: 44] Size: 7 Evaluations: 501
+[Task: 44] Size: 8 Evaluations: 528
+[Task: 44] Size: 9 Evaluations: 1331
+[Task: 44] Size: 10 Evaluations: 2002
+[Task: 44] Size: 11 Evaluations: 3656
+[Task: 44] Size: 12 Evaluations: 8194
+[Task: 44] Size: 13 Evaluations: 11710
+[Task: 44] Size: 14 Evaluations: 29982
+[Task: 44] Size: 15 Evaluations: 42780
+[Task: 44] Size: 16 Evaluations: 99596
+[Task: 44] Size: 17 Evaluations: 169639
+[Task: 44] Size: 18 Evaluations: 362348
+[Task: 44] Benchmark: join-cells-with-comma.sl
+[Task: 44] Result: Success
+[Task: 44] Program: concat(_arg_0, concat(",", concat(" ", (ifEqual("",_arg_1) then _arg_2 else concat(_arg_1, concat(",", concat(" ", _arg_2)))))))
+[Task: 44] Number of evaluations: 786025
+[Task: 44] 2021-09-09 08:45:41.873910
+[Task: 44] Time taken: 0:05:39.257100
+[Task: 44] 
+[Task: 45] Loading bustle model....
+[Task: 45] Count: 45
+[Task: 45] 
+[Task: 45] 2021-09-09 08:40:02.631299
+[Task: 45] Number of programs: 9
+[Task: 45] Size: 0 Evaluations: 0
+[Task: 45] Size: 1 Evaluations: 0
+[Task: 45] Size: 2 Evaluations: 13
+[Task: 45] Size: 3 Evaluations: 22
+[Task: 45] Size: 4 Evaluations: 23
+[Task: 45] Benchmark: join-first-and-last-name.sl
+[Task: 45] Result: Success
+[Task: 45] Program: concat(_arg_0, concat(" ", _arg_1))
+[Task: 45] Number of evaluations: 73
+[Task: 45] 2021-09-09 08:40:03.114159
+[Task: 45] Time taken: 0:00:00.478382
+[Task: 45] 
+[Task: 46] Loading bustle model....
+[Task: 46] Count: 46
+[Task: 46] 
+[Task: 46] 2021-09-09 08:40:02.742292
+[Task: 46] Number of programs: 6
+[Task: 46] Size: 0 Evaluations: 0
+[Task: 46] Size: 1 Evaluations: 0
+[Task: 46] Size: 2 Evaluations: 9
+[Task: 46] Size: 3 Evaluations: 11
+[Task: 46] Size: 4 Evaluations: 15
+[Task: 46] Size: 5 Evaluations: 28
+[Task: 46] Size: 6 Evaluations: 66
+[Task: 46] Size: 7 Evaluations: 127
+[Task: 46] Benchmark: lastname.sl
+[Task: 46] Result: Success
+[Task: 46] Program: name[concat(" ", name).IndexOf(" ",1):]
+[Task: 46] Number of evaluations: 574
+[Task: 46] 2021-09-09 08:40:03.663382
+[Task: 46] Time taken: 0:00:00.921048
+[Task: 46] 
+[Task: 47] Loading bustle model....
+[Task: 47] Count: 47
+[Task: 47] 
+[Task: 47] 2021-09-09 09:02:15.471813
+[Task: 47] Number of programs: 10
+[Task: 47] Size: 0 Evaluations: 0
+[Task: 47] Size: 1 Evaluations: 0
+[Task: 47] Size: 2 Evaluations: 15
+[Task: 47] Size: 3 Evaluations: 37
+[Task: 47] Size: 4 Evaluations: 35
+[Task: 47] Size: 5 Evaluations: 209
+[Task: 47] Size: 6 Evaluations: 355
+[Task: 47] Size: 7 Evaluations: 1041
+[Task: 47] Benchmark: most-frequently-occurring-text.sl
+[Task: 47] Result: Success
+[Task: 47] Program: _arg_0.replace(_arg_0.replace(_arg_1.strip(), " "), _arg_2)
+[Task: 47] Number of evaluations: 3296
+[Task: 47] 2021-09-09 09:02:16.788781
+[Task: 47] Time taken: 0:00:01.316962
+[Task: 47] 
+[Task: 48] Loading bustle model....
+[Task: 48] Count: 48
+[Task: 48] 
+[Task: 48] 2021-09-09 09:06:14.695658
+[Task: 48] Number of programs: 9
+[Task: 48] Size: 0 Evaluations: 0
+[Task: 48] Size: 1 Evaluations: 0
+[Task: 48] Size: 2 Evaluations: 15
+[Task: 48] Size: 3 Evaluations: 34
+[Task: 48] Size: 4 Evaluations: 27
+[Task: 48] Size: 5 Evaluations: 117
+[Task: 48] Size: 6 Evaluations: 193
+[Task: 48] Size: 7 Evaluations: 379
+[Task: 48] Size: 8 Evaluations: 638
+[Task: 48] Benchmark: name-combine-2.sl
+[Task: 48] Result: Success
+[Task: 48] Program: concat(firstname, concat(" ", concat(lastname.CharAt(0), ".")))
+[Task: 48] Number of evaluations: 1463
+[Task: 48] 2021-09-09 09:06:15.930629
+[Task: 48] Time taken: 0:00:01.234950
+[Task: 48] 
+[Task: 49] Loading bustle model....
+[Task: 49] Count: 49
+[Task: 49] 
+[Task: 49] 2021-09-09 09:06:14.327848
+[Task: 49] Number of programs: 9
+[Task: 49] Size: 0 Evaluations: 0
+[Task: 49] Size: 1 Evaluations: 0
+[Task: 49] Size: 2 Evaluations: 15
+[Task: 49] Size: 3 Evaluations: 35
+[Task: 49] Size: 4 Evaluations: 36
+[Task: 49] Size: 5 Evaluations: 129
+[Task: 49] Size: 6 Evaluations: 233
+[Task: 49] Size: 7 Evaluations: 506
+[Task: 49] Size: 8 Evaluations: 942
+[Task: 49] Benchmark: name-combine-3.sl
+[Task: 49] Result: Success
+[Task: 49] Program: concat(firstname.CharAt(0), concat(".", concat(" ", lastname)))
+[Task: 49] Number of evaluations: 2037
+[Task: 49] 2021-09-09 09:06:15.983330
+[Task: 49] Time taken: 0:00:01.655403
+[Task: 49] 
+[Task: 50] Loading bustle model....
+[Task: 50] Count: 50
+[Task: 50] 
+[Task: 50] 2021-09-09 09:06:14.383460
+[Task: 50] Number of programs: 10
+[Task: 50] Size: 0 Evaluations: 0
+[Task: 50] Size: 1 Evaluations: 0
+[Task: 50] Size: 2 Evaluations: 16
+[Task: 50] Size: 3 Evaluations: 43
+[Task: 50] Size: 4 Evaluations: 7
+[Task: 50] Size: 5 Evaluations: 113
+[Task: 50] Size: 6 Evaluations: 97
+[Task: 50] Size: 7 Evaluations: 241
+[Task: 50] Size: 8 Evaluations: 325
+[Task: 50] Size: 9 Evaluations: 718
+[Task: 50] Size: 10 Evaluations: 882
+[Task: 50] Benchmark: name-combine-4.sl
+[Task: 50] Result: Success
+[Task: 50] Program: concat(lastname, concat(",", concat(" ", concat(firstname.CharAt(0), "."))))
+[Task: 50] Number of evaluations: 2528
+[Task: 50] 2021-09-09 09:06:16.685981
+[Task: 50] Time taken: 0:00:02.302527
+[Task: 50] 
+[Task: 51] Loading bustle model....
+[Task: 51] Count: 51
+[Task: 51] 
+[Task: 51] 2021-09-09 09:06:14.333492
+[Task: 51] Number of programs: 8
+[Task: 51] Size: 0 Evaluations: 0
+[Task: 51] Size: 1 Evaluations: 0
+[Task: 51] Size: 2 Evaluations: 14
+[Task: 51] Size: 3 Evaluations: 27
+[Task: 51] Size: 4 Evaluations: 24
+[Task: 51] Benchmark: name-combine.sl
+[Task: 51] Result: Success
+[Task: 51] Program: concat(firstname, concat(" ", lastname))
+[Task: 51] Number of evaluations: 81
+[Task: 51] 2021-09-09 09:06:14.789383
+[Task: 51] Time taken: 0:00:00.457586
+[Task: 51] 
+[Task: 52] Loading bustle model....
+[Task: 52] Count: 52
+[Task: 52] 
+[Task: 52] 2021-09-09 16:01:26.940816
+[Task: 52] Number of programs: 15
+[Task: 52] Size: 0 Evaluations: 0
+[Task: 52] Size: 1 Evaluations: 0
+[Task: 52] Size: 2 Evaluations: 16
+[Task: 52] Size: 3 Evaluations: 80
+[Task: 52] Size: 4 Evaluations: 131
+[Task: 52] Size: 5 Evaluations: 522
+[Task: 52] Size: 6 Evaluations: 1159
+[Task: 52] Size: 7 Evaluations: 4362
+[Task: 52] Size: 8 Evaluations: 12533
+[Task: 52] Size: 9 Evaluations: 45438
+[Task: 52] Size: 10 Evaluations: 151812
+[Task: 52] Size: 11 Evaluations: 527144
+[Task: 52] Size: 12 Evaluations: 1809671
+[Task: 53] Loading bustle model....
+[Task: 53] Count: 53
+[Task: 53] 
+[Task: 53] 2021-09-09 09:06:14.334440
+[Task: 53] Number of programs: 10
+[Task: 53] Size: 0 Evaluations: 0
+[Task: 53] Size: 1 Evaluations: 0
+[Task: 53] Size: 2 Evaluations: 11
+[Task: 53] Size: 3 Evaluations: 35
+[Task: 53] Size: 4 Evaluations: 55
+[Task: 53] Benchmark: phone-1.sl
+[Task: 53] Result: Success
+[Task: 53] Program: name[4:][:3]
+[Task: 53] Number of evaluations: 193
+[Task: 53] 2021-09-09 09:06:14.798699
+[Task: 53] Time taken: 0:00:00.462645
+[Task: 53] 
+[Task: 54] Loading bustle model....
+[Task: 54] Count: 54
+[Task: 54] 
+[Task: 54] 2021-09-09 09:06:14.758548
+[Task: 54] Number of programs: 10
+[Task: 54] Size: 0 Evaluations: 0
+[Task: 54] Size: 1 Evaluations: 0
+[Task: 54] Size: 2 Evaluations: 11
+[Task: 54] Size: 3 Evaluations: 35
+[Task: 54] Size: 4 Evaluations: 63
+[Task: 54] Benchmark: phone-2.sl
+[Task: 54] Result: Success
+[Task: 54] Program: name[(3 + 5):]
+[Task: 54] Number of evaluations: 233
+[Task: 54] 2021-09-09 09:06:15.281076
+[Task: 54] Time taken: 0:00:00.515474
+[Task: 54] 
+[Task: 55] Loading bustle model....
+[Task: 55] Count: 55
+[Task: 55] 
+[Task: 55] 2021-09-09 09:06:14.721179
+[Task: 55] Number of programs: 13
+[Task: 55] Size: 0 Evaluations: 0
+[Task: 55] Size: 1 Evaluations: 0
+[Task: 55] Size: 2 Evaluations: 14
+[Task: 55] Size: 3 Evaluations: 54
+[Task: 55] Size: 4 Evaluations: 93
+[Task: 55] Size: 5 Evaluations: 344
+[Task: 55] Size: 6 Evaluations: 903
+[Task: 55] Size: 7 Evaluations: 3199
+[Task: 55] Benchmark: phone-3.sl
+[Task: 55] Result: Success
+[Task: 55] Program: concat("(", name.replace("-", concat(")", " ")))
+[Task: 55] Number of evaluations: 4900
+[Task: 55] 2021-09-09 09:06:17.490312
+[Task: 55] Time taken: 0:00:02.769115
+[Task: 55] 
+[Task: 56] Loading bustle model....
+[Task: 56] Count: 56
+[Task: 56] 
+[Task: 56] 2021-09-09 09:06:14.594559
+[Task: 56] Number of programs: 14
+[Task: 56] Size: 0 Evaluations: 0
+[Task: 56] Size: 1 Evaluations: 0
+[Task: 56] Size: 2 Evaluations: 15
+[Task: 56] Size: 3 Evaluations: 66
+[Task: 56] Size: 4 Evaluations: 117
+[Task: 56] Benchmark: phone-4.sl
+[Task: 56] Result: Success
+[Task: 56] Program: name.replace("-", ".",2)
+[Task: 56] Number of evaluations: 386
+[Task: 56] 2021-09-09 09:06:15.066968
+[Task: 56] Time taken: 0:00:00.472398
+[Task: 56] 
+[Task: 57] Loading bustle model....
+[Task: 57] Count: 57
+[Task: 57] 
+[Task: 57] 2021-09-09 09:06:14.643432
+[Task: 57] Number of programs: 13
+[Task: 57] Size: 0 Evaluations: 0
+[Task: 57] Size: 1 Evaluations: 0
+[Task: 57] Size: 2 Evaluations: 14
+[Task: 57] Size: 3 Evaluations: 56
+[Task: 57] Size: 4 Evaluations: 91
+[Task: 57] Size: 5 Evaluations: 428
+[Task: 57] Benchmark: phone-5.sl
+[Task: 57] Result: Success
+[Task: 57] Program: name.Substr(1,name.IndexOf(" "))
+[Task: 57] Number of evaluations: 1157
+[Task: 57] 2021-09-09 09:06:15.326053
+[Task: 57] Time taken: 0:00:00.680500
+[Task: 57] 
+[Task: 58] Loading bustle model....
+[Task: 58] Count: 58
+[Task: 58] 
+[Task: 58] 2021-09-09 09:06:14.779545
+[Task: 58] Number of programs: 13
+[Task: 58] Size: 0 Evaluations: 0
+[Task: 58] Size: 1 Evaluations: 0
+[Task: 58] Size: 2 Evaluations: 14
+[Task: 58] Size: 3 Evaluations: 57
+[Task: 58] Size: 4 Evaluations: 119
+[Task: 58] Size: 5 Evaluations: 466
+[Task: 58] Size: 6 Evaluations: 1295
+[Task: 58] Size: 7 Evaluations: 7272
+[Task: 58] Benchmark: phone-6.sl
+[Task: 58] Result: Success
+[Task: 58] Program: name[name.IndexOf(" "):].Substr(1,4)
+[Task: 58] Number of evaluations: 24851
+[Task: 58] 2021-09-09 09:06:22.060107
+[Task: 58] Time taken: 0:00:07.274591
+[Task: 58] 
+[Task: 59] Loading bustle model....
+[Task: 59] Count: 59
+[Task: 59] 
+[Task: 59] 2021-09-09 09:06:14.735281
+[Task: 59] Number of programs: 13
+[Task: 59] Size: 0 Evaluations: 0
+[Task: 59] Size: 1 Evaluations: 0
+[Task: 59] Size: 2 Evaluations: 14
+[Task: 59] Size: 3 Evaluations: 57
+[Task: 59] Size: 4 Evaluations: 83
+[Task: 59] Size: 5 Evaluations: 404
+[Task: 59] Size: 6 Evaluations: 973
+[Task: 59] Size: 7 Evaluations: 5986
+[Task: 59] Benchmark: phone-7.sl
+[Task: 59] Result: Success
+[Task: 59] Program: name[name.IndexOf("-"):].Substr(1,4)
+[Task: 59] Number of evaluations: 18541
+[Task: 59] 2021-09-09 09:06:20.359557
+[Task: 59] Time taken: 0:00:05.619033
+[Task: 59] 
+[Task: 60] Loading bustle model....
+[Task: 60] Count: 60
+[Task: 60] 
+[Task: 60] 2021-09-09 09:06:14.733859
+[Task: 60] Number of programs: 13
+[Task: 60] Size: 0 Evaluations: 0
+[Task: 60] Size: 1 Evaluations: 0
+[Task: 60] Size: 2 Evaluations: 14
+[Task: 60] Size: 3 Evaluations: 57
+[Task: 60] Size: 4 Evaluations: 117
+[Task: 60] Size: 5 Evaluations: 446
+[Task: 60] Benchmark: phone-8.sl
+[Task: 60] Result: Success
+[Task: 60] Program: name[(name.Length() - 3):]
+[Task: 60] Number of evaluations: 1410
+[Task: 60] 2021-09-09 09:06:15.622361
+[Task: 60] Time taken: 0:00:00.884336
+[Task: 60] 
+[Task: 61] Loading bustle model....
+[Task: 61] Count: 61
+[Task: 61] 
+[Task: 61] 2021-09-09 09:06:14.323888
+[Task: 61] Number of programs: 13
+[Task: 61] Size: 0 Evaluations: 0
+[Task: 61] Size: 1 Evaluations: 0
+[Task: 61] Size: 2 Evaluations: 14
+[Task: 61] Size: 3 Evaluations: 57
+[Task: 61] Size: 4 Evaluations: 114
+[Task: 61] Size: 5 Evaluations: 361
+[Task: 61] Size: 6 Evaluations: 954
+[Task: 61] Size: 7 Evaluations: 3335
+[Task: 61] Size: 8 Evaluations: 9514
+[Task: 61] Size: 9 Evaluations: 34531
+[Task: 61] Benchmark: phone-9.sl
+[Task: 61] Result: Success
+[Task: 61] Program: name[1:].replace("-", ".",2).replace(" ", ".")
+[Task: 61] Number of evaluations: 108873
+[Task: 61] 2021-09-09 09:06:50.751194
+[Task: 61] Time taken: 0:00:36.427309
+[Task: 61] 
+[Task: 62] Loading bustle model....
+[Task: 62] Count: 62
+[Task: 62] 
+[Task: 62] 2021-09-09 09:06:14.741061
+[Task: 62] Number of programs: 10
+[Task: 62] Size: 0 Evaluations: 0
+[Task: 62] Size: 1 Evaluations: 0
+[Task: 62] Size: 2 Evaluations: 11
+[Task: 62] Benchmark: phone.sl
+[Task: 62] Result: Success
+[Task: 62] Program: name[:3]
+[Task: 62] Number of evaluations: 24
+[Task: 62] 2021-09-09 09:06:15.128042
+[Task: 62] Time taken: 0:00:00.376311
+[Task: 62] 
+[Task: 63] Loading bustle model....
+[Task: 63] Count: 63
+[Task: 63] 
+[Task: 63] 2021-09-09 09:06:14.697941
+[Task: 63] Number of programs: 9
+[Task: 63] Size: 0 Evaluations: 0
+[Task: 63] Size: 1 Evaluations: 0
+[Task: 63] Size: 2 Evaluations: 11
+[Task: 63] Size: 3 Evaluations: 19
+[Task: 63] Size: 4 Evaluations: 26
+[Task: 63] Benchmark: remove-file-extension-from-filename.sl
+[Task: 63] Result: Success
+[Task: 63] Program: _arg_0[:_arg_0.IndexOf(".")]
+[Task: 63] Number of evaluations: 116
+[Task: 63] 2021-09-09 09:06:15.136523
+[Task: 63] Time taken: 0:00:00.438569
+[Task: 63] 
+[Task: 64] Loading bustle model....
+[Task: 64] Count: 64
+[Task: 64] 
+[Task: 64] 2021-09-09 09:06:14.401913
+[Task: 64] Number of programs: 8
+[Task: 64] Size: 0 Evaluations: 0
+[Task: 64] Size: 1 Evaluations: 0
+[Task: 64] Size: 2 Evaluations: 11
+[Task: 64] Size: 3 Evaluations: 14
+[Task: 64] Size: 4 Evaluations: 23
+[Task: 64] Size: 5 Evaluations: 51
+[Task: 64] Size: 6 Evaluations: 98
+[Task: 64] Size: 7 Evaluations: 278
+[Task: 64] Size: 8 Evaluations: 496
+[Task: 64] Size: 9 Evaluations: 1183
+[Task: 64] Size: 10 Evaluations: 2315
+[Task: 64] Size: 11 Evaluations: 5723
+[Task: 64] Size: 12 Evaluations: 12591
+[Task: 64] Size: 13 Evaluations: 30895
+[Task: 64] Size: 14 Evaluations: 70333
+[Task: 64] Size: 15 Evaluations: 165626
+[Task: 64] Size: 16 Evaluations: 384988
+[Task: 64] Size: 17 Evaluations: 913489
+[Task: 64] Size: 18 Evaluations: 2180895
+[Task: 64] Benchmark: remove-leading-and-trailing-spaces-from-text.sl
+[Task: 64] Result: Success
+[Task: 64] Program: _arg_0.replace(concat(" ", concat(" ", (ifEqual(_arg_0,_arg_0.lower()) then "" else " "))), "")
+[Task: 64] Number of evaluations: 5412034
+[Task: 64] 2021-09-09 09:44:55.759131
+[Task: 64] Time taken: 0:38:41.357344
+[Task: 64] 
+[Task: 65] Loading bustle model....
+[Task: 65] Count: 65
+[Task: 65] 
+[Task: 65] 2021-09-09 09:06:14.736974
+[Task: 65] Number of programs: 9
+[Task: 65] Size: 0 Evaluations: 0
+[Task: 65] Size: 1 Evaluations: 0
+[Task: 65] Size: 2 Evaluations: 10
+[Task: 65] Size: 3 Evaluations: 19
+[Task: 65] Size: 4 Evaluations: 25
+[Task: 65] Benchmark: remove-text-by-matching.sl
+[Task: 65] Result: Success
+[Task: 65] Program: _arg_0.replace("-", "",-1)
+[Task: 65] Number of evaluations: 97
+[Task: 65] 2021-09-09 09:06:15.233642
+[Task: 65] Time taken: 0:00:00.491544
+[Task: 65] 
+[Task: 66] Loading bustle model....
+[Task: 66] Count: 66
+[Task: 66] 
+[Task: 66] 2021-09-09 16:01:27.098595
+[Task: 66] Number of programs: 9
+[Task: 66] Size: 0 Evaluations: 0
+[Task: 66] Size: 1 Evaluations: 0
+[Task: 66] Size: 2 Evaluations: 11
+[Task: 66] Size: 3 Evaluations: 18
+[Task: 66] Size: 4 Evaluations: 21
+[Task: 66] Size: 5 Evaluations: 77
+[Task: 66] Size: 6 Evaluations: 203
+[Task: 66] Size: 7 Evaluations: 578
+[Task: 66] Size: 8 Evaluations: 1816
+[Task: 66] Size: 9 Evaluations: 5530
+[Task: 66] Size: 10 Evaluations: 18540
+[Task: 66] Size: 11 Evaluations: 59164
+[Task: 66] Size: 12 Evaluations: 203823
+[Task: 66] Size: 13 Evaluations: 676751
+[Task: 66] Size: 14 Evaluations: 2353749
+[Task: 67] Loading bustle model....
+[Task: 67] Count: 67
+[Task: 67] 
+[Task: 67] 2021-09-09 09:06:14.733585
+[Task: 67] Number of programs: 9
+[Task: 67] Size: 0 Evaluations: 0
+[Task: 67] Size: 1 Evaluations: 0
+[Task: 67] Size: 2 Evaluations: 12
+[Task: 67] Size: 3 Evaluations: 21
+[Task: 67] Size: 4 Evaluations: 34
+[Task: 67] Size: 5 Evaluations: 99
+[Task: 67] Size: 6 Evaluations: 248
+[Task: 67] Size: 7 Evaluations: 657
+[Task: 67] Size: 8 Evaluations: 1689
+[Task: 67] Benchmark: remove-unwanted-characters.sl
+[Task: 67] Result: Success
+[Task: 67] Program: _arg_0.upper().replace(_arg_1.upper(), "",-1).lower()
+[Task: 67] Number of evaluations: 5216
+[Task: 67] 2021-09-09 09:06:17.312133
+[Task: 67] Time taken: 0:00:02.574362
+[Task: 67] 
+[Task: 68] Loading bustle model....
+[Task: 68] Count: 68
+[Task: 68] 
+[Task: 68] 2021-09-09 09:39:52.429245
+[Task: 68] Number of programs: 9
+[Task: 68] Size: 0 Evaluations: 0
+[Task: 68] Size: 1 Evaluations: 0
+[Task: 68] Size: 2 Evaluations: 10
+[Task: 68] Size: 3 Evaluations: 19
+[Task: 68] Size: 4 Evaluations: 24
+[Task: 68] Benchmark: replace-one-character-with-another.sl
+[Task: 68] Result: Success
+[Task: 68] Program: _arg_0.replace(" ", "-",-1)
+[Task: 68] Number of evaluations: 90
+[Task: 68] 2021-09-09 09:39:52.912562
+[Task: 68] Time taken: 0:00:00.483248
+[Task: 68] 
+[Task: 69] Loading bustle model....
+[Task: 69] Count: 69
+[Task: 69] 
+[Task: 69] 2021-09-09 09:43:30.081063
+[Task: 69] Number of programs: 8
+[Task: 69] Size: 0 Evaluations: 0
+[Task: 69] Size: 1 Evaluations: 0
+[Task: 69] Size: 2 Evaluations: 14
+[Task: 69] Size: 3 Evaluations: 27
+[Task: 69] Size: 4 Evaluations: 29
+[Task: 69] Benchmark: reverse-name.sl
+[Task: 69] Result: Success
+[Task: 69] Program: concat(lastname, concat(" ", firstname))
+[Task: 69] Number of evaluations: 98
+[Task: 69] 2021-09-09 09:43:30.446312
+[Task: 69] Time taken: 0:00:00.365235
+[Task: 69] 
+[Task: 70] Loading bustle model....
+[Task: 70] Count: 70
+[Task: 70] 
+[Task: 70] 2021-09-09 16:01:26.943707
+[Task: 70] Number of programs: 13
+[Task: 70] Size: 0 Evaluations: 0
+[Task: 70] Size: 1 Evaluations: 0
+[Task: 70] Size: 2 Evaluations: 15
+[Task: 70] Size: 3 Evaluations: 38
+[Task: 70] Size: 4 Evaluations: 109
+[Task: 70] Size: 5 Evaluations: 351
+[Task: 70] Size: 6 Evaluations: 1505
+[Task: 70] Size: 7 Evaluations: 5497
+[Task: 70] Size: 8 Evaluations: 26745
+[Task: 70] Size: 9 Evaluations: 110684
+[Task: 70] Size: 10 Evaluations: 547037
+[Task: 70] Size: 11 Evaluations: 2391385
+[Task: 71] Loading bustle model....
+[Task: 71] Count: 71
+[Task: 71] 
+[Task: 71] 2021-09-09 09:43:30.098385
+[Task: 71] Number of programs: 19
+[Task: 71] Size: 0 Evaluations: 0
+[Task: 71] Size: 1 Evaluations: 0
+[Task: 71] Size: 2 Evaluations: 27
+[Task: 71] Size: 3 Evaluations: 187
+[Task: 71] Size: 4 Evaluations: 181
+[Task: 71] Size: 5 Evaluations: 839
+[Task: 71] Size: 6 Evaluations: 5713
+[Task: 71] Size: 7 Evaluations: 28169
+[Task: 71] Benchmark: stackoverflow11.sl
+[Task: 71] Result: Success
+[Task: 71] Program: _arg_0[(1 + _arg_0.IndexOf("_")):].strip()
+[Task: 71] Number of evaluations: 142490
+[Task: 71] 2021-09-09 09:43:45.572780
+[Task: 71] Time taken: 0:00:15.472598
+[Task: 71] 
+[Task: 72] Loading bustle model....
+[Task: 72] Count: 72
+[Task: 72] 
+[Task: 72] 2021-09-09 09:43:30.218734
+[Task: 72] Number of programs: 12
+[Task: 72] Size: 0 Evaluations: 0
+[Task: 72] Size: 1 Evaluations: 0
+[Task: 72] Size: 2 Evaluations: 19
+[Task: 72] Size: 3 Evaluations: 58
+[Task: 72] Size: 4 Evaluations: 71
+[Task: 72] Size: 5 Evaluations: 333
+[Task: 72] Size: 6 Evaluations: 1211
+[Task: 72] Size: 7 Evaluations: 4330
+[Task: 72] Size: 8 Evaluations: 17790
+[Task: 72] Benchmark: stackoverflow1.sl
+[Task: 72] Result: Success
+[Task: 72] Program: _arg_0[:_arg_0.IndexOf("Inc")].strip()
+[Task: 72] Number of evaluations: 70768
+[Task: 72] 2021-09-09 09:43:43.137678
+[Task: 72] Time taken: 0:00:12.918956
+[Task: 72] 
+[Task: 73] Loading bustle model....
+[Task: 73] Count: 73
+[Task: 73] 
+[Task: 73] 2021-09-09 09:43:30.290952
+[Task: 73] Number of programs: 9
+[Task: 73] Size: 0 Evaluations: 0
+[Task: 73] Size: 1 Evaluations: 0
+[Task: 73] Size: 2 Evaluations: 13
+[Task: 73] Size: 3 Evaluations: 17
+[Task: 73] Size: 4 Evaluations: 32
+[Task: 73] Size: 5 Evaluations: 94
+[Task: 73] Size: 6 Evaluations: 262
+[Task: 73] Size: 7 Evaluations: 677
+[Task: 73] Size: 8 Evaluations: 2394
+[Task: 73] Size: 9 Evaluations: 6531
+[Task: 73] Size: 10 Evaluations: 23989
+[Task: 73] Size: 11 Evaluations: 70628
+[Task: 73] Benchmark: stackoverflow2.sl
+[Task: 73] Result: Success
+[Task: 73] Program: _arg_0[:-1][:-1][:-1][:-1][:-1].strip()
+[Task: 73] Number of evaluations: 271420
+[Task: 73] 2021-09-09 09:44:33.946043
+[Task: 73] Time taken: 0:01:03.653491
+[Task: 73] 
+[Task: 74] Loading bustle model....
+[Task: 74] Count: 74
+[Task: 74] 
+[Task: 74] 2021-09-09 09:43:30.316606
+[Task: 74] Number of programs: 13
+[Task: 74] Size: 0 Evaluations: 0
+[Task: 74] Size: 1 Evaluations: 0
+[Task: 74] Size: 2 Evaluations: 15
+[Task: 74] Size: 3 Evaluations: 37
+[Task: 74] Size: 4 Evaluations: 42
+[Task: 74] Size: 5 Evaluations: 222
+[Task: 74] Size: 6 Evaluations: 529
+[Task: 74] Size: 7 Evaluations: 2475
+[Task: 74] Size: 8 Evaluations: 7544
+[Task: 74] Size: 9 Evaluations: 34724
+[Task: 74] Size: 10 Evaluations: 114485
+[Task: 74] Size: 11 Evaluations: 512553
+[Task: 74] Benchmark: stackoverflow3.sl
+[Task: 74] Result: Success
+[Task: 74] Program: _arg_0[3:][concat(" ", _arg_0).IndexOf("9"):]
+[Task: 74] Number of evaluations: 2244243
+[Task: 74] 2021-09-09 09:51:15.333813
+[Task: 74] Time taken: 0:07:45.017125
+[Task: 74] 
+[Task: 75] Loading bustle model....
+[Task: 75] Count: 75
+[Task: 75] 
+[Task: 75] 2021-09-09 09:43:30.186783
+[Task: 75] Number of programs: 12
+[Task: 75] Size: 0 Evaluations: 0
+[Task: 75] Size: 1 Evaluations: 0
+[Task: 75] Size: 2 Evaluations: 14
+[Task: 75] Size: 3 Evaluations: 45
+[Task: 75] Size: 4 Evaluations: 55
+[Task: 75] Size: 5 Evaluations: 121
+[Task: 75] Size: 6 Evaluations: 368
+[Task: 75] Size: 7 Evaluations: 800
+[Task: 75] Size: 8 Evaluations: 1647
+[Task: 75] Size: 9 Evaluations: 5565
+[Task: 75] Benchmark: stackoverflow4.sl
+[Task: 75] Result: Success
+[Task: 75] Program: _arg_0[:-1].replace(",", " ",-1).replace("<", " ")
+[Task: 75] Number of evaluations: 17358
+[Task: 75] 2021-09-09 09:43:35.299202
+[Task: 75] Time taken: 0:00:05.112344
+[Task: 75] 
+[Task: 76] Loading bustle model....
+[Task: 76] Count: 76
+[Task: 76] 
+[Task: 76] 2021-09-09 09:43:30.283220
+[Task: 76] Number of programs: 13
+[Task: 76] Size: 0 Evaluations: 0
+[Task: 76] Size: 1 Evaluations: 0
+[Task: 76] Size: 2 Evaluations: 17
+[Task: 76] Size: 3 Evaluations: 63
+[Task: 76] Size: 4 Evaluations: 80
+[Task: 76] Size: 5 Evaluations: 370
+[Task: 76] Size: 6 Evaluations: 1417
+[Task: 76] Size: 7 Evaluations: 6125
+[Task: 76] Size: 8 Evaluations: 25514
+[Task: 76] Benchmark: stackoverflow5.sl
+[Task: 76] Result: Success
+[Task: 76] Program: _arg_0[:concat(_arg_0, _arg_0)[1:].IndexOf("1")]
+[Task: 76] Number of evaluations: 130184
+[Task: 76] 2021-09-09 09:43:46.165694
+[Task: 76] Time taken: 0:00:15.881184
+[Task: 76] 
+[Task: 77] Loading bustle model....
+[Task: 77] Count: 77
+[Task: 77] 
+[Task: 77] 2021-09-09 16:01:27.059383
+[Task: 77] Number of programs: 10
+[Task: 77] Size: 0 Evaluations: 0
+[Task: 77] Size: 1 Evaluations: 0
+[Task: 77] Size: 2 Evaluations: 13
+[Task: 77] Size: 3 Evaluations: 27
+[Task: 77] Size: 4 Evaluations: 41
+[Task: 77] Size: 5 Evaluations: 132
+[Task: 77] Size: 6 Evaluations: 448
+[Task: 77] Size: 7 Evaluations: 1368
+[Task: 77] Size: 8 Evaluations: 5037
+[Task: 77] Size: 9 Evaluations: 17079
+[Task: 77] Size: 10 Evaluations: 63166
+[Task: 77] Size: 11 Evaluations: 229443
+[Task: 77] Size: 12 Evaluations: 854436
+[Task: 77] Size: 13 Evaluations: 3188680
+[Task: 78] Loading bustle model....
+[Task: 78] Count: 78
+[Task: 78] 
+[Task: 78] 2021-09-09 09:43:30.304749
+[Task: 78] Number of programs: 9
+[Task: 78] Size: 0 Evaluations: 0
+[Task: 78] Size: 1 Evaluations: 0
+[Task: 78] Size: 2 Evaluations: 14
+[Task: 78] Size: 3 Evaluations: 25
+[Task: 78] Size: 4 Evaluations: 22
+[Task: 78] Size: 5 Evaluations: 79
+[Task: 78] Size: 6 Evaluations: 102
+[Task: 78] Size: 7 Evaluations: 108
+[Task: 78] Size: 8 Evaluations: 185
+[Task: 78] Size: 9 Evaluations: 346
+[Task: 78] Size: 10 Evaluations: 784
+[Task: 78] Benchmark: stackoverflow7.sl
+[Task: 78] Result: Success
+[Task: 78] Program: _arg_0.replace(_arg_1.strip(), "").strip()
+[Task: 78] Number of evaluations: 2394
+[Task: 78] 2021-09-09 09:43:31.520999
+[Task: 78] Time taken: 0:00:01.216240
+[Task: 78] 
+[Task: 79] Loading bustle model....
+[Task: 79] Count: 79
+[Task: 79] 
+[Task: 79] 2021-09-09 09:43:30.117691
+[Task: 79] Number of programs: 12
+[Task: 79] Size: 0 Evaluations: 0
+[Task: 79] Size: 1 Evaluations: 0
+[Task: 79] Size: 2 Evaluations: 15
+[Task: 79] Size: 3 Evaluations: 34
+[Task: 79] Size: 4 Evaluations: 79
+[Task: 79] Size: 5 Evaluations: 257
+[Task: 79] Size: 6 Evaluations: 932
+[Task: 79] Size: 7 Evaluations: 3124
+[Task: 79] Size: 8 Evaluations: 13897
+[Task: 79] Size: 9 Evaluations: 52301
+[Task: 79] Benchmark: stackoverflow8.sl
+[Task: 79] Result: Success
+[Task: 79] Program: _arg_0[2:][4:][4:].replace("/", "")
+[Task: 79] Number of evaluations: 181460
+[Task: 79] 2021-09-09 09:44:01.566678
+[Task: 79] Time taken: 0:00:31.448973
+[Task: 79] 
+[Task: 80] Loading bustle model....
+[Task: 80] Count: 80
+[Task: 80] 
+[Task: 80] 2021-09-09 09:43:30.344002
+[Task: 80] Number of programs: 8
+[Task: 80] Size: 0 Evaluations: 0
+[Task: 80] Size: 1 Evaluations: 0
+[Task: 80] Size: 2 Evaluations: 11
+[Task: 80] Size: 3 Evaluations: 13
+[Task: 80] Size: 4 Evaluations: 18
+[Task: 80] Size: 5 Evaluations: 50
+[Task: 80] Size: 6 Evaluations: 127
+[Task: 80] Size: 7 Evaluations: 293
+[Task: 80] Size: 8 Evaluations: 894
+[Task: 80] Size: 9 Evaluations: 2299
+[Task: 80] Size: 10 Evaluations: 7224
+[Task: 80] Size: 11 Evaluations: 19337
+[Task: 80] Size: 12 Evaluations: 62129
+[Task: 80] Size: 13 Evaluations: 175982
+[Task: 80] Size: 14 Evaluations: 560982
+[Task: 80] Benchmark: stackoverflow9.sl
+[Task: 80] Result: Success
+[Task: 80] Program: _arg_0[_arg_0.replace(" ", _arg_0.CharAt(0)).IndexOf(" "):].strip()
+[Task: 80] Number of evaluations: 1814150
+[Task: 80] 2021-09-09 09:52:57.446042
+[Task: 80] Time taken: 0:09:27.102375
+[Task: 80] 
+[Task: 81] Loading bustle model....
+[Task: 81] Count: 81
+[Task: 81] 
+[Task: 81] 2021-09-09 09:43:30.150210
+[Task: 81] Number of programs: 11
+[Task: 81] Size: 0 Evaluations: 0
+[Task: 81] Size: 1 Evaluations: 0
+[Task: 81] Size: 2 Evaluations: 14
+[Task: 81] Size: 3 Evaluations: 31
+[Task: 81] Size: 4 Evaluations: 54
+[Task: 81] Size: 5 Evaluations: 148
+[Task: 81] Size: 6 Evaluations: 420
+[Task: 81] Size: 7 Evaluations: 1630
+[Task: 81] Size: 8 Evaluations: 5001
+[Task: 81] Size: 9 Evaluations: 18018
+[Task: 81] Benchmark: strip-html-from-text-or-numbers.sl
+[Task: 81] Result: Success
+[Task: 81] Program: _arg_0.Substr(_arg_0.IndexOf(0.IntToStr()),_arg_0.IndexOf("<",1))
+[Task: 81] Number of evaluations: 65432
+[Task: 81] 2021-09-09 09:43:45.895267
+[Task: 81] Time taken: 0:00:15.744973
+[Task: 81] 
+[Task: 82] Loading bustle model....
+[Task: 82] Count: 82
+[Task: 82] 
+[Task: 82] 2021-09-09 16:01:27.141725
+[Task: 82] Number of programs: 20
+[Task: 82] Size: 0 Evaluations: 0
+[Task: 82] Size: 1 Evaluations: 0
+[Task: 82] Size: 2 Evaluations: 19
+[Task: 82] Size: 3 Evaluations: 68
+[Task: 82] Size: 4 Evaluations: 203
+[Task: 82] Size: 5 Evaluations: 908
+[Task: 82] Size: 6 Evaluations: 3944
+[Task: 82] Size: 7 Evaluations: 17713
+[Task: 82] Size: 8 Evaluations: 92881
+[Task: 82] Size: 9 Evaluations: 521838
+[Task: 82] Size: 10 Evaluations: 2914841
+[Task: 83] Loading bustle model....
+[Task: 83] Count: 83
+[Task: 83] 
+[Task: 83] 2021-09-09 16:01:26.975553
+[Task: 83] Number of programs: 18
+[Task: 83] Size: 0 Evaluations: 0
+[Task: 83] Size: 1 Evaluations: 0
+[Task: 83] Size: 2 Evaluations: 18
+[Task: 83] Size: 3 Evaluations: 61
+[Task: 83] Size: 4 Evaluations: 96
+[Task: 83] Size: 5 Evaluations: 514
+[Task: 83] Size: 6 Evaluations: 1524
+[Task: 83] Size: 7 Evaluations: 3164
+[Task: 83] Size: 8 Evaluations: 10442
+[Task: 83] Size: 9 Evaluations: 41634
+[Task: 83] Size: 10 Evaluations: 151359
+[Task: 83] Size: 11 Evaluations: 676215
+[Task: 83] Size: 12 Evaluations: 3154902
+[Task: 84] Loading bustle model....
+[Task: 84] Count: 84
+[Task: 84] 
+[Task: 84] 2021-09-09 09:43:30.282062
+[Task: 84] Number of programs: 9
+[Task: 84] Size: 0 Evaluations: 0
+[Task: 84] Size: 1 Evaluations: 0
+[Task: 84] Size: 2 Evaluations: 15
+[Task: 84] Size: 3 Evaluations: 37
+[Task: 84] Size: 4 Evaluations: 57
+[Task: 84] Size: 5 Evaluations: 178
+[Task: 84] Size: 6 Evaluations: 389
+[Task: 84] Benchmark: univ_1.sl
+[Task: 84] Result: Success
+[Task: 84] Program: concat(col1, concat(",", concat(" ", col2)))
+[Task: 84] Number of evaluations: 714
+[Task: 84] 2021-09-09 09:43:31.043154
+[Task: 84] Time taken: 0:00:00.759608
+[Task: 84] 
+[Task: 85] Loading bustle model....
+[Task: 85] Count: 85
+[Task: 85] 
+[Task: 85] 2021-09-09 16:01:26.980240
+[Task: 85] Number of programs: 15
+[Task: 85] Size: 0 Evaluations: 0
+[Task: 85] Size: 1 Evaluations: 0
+[Task: 85] Size: 2 Evaluations: 29
+[Task: 85] Size: 3 Evaluations: 135
+[Task: 85] Size: 4 Evaluations: 105
+[Task: 85] Size: 5 Evaluations: 443
+[Task: 85] Size: 6 Evaluations: 1237
+[Task: 85] Size: 7 Evaluations: 1863
+[Task: 85] Size: 8 Evaluations: 5840
+[Task: 85] Size: 9 Evaluations: 10323
+[Task: 85] Size: 10 Evaluations: 30984
+[Task: 85] Size: 11 Evaluations: 65135
+[Task: 85] Size: 12 Evaluations: 166215
+[Task: 85] Size: 13 Evaluations: 382486
+[Task: 85] Size: 14 Evaluations: 809693
+[Task: 85] Size: 15 Evaluations: 1944059
+[Task: 85] Size: 16 Evaluations: 4072780
+[Task: 86] Loading bustle model....
+[Task: 86] Count: 86
+[Task: 86] 
+[Task: 86] 2021-09-09 09:43:30.277714
+[Task: 86] Number of programs: 15
+[Task: 86] Size: 0 Evaluations: 0
+[Task: 86] Size: 1 Evaluations: 0
+[Task: 86] Size: 2 Evaluations: 29
+[Task: 86] Size: 3 Evaluations: 138
+[Task: 86] Size: 4 Evaluations: 162
+[Task: 86] Size: 5 Evaluations: 984
+[Task: 86] Size: 6 Evaluations: 3486
+[Task: 86] Size: 7 Evaluations: 10562
+[Task: 86] Size: 8 Evaluations: 45708
+[Task: 86] Size: 9 Evaluations: 158652
+[Task: 86] Size: 10 Evaluations: 605434
+[Task: 86] Size: 11 Evaluations: 2337827
+[Task: 86] Benchmark: univ_3.sl
+[Task: 86] Result: Success
+[Task: 86] Program: (ifcol2.Contain("USA") then col2 else concat(col2, concat(",", concat(" ", "USA"))))
+[Task: 86] Number of evaluations: 8546205
+[Task: 86] 2021-09-09 10:28:35.469323
+[Task: 86] Time taken: 0:45:05.191638
+[Task: 86] 
+[Task: 87] Loading bustle model....
+[Task: 87] Count: 87
+[Task: 87] 
+[Task: 87] 2021-09-09 16:30:34.994582
+[Task: 87] Number of programs: 16
+[Task: 87] Size: 0 Evaluations: 0
+[Task: 87] Size: 1 Evaluations: 0
+[Task: 87] Size: 2 Evaluations: 33
+[Task: 87] Size: 3 Evaluations: 167
+[Task: 87] Size: 4 Evaluations: 220
+[Task: 87] Size: 5 Evaluations: 969
+[Task: 87] Size: 6 Evaluations: 4250
+[Task: 87] Size: 7 Evaluations: 11431
+[Task: 87] Size: 8 Evaluations: 45434
+[Task: 87] Size: 9 Evaluations: 165899
+[Task: 87] Size: 10 Evaluations: 569194
+[Task: 87] Size: 11 Evaluations: 2134166
+[Task: 88] Loading bustle model....
+[Task: 88] Count: 88
+[Task: 88] 
+[Task: 88] 2021-09-09 16:30:35.041082
+[Task: 88] Number of programs: 36
+[Task: 88] Size: 0 Evaluations: 0
+[Task: 88] Size: 1 Evaluations: 0
+[Task: 88] Size: 2 Evaluations: 71
+[Task: 88] Size: 3 Evaluations: 1006
+[Task: 88] Size: 4 Evaluations: 864
+[Task: 88] Size: 5 Evaluations: 3290
+[Task: 88] Size: 6 Evaluations: 45363
+[Task: 88] Size: 7 Evaluations: 130372
+[Task: 88] Size: 8 Evaluations: 532708
+[Task: 88] Size: 9 Evaluations: 5572674

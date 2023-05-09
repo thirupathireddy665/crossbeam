@@ -1,0 +1,1975 @@
+Count: 0
+
+
+2021-09-04 18:21:44.215751
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 17
+Size: 3 Evaluations: 36
+Size: 4 Evaluations: 116
+Size: 5 Evaluations: 357
+Size: 6 Evaluations: 1660
+Size: 7 Evaluations: 6011
+Benchmark: 11440431.sl
+Result: Success
+Program: _arg_0.replace("US", "").replace("CAN", "").strip()
+Number of evaluations: 27533
+2021-09-04 18:21:50.069473
+Time taken: 0:00:05.853696
+
+
+
+Count: 1
+
+
+2021-09-04 18:21:50.100957
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 12
+Size: 3 Evaluations: 20
+Size: 4 Evaluations: 65
+Size: 5 Evaluations: 187
+Size: 6 Evaluations: 695
+Size: 7 Evaluations: 2470
+Size: 8 Evaluations: 9835
+Size: 9 Evaluations: 37067
+Size: 10 Evaluations: 153756
+Benchmark: 11604909.sl
+Result: Fail
+Program: None
+Number of evaluations: 204107
+2021-09-04 18:23:54.656051
+Time taken: 0:02:04.554984
+
+
+
+Count: 2
+
+
+2021-09-04 18:23:54.867473
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 10
+Size: 3 Evaluations: 17
+Size: 4 Evaluations: 35
+Size: 5 Evaluations: 104
+Size: 6 Evaluations: 272
+Size: 7 Evaluations: 957
+Size: 8 Evaluations: 2787
+Size: 9 Evaluations: 9846
+Size: 10 Evaluations: 32675
+Benchmark: 17212077.sl
+Result: Fail
+Program: None
+Number of evaluations: 46703
+2021-09-04 18:24:19.136056
+Time taken: 0:00:24.268470
+
+
+
+Count: 3
+
+
+2021-09-04 18:24:19.249035
+Number of programs: 8
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 14
+Size: 4 Evaluations: 43
+Size: 5 Evaluations: 107
+Size: 6 Evaluations: 356
+Benchmark: 2171308.sl
+Result: Success
+Program: _arg_0[:1] + "" + _arg_0[_arg_0.IndexOf(" "):]
+Number of evaluations: 1417
+2021-09-04 18:24:19.540951
+Time taken: 0:00:00.291723
+
+
+
+Count: 4
+
+
+2021-09-04 18:24:19.554131
+Number of programs: 14
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 30
+Size: 3 Evaluations: 104
+Size: 4 Evaluations: 414
+Size: 5 Evaluations: 1537
+Size: 6 Evaluations: 9460
+Size: 7 Evaluations: 39183
+Size: 8 Evaluations: 237764
+Size: 9 Evaluations: 1187714
+Benchmark: 25239569.sl
+Result: Success
+Program: _arg_0.replace("BRD", "Branding").replace("DRS", "Direct Response").replace("LDS", "Leads")
+Number of evaluations: 6224224
+2021-09-04 18:45:40.438602
+Time taken: 0:21:20.884736
+
+
+
+Count: 5
+
+
+2021-09-04 18:45:45.979650
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 13
+Size: 3 Evaluations: 28
+Size: 4 Evaluations: 74
+Size: 5 Evaluations: 256
+Benchmark: 28627624_1.sl
+Result: Success
+Program: _arg_0[:_arg_0.IndexOf("-")].strip()
+Number of evaluations: 1063
+2021-09-04 18:45:46.092883
+Time taken: 0:00:00.113033
+
+
+
+Count: 6
+
+
+2021-09-04 18:45:46.113174
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 19
+Size: 4 Evaluations: 48
+Size: 5 Evaluations: 149
+Size: 6 Evaluations: 486
+Benchmark: 30732554.sl
+Result: Success
+Program: _arg_0[:concat(_arg_0, "|").IndexOf("|")]
+Number of evaluations: 2043
+2021-09-04 18:45:46.506759
+Time taken: 0:00:00.393559
+
+
+
+Count: 7
+
+
+2021-09-04 18:45:46.532506
+Number of programs: 13
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 15
+Size: 3 Evaluations: 38
+Size: 4 Evaluations: 122
+Size: 5 Evaluations: 430
+Size: 6 Evaluations: 1959
+Size: 7 Evaluations: 7645
+Size: 8 Evaluations: 39258
+Size: 9 Evaluations: 169969
+Size: 10 Evaluations: 884256
+Benchmark: 31753108.sl
+Result: Fail
+Program: None
+Number of evaluations: 1103692
+2021-09-04 18:52:08.353083
+Time taken: 0:06:21.820593
+
+
+
+Count: 8
+
+
+2021-09-04 18:52:09.201032
+Number of programs: 12
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 26
+Size: 3 Evaluations: 69
+Size: 4 Evaluations: 315
+Size: 5 Evaluations: 964
+Size: 6 Evaluations: 6143
+Size: 7 Evaluations: 25075
+Size: 8 Evaluations: 137018
+Size: 9 Evaluations: 711658
+Size: 10 Evaluations: 3545012
+Benchmark: 33619752.sl
+Result: Fail
+Program: None
+Number of evaluations: 4426280
+2021-09-04 19:33:31.505867
+Time taken: 0:41:21.114162
+
+
+
+Count: 9
+
+
+2021-09-04 19:33:36.224487
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 16
+Size: 3 Evaluations: 34
+Size: 4 Evaluations: 112
+Size: 5 Evaluations: 338
+Benchmark: 34801680.sl
+Result: Success
+Program: _arg_0[_arg_0.IndexOf(" "):].strip()
+Number of evaluations: 1573
+2021-09-04 19:33:36.370315
+Time taken: 0:00:00.145626
+
+
+
+Count: 10
+
+
+2021-09-04 19:33:36.391462
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 17
+Size: 3 Evaluations: 33
+Size: 4 Evaluations: 104
+Benchmark: 35016216.sl
+Result: Success
+Program: _arg_0.replace(_arg_0.lower(), _arg_1)
+Number of evaluations: 386
+2021-09-04 19:33:36.431304
+Time taken: 0:00:00.039817
+
+
+
+Count: 11
+
+
+2021-09-04 19:33:36.447249
+Number of programs: 13
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 23
+Size: 3 Evaluations: 83
+Size: 4 Evaluations: 250
+Size: 5 Evaluations: 1004
+Size: 6 Evaluations: 5274
+Size: 7 Evaluations: 20813
+Size: 8 Evaluations: 120058
+Size: 9 Evaluations: 546894
+Size: 10 Evaluations: 2914676
+Benchmark: 35744094.sl
+Result: Fail
+Program: None
+Number of evaluations: 3609075
+2021-09-04 19:55:41.210040
+Time taken: 0:22:04.762828
+
+
+
+Count: 12
+
+
+2021-09-04 19:55:44.062162
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 19
+Size: 4 Evaluations: 44
+Size: 5 Evaluations: 132
+Size: 6 Evaluations: 403
+Size: 7 Evaluations: 1242
+Size: 8 Evaluations: 4372
+Size: 9 Evaluations: 14415
+Size: 10 Evaluations: 52879
+Benchmark: 36462127.sl
+Result: Fail
+Program: None
+Number of evaluations: 73517
+2021-09-04 19:56:13.518668
+Time taken: 0:00:29.456348
+
+
+
+Count: 13
+
+
+2021-09-04 19:56:13.575755
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 18
+Size: 3 Evaluations: 35
+Size: 4 Evaluations: 128
+Size: 5 Evaluations: 409
+Benchmark: 37534494.sl
+Result: Success
+Program: (if_arg_0.Contain(_arg_2) then _arg_0 else _arg_1)
+Number of evaluations: 1788
+2021-09-04 19:56:13.755753
+Time taken: 0:00:00.179832
+
+
+
+Count: 14
+
+
+2021-09-04 19:56:13.772509
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 13
+Size: 3 Evaluations: 27
+Size: 4 Evaluations: 66
+Size: 5 Evaluations: 185
+Size: 6 Evaluations: 779
+Size: 7 Evaluations: 2417
+Size: 8 Evaluations: 10211
+Benchmark: 38664547.sl
+Result: Success
+Program: _arg_0.replace("that", (ifEqual("that",_arg_0) then "that" else ""))
+Number of evaluations: 32033
+2021-09-04 19:56:22.461362
+Time taken: 0:00:08.688828
+
+
+
+Count: 15
+
+
+2021-09-04 19:56:22.499364
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 13
+Size: 3 Evaluations: 28
+Size: 4 Evaluations: 78
+Size: 5 Evaluations: 271
+Size: 6 Evaluations: 1009
+Size: 7 Evaluations: 3781
+Size: 8 Evaluations: 15484
+Benchmark: 38871714.sl
+Result: Success
+Program: _arg_0.replace("<", "",-1).replace(">", "",-1)
+Number of evaluations: 76582
+2021-09-04 19:56:35.780614
+Time taken: 0:00:13.281110
+
+
+
+Count: 16
+
+
+2021-09-04 19:56:35.832209
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 12
+Size: 3 Evaluations: 21
+Size: 4 Evaluations: 56
+Size: 5 Evaluations: 183
+Size: 6 Evaluations: 633
+Size: 7 Evaluations: 2130
+Size: 8 Evaluations: 8310
+Size: 9 Evaluations: 30529
+Size: 10 Evaluations: 120717
+Benchmark: 39060015.sl
+Result: Fail
+Program: None
+Number of evaluations: 162591
+2021-09-04 19:57:26.041441
+Time taken: 0:00:50.209083
+
+
+
+Count: 17
+
+
+2021-09-04 19:57:26.236875
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 25
+Size: 4 Evaluations: 77
+Size: 5 Evaluations: 225
+Size: 6 Evaluations: 888
+Size: 7 Evaluations: 2993
+Size: 8 Evaluations: 12113
+Benchmark: 41503046.sl
+Result: Success
+Program: _arg_0[:_arg_0.IndexOf(" ",concat("ssp.", "ssp.").Length())]
+Number of evaluations: 52845
+2021-09-04 19:57:42.372923
+Time taken: 0:00:16.135873
+
+
+
+Count: 18
+
+
+2021-09-04 19:57:42.445390
+Number of programs: 17
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 28
+Size: 3 Evaluations: 153
+Size: 4 Evaluations: 363
+Size: 5 Evaluations: 2247
+Size: 6 Evaluations: 10156
+Size: 7 Evaluations: 50928
+Size: 8 Evaluations: 305644
+Size: 9 Evaluations: 1549147
+Size: 10 Evaluations: 9305298
+Benchmark: 43120683.sl
+Result: Fail
+Program: None
+Number of evaluations: 11223964
+2021-09-04 21:31:15.462722
+Time taken: 1:33:33.017226
+
+
+
+Count: 19
+
+
+2021-09-04 21:31:23.799346
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 18
+Size: 4 Evaluations: 41
+Size: 5 Evaluations: 106
+Size: 6 Evaluations: 313
+Size: 7 Evaluations: 860
+Size: 8 Evaluations: 2881
+Benchmark: 43606446.sl
+Result: Success
+Program: _arg_0[:-1][(-1 + (-1 + -1)):]
+Number of evaluations: 10756
+2021-09-04 21:31:28.411216
+Time taken: 0:00:04.611736
+
+
+
+Count: 20
+
+
+2021-09-04 21:31:28.470801
+Number of programs: 11
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 22
+Size: 3 Evaluations: 51
+Size: 4 Evaluations: 218
+Size: 5 Evaluations: 738
+Size: 6 Evaluations: 3830
+Size: 7 Evaluations: 15633
+Size: 8 Evaluations: 79167
+Benchmark: add-a-line-break-with-a-formula.sl
+Result: Success
+Program: concat(_arg_0, concat("/n", concat(_arg_1, concat("/n", _arg_2))))
+Number of evaluations: 130816
+2021-09-04 21:31:59.379127
+Time taken: 0:00:30.908191
+
+
+
+Count: 21
+
+
+2021-09-04 21:31:59.470362
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 13
+Size: 3 Evaluations: 35
+Size: 4 Evaluations: 91
+Benchmark: bikes.sl
+Result: Success
+Program: name[:(0 - 3)]
+Number of evaluations: 311
+2021-09-04 21:31:59.519914
+Time taken: 0:00:00.049450
+
+
+
+Count: 22
+
+
+2021-09-04 21:31:59.573700
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 10
+Size: 3 Evaluations: 19
+Benchmark: change-negative-numbers-to-positive.sl
+Result: Success
+Program: _arg_0.replace("-", "")
+Number of evaluations: 47
+2021-09-04 21:31:59.582577
+Time taken: 0:00:00.008850
+
+
+
+Count: 23
+
+
+2021-09-04 21:31:59.608943
+Number of programs: 13
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 61
+Size: 4 Evaluations: 89
+Size: 5 Evaluations: 541
+Size: 6 Evaluations: 1654
+Size: 7 Evaluations: 7255
+Size: 8 Evaluations: 31137
+Size: 9 Evaluations: 127855
+Size: 10 Evaluations: 605997
+Benchmark: clean-and-reformat-telephone-numbers.sl
+Result: Fail
+Program: None
+Number of evaluations: 774603
+2021-09-04 21:37:45.879672
+Time taken: 0:05:46.270731
+
+
+
+Count: 24
+
+
+2021-09-04 21:37:46.376072
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 16
+Size: 3 Evaluations: 37
+Size: 4 Evaluations: 105
+Size: 5 Evaluations: 339
+Size: 6 Evaluations: 1359
+Benchmark: create-email-address-from-name.sl
+Result: Success
+Program: concat(_arg_1.CharAt(0), concat(_arg_0, "_acme.com"))
+Number of evaluations: 3775
+2021-09-04 21:37:46.898162
+Time taken: 0:00:00.521967
+
+
+
+Count: 25
+
+
+2021-09-04 21:37:46.944438
+Number of programs: 11
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 17
+Size: 3 Evaluations: 46
+Size: 4 Evaluations: 120
+Size: 5 Evaluations: 480
+Size: 6 Evaluations: 1852
+Size: 7 Evaluations: 6782
+Size: 8 Evaluations: 31694
+Benchmark: create-email-address-with-name-and-domain.sl
+Result: Success
+Program: concat(_arg_0.CharAt(0), concat(_arg_1, concat("_", _arg_2)))
+Number of evaluations: 84009
+2021-09-04 21:38:05.107712
+Time taken: 0:00:18.163219
+
+
+
+Count: 26
+
+
+2021-09-04 21:38:05.160800
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 15
+Size: 3 Evaluations: 34
+Size: 4 Evaluations: 101
+Size: 5 Evaluations: 287
+Size: 6 Evaluations: 1190
+Size: 7 Evaluations: 3823
+Size: 8 Evaluations: 16019
+Benchmark: dr-name.sl
+Result: Success
+Program: concat("Dr.", concat(" ", name[:name.IndexOf(" ")]))
+Number of evaluations: 29097
+2021-09-04 21:38:13.738871
+Time taken: 0:00:08.577965
+
+
+
+Count: 27
+
+
+2021-09-04 21:38:13.779641
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 32
+Size: 4 Evaluations: 85
+Size: 5 Evaluations: 306
+Size: 6 Evaluations: 1088
+Benchmark: exceljet1.sl
+Result: Success
+Program: _arg_1[(1 + _arg_1.IndexOf("_")):]
+Number of evaluations: 4577
+2021-09-04 21:38:14.588206
+Time taken: 0:00:00.808452
+
+
+
+Count: 28
+
+
+2021-09-04 21:38:14.604857
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 19
+Size: 4 Evaluations: 45
+Size: 5 Evaluations: 136
+Size: 6 Evaluations: 407
+Size: 7 Evaluations: 1285
+Size: 8 Evaluations: 4468
+Size: 9 Evaluations: 14774
+Benchmark: exceljet2.sl
+Result: Success
+Program: _arg_0[(-1 + (-1 + -1)):].replace(".", "")
+Number of evaluations: 56450
+2021-09-04 21:38:29.973363
+Time taken: 0:00:15.368484
+
+
+
+Count: 29
+
+
+2021-09-04 21:38:30.022930
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 20
+Size: 4 Evaluations: 49
+Size: 5 Evaluations: 155
+Size: 6 Evaluations: 498
+Size: 7 Evaluations: 1649
+Benchmark: exceljet3.sl
+Result: Success
+Program: _arg_0[(1 + _arg_0.IndexOf("=")):].strip()
+Number of evaluations: 6700
+2021-09-04 21:38:31.538608
+Time taken: 0:00:01.515568
+
+
+
+Count: 30
+
+
+2021-09-04 21:38:31.560025
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 12
+Size: 3 Evaluations: 27
+Size: 4 Evaluations: 59
+Size: 5 Evaluations: 208
+Size: 6 Evaluations: 663
+Size: 7 Evaluations: 2349
+Benchmark: exceljet4.sl
+Result: Success
+Program: _arg_0[concat(-1.IntToStr(), _arg_0).IndexOf("/"):]
+Number of evaluations: 10519
+2021-09-04 21:38:34.173689
+Time taken: 0:00:02.613633
+
+
+
+Count: 31
+
+
+2021-09-04 21:38:34.202031
+Number of programs: 14
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 15
+Size: 3 Evaluations: 46
+Size: 4 Evaluations: 119
+Size: 5 Evaluations: 522
+Size: 6 Evaluations: 1848
+Size: 7 Evaluations: 8566
+Size: 8 Evaluations: 37733
+Size: 9 Evaluations: 178695
+Size: 10 Evaluations: 853479
+Benchmark: extract-word-containing-specific-text.sl
+Result: Fail
+Program: None
+Number of evaluations: 1081023
+2021-09-04 21:44:36.664856
+Time taken: 0:06:02.462810
+
+
+
+Count: 32
+
+
+2021-09-04 21:44:37.387293
+Number of programs: 11
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 12
+Size: 3 Evaluations: 26
+Size: 4 Evaluations: 64
+Size: 5 Evaluations: 227
+Size: 6 Evaluations: 745
+Size: 7 Evaluations: 2784
+Size: 8 Evaluations: 10878
+Size: 9 Evaluations: 41947
+Size: 10 Evaluations: 175286
+Benchmark: extract-word-that-begins-with-specific-character.sl
+Result: Fail
+Program: None
+Number of evaluations: 231969
+2021-09-04 21:46:15.915618
+Time taken: 0:01:38.528214
+
+
+
+Count: 33
+
+
+2021-09-04 21:46:16.124580
+Number of programs: 7
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 10
+Size: 3 Evaluations: 18
+Size: 4 Evaluations: 46
+Benchmark: firstname.sl
+Result: Success
+Program: name[:name.IndexOf(" ")]
+Number of evaluations: 160
+2021-09-04 21:46:16.144815
+Time taken: 0:00:00.020130
+
+
+
+Count: 34
+
+
+2021-09-04 21:46:16.169065
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 32
+Size: 4 Evaluations: 85
+Benchmark: get-domain-from-email-address_2.sl
+Result: Success
+Program: _arg_1[:_arg_1.IndexOf("_")]
+Number of evaluations: 360
+2021-09-04 21:46:16.210032
+Time taken: 0:00:00.040940
+
+
+
+Count: 35
+
+
+2021-09-04 21:46:16.228191
+Number of programs: 11
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 13
+Size: 3 Evaluations: 30
+Size: 4 Evaluations: 74
+Size: 5 Evaluations: 265
+Size: 6 Evaluations: 887
+Size: 7 Evaluations: 3367
+Size: 8 Evaluations: 13474
+Size: 9 Evaluations: 52881
+Size: 10 Evaluations: 227052
+Benchmark: get-domain-name-from-url.sl
+Result: Fail
+Program: None
+Number of evaluations: 298043
+2021-09-04 21:48:26.658615
+Time taken: 0:02:10.430415
+
+
+
+Count: 36
+
+
+2021-09-04 21:48:26.834987
+Number of programs: 8
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 14
+Size: 4 Evaluations: 42
+Benchmark: get-first-name-from-name.sl
+Result: Success
+Program: _arg_0[:_arg_0.IndexOf(" ")]
+Number of evaluations: 145
+2021-09-04 21:48:26.854118
+Time taken: 0:00:00.019035
+
+
+
+Count: 37
+
+
+2021-09-04 21:48:26.868674
+Number of programs: 8
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 14
+Size: 4 Evaluations: 43
+Size: 5 Evaluations: 106
+Size: 6 Evaluations: 369
+Size: 7 Evaluations: 1105
+Benchmark: get-first-word.sl
+Result: Success
+Program: _arg_0[:_arg_0.replace(" ", _arg_0).IndexOf(_arg_0)]
+Number of evaluations: 4622
+2021-09-04 21:48:27.748755
+Time taken: 0:00:00.880074
+
+
+
+Count: 38
+
+
+2021-09-04 21:48:27.775685
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 20
+Size: 4 Evaluations: 70
+Size: 5 Evaluations: 190
+Size: 6 Evaluations: 747
+Size: 7 Evaluations: 2537
+Size: 8 Evaluations: 9924
+Size: 9 Evaluations: 37972
+Size: 10 Evaluations: 150591
+Benchmark: get-last-line-in-cell.sl
+Result: Fail
+Program: None
+Number of evaluations: 202065
+2021-09-04 21:49:46.533422
+Time taken: 0:01:18.757717
+
+
+
+Count: 39
+
+
+2021-09-04 21:49:46.703651
+Number of programs: 8
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 14
+Size: 4 Evaluations: 42
+Size: 5 Evaluations: 103
+Benchmark: get-last-name-from-name.sl
+Result: Success
+Program: _arg_0[_arg_0.IndexOf(" "):].strip()
+Number of evaluations: 399
+2021-09-04 21:49:46.764939
+Time taken: 0:00:00.061179
+
+
+
+Count: 40
+
+
+2021-09-04 21:49:46.811349
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 19
+Size: 4 Evaluations: 45
+Size: 5 Evaluations: 131
+Size: 6 Evaluations: 400
+Size: 7 Evaluations: 1213
+Size: 8 Evaluations: 4167
+Size: 9 Evaluations: 13653
+Size: 10 Evaluations: 48881
+Benchmark: get-last-name-from-name-with-comma.sl
+Result: Fail
+Program: None
+Number of evaluations: 68520
+2021-09-04 21:50:22.602260
+Time taken: 0:00:35.790851
+
+
+
+Count: 41
+
+
+2021-09-04 21:50:22.663900
+Number of programs: 8
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 10
+Size: 3 Evaluations: 14
+Size: 4 Evaluations: 35
+Size: 5 Evaluations: 94
+Size: 6 Evaluations: 286
+Size: 7 Evaluations: 818
+Size: 8 Evaluations: 2816
+Benchmark: get-last-word.sl
+Result: Success
+Program: _arg_0[(-1 + (-1 + (-1 + -1))):]
+Number of evaluations: 10608
+2021-09-04 21:50:25.426810
+Time taken: 0:00:02.762806
+
+
+
+Count: 42
+
+
+2021-09-04 21:50:25.459630
+Number of programs: 8
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 10
+Size: 3 Evaluations: 14
+Size: 4 Evaluations: 35
+Size: 5 Evaluations: 96
+Size: 6 Evaluations: 287
+Size: 7 Evaluations: 821
+Size: 8 Evaluations: 2863
+Size: 9 Evaluations: 8879
+Size: 10 Evaluations: 31398
+Benchmark: get-middle-name-from-full-name.sl
+Result: Fail
+Program: None
+Number of evaluations: 44403
+2021-09-04 21:50:49.454587
+Time taken: 0:00:23.994856
+
+
+
+Count: 43
+
+
+2021-09-04 21:50:49.523340
+Number of programs: 8
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 23
+Size: 4 Evaluations: 57
+Size: 5 Evaluations: 153
+Size: 6 Evaluations: 536
+Size: 7 Evaluations: 1576
+Size: 8 Evaluations: 5885
+Size: 9 Evaluations: 19130
+Size: 10 Evaluations: 71416
+Benchmark: initials.sl
+Result: Fail
+Program: None
+Number of evaluations: 98787
+2021-09-04 21:51:44.955113
+Time taken: 0:00:55.431699
+
+
+
+Count: 44
+
+
+2021-09-04 21:51:45.076850
+Number of programs: 11
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 17
+Size: 3 Evaluations: 45
+Size: 4 Evaluations: 123
+Size: 5 Evaluations: 488
+Size: 6 Evaluations: 1923
+Size: 7 Evaluations: 7178
+Size: 8 Evaluations: 32767
+Size: 9 Evaluations: 125268
+Size: 10 Evaluations: 593460
+Benchmark: join-cells-with-comma.sl
+Result: Fail
+Program: None
+Number of evaluations: 761269
+2021-09-04 21:56:48.332997
+Time taken: 0:05:03.256041
+
+
+
+Count: 45
+
+
+2021-09-04 21:56:48.766473
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 13
+Size: 3 Evaluations: 24
+Size: 4 Evaluations: 64
+Benchmark: join-first-and-last-name.sl
+Result: Success
+Program: concat(_arg_0, concat(" ", _arg_1))
+Number of evaluations: 125
+2021-09-04 21:56:48.781705
+Time taken: 0:00:00.015133
+
+
+
+Count: 46
+
+
+2021-09-04 21:56:48.812335
+Number of programs: 6
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 9
+Size: 3 Evaluations: 12
+Size: 4 Evaluations: 32
+Size: 5 Evaluations: 71
+Benchmark: lastname.sl
+Result: Success
+Program: name[name.IndexOf(" "):].strip()
+Number of evaluations: 276
+2021-09-04 21:56:48.859149
+Time taken: 0:00:00.046793
+
+
+
+Count: 47
+
+
+2021-09-04 21:56:48.871661
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 15
+Size: 3 Evaluations: 39
+Size: 4 Evaluations: 93
+Size: 5 Evaluations: 353
+Benchmark: most-frequently-occurring-text.sl
+Result: Success
+Program: (ifEqual(_arg_0,_arg_1) then _arg_0 else _arg_2)
+Number of evaluations: 1467
+2021-09-04 21:56:49.105051
+Time taken: 0:00:00.233380
+
+
+
+Count: 48
+
+
+2021-09-04 21:56:49.128772
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 15
+Size: 3 Evaluations: 36
+Size: 4 Evaluations: 104
+Size: 5 Evaluations: 306
+Size: 6 Evaluations: 1269
+Size: 7 Evaluations: 3913
+Size: 8 Evaluations: 17812
+Benchmark: name-combine-2.sl
+Result: Success
+Program: concat(firstname, concat(" ", concat(lastname.CharAt(0), ".")))
+Number of evaluations: 31180
+2021-09-04 21:56:59.635600
+Time taken: 0:00:10.506817
+
+
+
+Count: 49
+
+
+2021-09-04 21:56:59.666050
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 15
+Size: 3 Evaluations: 36
+Size: 4 Evaluations: 103
+Size: 5 Evaluations: 313
+Size: 6 Evaluations: 1300
+Size: 7 Evaluations: 4219
+Size: 8 Evaluations: 19000
+Benchmark: name-combine-3.sl
+Result: Success
+Program: concat(firstname.CharAt(0), concat(".", concat(" ", lastname)))
+Number of evaluations: 49066
+2021-09-04 21:57:15.593885
+Time taken: 0:00:15.927751
+
+
+
+Count: 50
+
+
+2021-09-04 21:57:15.626487
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 16
+Size: 3 Evaluations: 45
+Size: 4 Evaluations: 117
+Size: 5 Evaluations: 410
+Size: 6 Evaluations: 1595
+Size: 7 Evaluations: 5523
+Size: 8 Evaluations: 24940
+Size: 9 Evaluations: 91100
+Size: 10 Evaluations: 411959
+Benchmark: name-combine-4.sl
+Result: Fail
+Program: None
+Number of evaluations: 535705
+2021-09-04 22:03:49.927586
+Time taken: 0:06:34.301007
+
+
+
+Count: 51
+
+
+2021-09-04 22:03:50.322188
+Number of programs: 8
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 29
+Size: 4 Evaluations: 89
+Benchmark: name-combine.sl
+Result: Success
+Program: concat(firstname, concat(" ", lastname))
+Number of evaluations: 158
+2021-09-04 22:03:50.348494
+Time taken: 0:00:00.026176
+
+
+
+Count: 52
+
+
+2021-09-04 22:03:50.359479
+Number of programs: 15
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 16
+Size: 3 Evaluations: 81
+Size: 4 Evaluations: 152
+Size: 5 Evaluations: 926
+Size: 6 Evaluations: 2580
+Size: 7 Evaluations: 17525
+Size: 8 Evaluations: 61114
+Size: 9 Evaluations: 393524
+Size: 10 Evaluations: 1636882
+Benchmark: phone-10.sl
+Result: Fail
+Program: None
+Number of evaluations: 2112800
+2021-09-04 22:32:14.070391
+Time taken: 0:28:23.710937
+
+
+
+Count: 53
+
+
+2021-09-04 22:32:16.229976
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 35
+Size: 4 Evaluations: 70
+Benchmark: phone-1.sl
+Result: Success
+Program: name[4:][:3]
+Number of evaluations: 259
+2021-09-04 22:32:16.274798
+Time taken: 0:00:00.044715
+
+
+
+Count: 54
+
+
+2021-09-04 22:32:16.299177
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 35
+Size: 4 Evaluations: 70
+Benchmark: phone-2.sl
+Result: Success
+Program: name[(3 + 5):]
+Number of evaluations: 268
+2021-09-04 22:32:16.344437
+Time taken: 0:00:00.045237
+
+
+
+Count: 55
+
+
+2021-09-04 22:32:16.365550
+Number of programs: 13
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 55
+Size: 4 Evaluations: 106
+Size: 5 Evaluations: 508
+Size: 6 Evaluations: 1463
+Size: 7 Evaluations: 8941
+Benchmark: phone-3.sl
+Result: Success
+Program: concat("(", name.replace("-", concat(")", " ")))
+Number of evaluations: 13096
+2021-09-04 22:32:21.621750
+Time taken: 0:00:05.256194
+
+
+
+Count: 56
+
+
+2021-09-04 22:32:21.692350
+Number of programs: 14
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 15
+Size: 3 Evaluations: 66
+Size: 4 Evaluations: 118
+Benchmark: phone-4.sl
+Result: Success
+Program: name.replace("-", ".",2)
+Number of evaluations: 706
+2021-09-04 22:32:21.810266
+Time taken: 0:00:00.117806
+
+
+
+Count: 57
+
+
+2021-09-04 22:32:21.837737
+Number of programs: 13
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 57
+Size: 4 Evaluations: 122
+Size: 5 Evaluations: 588
+Benchmark: phone-5.sl
+Result: Success
+Program: name.Substr(1,name.IndexOf(" "))
+Number of evaluations: 1953
+2021-09-04 22:32:22.197339
+Time taken: 0:00:00.359581
+
+
+
+Count: 58
+
+
+2021-09-04 22:32:22.201158
+Number of programs: 13
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 57
+Size: 4 Evaluations: 122
+Size: 5 Evaluations: 588
+Size: 6 Evaluations: 1794
+Size: 7 Evaluations: 10371
+Benchmark: phone-6.sl
+Result: Success
+Program: name[name.IndexOf(" "):].Substr(1,4)
+Number of evaluations: 37896
+2021-09-04 22:32:33.185834
+Time taken: 0:00:10.984682
+
+
+
+Count: 59
+
+
+2021-09-04 22:32:33.273827
+Number of programs: 13
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 57
+Size: 4 Evaluations: 122
+Size: 5 Evaluations: 588
+Size: 6 Evaluations: 1794
+Size: 7 Evaluations: 10371
+Benchmark: phone-7.sl
+Result: Success
+Program: name[name.IndexOf("-"):].Substr(1,4)
+Number of evaluations: 37902
+2021-09-04 22:32:44.200376
+Time taken: 0:00:10.926374
+
+
+
+Count: 60
+
+
+2021-09-04 22:32:44.249338
+Number of programs: 13
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 57
+Size: 4 Evaluations: 122
+Benchmark: phone-8.sl
+Result: Success
+Program: name[(0 - 3):]
+Number of evaluations: 610
+2021-09-04 22:32:44.349862
+Time taken: 0:00:00.100434
+
+
+
+Count: 61
+
+
+2021-09-04 22:32:44.373709
+Number of programs: 13
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 57
+Size: 4 Evaluations: 122
+Size: 5 Evaluations: 588
+Size: 6 Evaluations: 1794
+Size: 7 Evaluations: 10371
+Size: 8 Evaluations: 37976
+Size: 9 Evaluations: 213536
+Benchmark: phone-9.sl
+Result: Success
+Program: name.replace("-", ".",2)[1:].replace(" ", ".")
+Number of evaluations: 833751
+2021-09-04 22:37:33.853941
+Time taken: 0:04:49.480225
+
+
+
+Count: 62
+
+
+2021-09-04 22:37:34.488969
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Benchmark: phone.sl
+Result: Success
+Program: name[:3]
+Number of evaluations: 24
+2021-09-04 22:37:34.491357
+Time taken: 0:00:00.002262
+
+
+
+Count: 63
+
+
+2021-09-04 22:37:34.513609
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 20
+Size: 4 Evaluations: 49
+Benchmark: remove-file-extension-from-filename.sl
+Result: Success
+Program: _arg_0[:_arg_0.IndexOf(".")]
+Number of evaluations: 195
+2021-09-04 22:37:34.540693
+Time taken: 0:00:00.027065
+
+
+
+Count: 64
+
+
+2021-09-04 22:37:34.550417
+Number of programs: 8
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 14
+Size: 4 Evaluations: 43
+Size: 5 Evaluations: 107
+Size: 6 Evaluations: 365
+Size: 7 Evaluations: 1067
+Size: 8 Evaluations: 3893
+Size: 9 Evaluations: 12438
+Size: 10 Evaluations: 45575
+Benchmark: remove-leading-and-trailing-spaces-from-text.sl
+Result: Fail
+Program: None
+Number of evaluations: 63513
+2021-09-04 22:38:01.643785
+Time taken: 0:00:27.093350
+
+
+
+Count: 65
+
+
+2021-09-04 22:38:01.701034
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 10
+Size: 3 Evaluations: 19
+Size: 4 Evaluations: 36
+Benchmark: remove-text-by-matching.sl
+Result: Success
+Program: _arg_0.replace("-", "",-1)
+Number of evaluations: 166
+2021-09-04 22:38:01.720859
+Time taken: 0:00:00.019697
+
+
+
+Count: 66
+
+
+2021-09-04 22:38:01.748099
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 19
+Size: 4 Evaluations: 45
+Size: 5 Evaluations: 134
+Size: 6 Evaluations: 435
+Size: 7 Evaluations: 1385
+Size: 8 Evaluations: 4915
+Size: 9 Evaluations: 16948
+Size: 10 Evaluations: 62335
+Benchmark: remove-text-by-position.sl
+Result: Fail
+Program: None
+Number of evaluations: 86227
+2021-09-04 22:38:40.522840
+Time taken: 0:00:38.774765
+
+
+
+Count: 67
+
+
+2021-09-04 22:38:40.642810
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 12
+Size: 3 Evaluations: 21
+Size: 4 Evaluations: 50
+Size: 5 Evaluations: 138
+Benchmark: remove-unwanted-characters.sl
+Result: Success
+Program: _arg_0.replace(_arg_1.strip(), "",-1)
+Number of evaluations: 625
+2021-09-04 22:38:40.797822
+Time taken: 0:00:00.154862
+
+
+
+Count: 68
+
+
+2021-09-04 22:38:40.822573
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 10
+Size: 3 Evaluations: 19
+Size: 4 Evaluations: 34
+Benchmark: replace-one-character-with-another.sl
+Result: Success
+Program: _arg_0.replace(" ", "-",-1)
+Number of evaluations: 159
+2021-09-04 22:38:40.842077
+Time taken: 0:00:00.019491
+
+
+
+Count: 69
+
+
+2021-09-04 22:38:40.868654
+Number of programs: 8
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 29
+Size: 4 Evaluations: 89
+Benchmark: reverse-name.sl
+Result: Success
+Program: concat(lastname, concat(" ", firstname))
+Number of evaluations: 180
+2021-09-04 22:38:40.895924
+Time taken: 0:00:00.027262
+
+
+
+Count: 70
+
+
+2021-09-04 22:38:40.914801
+Number of programs: 13
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 15
+Size: 3 Evaluations: 38
+Size: 4 Evaluations: 122
+Size: 5 Evaluations: 436
+Size: 6 Evaluations: 2034
+Size: 7 Evaluations: 8293
+Size: 8 Evaluations: 42525
+Size: 9 Evaluations: 188527
+Size: 10 Evaluations: 994628
+Benchmark: stackoverflow10.sl
+Result: Fail
+Program: None
+Number of evaluations: 1236618
+2021-09-04 23:01:58.609497
+Time taken: 0:23:17.694735
+
+
+
+Count: 71
+
+
+2021-09-04 23:02:00.809763
+Number of programs: 19
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 27
+Size: 3 Evaluations: 187
+Size: 4 Evaluations: 339
+Size: 5 Evaluations: 2876
+Size: 6 Evaluations: 11909
+Size: 7 Evaluations: 73198
+Benchmark: stackoverflow11.sl
+Result: Success
+Program: _arg_0[(1 + _arg_0.IndexOf("_")):].strip()
+Number of evaluations: 434059
+2021-09-04 23:03:13.158052
+Time taken: 0:01:12.348164
+
+
+
+Count: 72
+
+
+2021-09-04 23:03:13.377994
+Number of programs: 12
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 19
+Size: 3 Evaluations: 60
+Size: 4 Evaluations: 176
+Size: 5 Evaluations: 681
+Benchmark: stackoverflow1.sl
+Result: Success
+Program: _arg_0[:_arg_0.IndexOf("Inc")].strip()
+Number of evaluations: 3550
+2021-09-04 23:03:13.734969
+Time taken: 0:00:00.356826
+
+
+
+Count: 73
+
+
+2021-09-04 23:03:13.760503
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 13
+Size: 3 Evaluations: 19
+Size: 4 Evaluations: 60
+Size: 5 Evaluations: 159
+Size: 6 Evaluations: 573
+Size: 7 Evaluations: 1744
+Size: 8 Evaluations: 6781
+Benchmark: stackoverflow2.sl
+Result: Success
+Program: _arg_0[:(-1 - concat("in", "in").Length())].strip()
+Number of evaluations: 25025
+2021-09-04 23:03:18.579543
+Time taken: 0:00:04.819009
+
+
+
+Count: 74
+
+
+2021-09-04 23:03:18.634959
+Number of programs: 13
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 15
+Size: 3 Evaluations: 38
+Size: 4 Evaluations: 116
+Size: 5 Evaluations: 417
+Size: 6 Evaluations: 1618
+Size: 7 Evaluations: 6918
+Benchmark: stackoverflow3.sl
+Result: Success
+Program: _arg_0[(3 + _arg_0.IndexOf("9")):].strip()
+Number of evaluations: 28542
+2021-09-04 23:03:23.932834
+Time taken: 0:00:05.297696
+
+
+
+Count: 75
+
+
+2021-09-04 23:03:23.968263
+Number of programs: 12
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 46
+Size: 4 Evaluations: 89
+Size: 5 Evaluations: 387
+Size: 6 Evaluations: 1220
+Size: 7 Evaluations: 5009
+Size: 8 Evaluations: 19147
+Size: 9 Evaluations: 79704
+Benchmark: stackoverflow4.sl
+Result: Success
+Program: _arg_0.replace(",", " ",-1)[:-1].replace("<", " ")
+Number of evaluations: 370549
+2021-09-04 23:04:58.994399
+Time taken: 0:01:35.025998
+
+
+
+Count: 76
+
+
+2021-09-04 23:04:59.194510
+Number of programs: 13
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 17
+Size: 3 Evaluations: 64
+Size: 4 Evaluations: 147
+Size: 5 Evaluations: 719
+Size: 6 Evaluations: 2809
+Benchmark: stackoverflow5.sl
+Result: Success
+Program: _arg_0[:(-1 + _arg_0.IndexOf("1"))]
+Number of evaluations: 15004
+2021-09-04 23:05:00.758232
+Time taken: 0:00:01.563612
+
+
+
+Count: 77
+
+
+2021-09-04 23:05:00.785330
+Number of programs: 10
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 13
+Size: 3 Evaluations: 28
+Size: 4 Evaluations: 74
+Size: 5 Evaluations: 256
+Size: 6 Evaluations: 914
+Size: 7 Evaluations: 3400
+Size: 8 Evaluations: 13590
+Size: 9 Evaluations: 54295
+Benchmark: stackoverflow6.sl
+Result: Success
+Program: _arg_0[(1 + _arg_0.IndexOf(concat("=", " "))):].strip()
+Number of evaluations: 244142
+2021-09-04 23:05:44.150955
+Time taken: 0:00:43.365603
+
+
+
+Count: 78
+
+
+2021-09-04 23:05:44.260565
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 27
+Size: 4 Evaluations: 84
+Size: 5 Evaluations: 274
+Benchmark: stackoverflow7.sl
+Result: Success
+Program: _arg_0.replace(_arg_1.strip(), "").strip()
+Number of evaluations: 1096
+2021-09-04 23:05:44.369718
+Time taken: 0:00:00.109043
+
+
+
+Count: 79
+
+
+2021-09-04 23:05:44.396914
+Number of programs: 12
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 15
+Size: 3 Evaluations: 35
+Size: 4 Evaluations: 103
+Size: 5 Evaluations: 357
+Size: 6 Evaluations: 1433
+Size: 7 Evaluations: 5519
+Benchmark: stackoverflow8.sl
+Result: Success
+Program: _arg_0[_arg_0.IndexOf(_arg_0[-1:].upper()):]
+Number of evaluations: 25561
+2021-09-04 23:05:48.236448
+Time taken: 0:00:03.839516
+
+
+
+Count: 80
+
+
+2021-09-04 23:05:48.299280
+Number of programs: 8
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 11
+Size: 3 Evaluations: 14
+Size: 4 Evaluations: 42
+Size: 5 Evaluations: 105
+Size: 6 Evaluations: 355
+Size: 7 Evaluations: 1005
+Size: 8 Evaluations: 3617
+Benchmark: stackoverflow9.sl
+Result: Success
+Program: _arg_0[_arg_0.replace(" ", -1.IntToStr()).IndexOf(" "):]
+Number of evaluations: 14193
+2021-09-04 23:05:51.072463
+Time taken: 0:00:02.773077
+
+
+
+Count: 81
+
+
+2021-09-04 23:05:51.098575
+Number of programs: 11
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 14
+Size: 3 Evaluations: 31
+Size: 4 Evaluations: 82
+Size: 5 Evaluations: 249
+Size: 6 Evaluations: 865
+Size: 7 Evaluations: 2932
+Size: 8 Evaluations: 11165
+Benchmark: strip-html-from-text-or-numbers.sl
+Result: Success
+Program: _arg_0.replace(concat("<", concat("b", ">")), "",-1)
+Number of evaluations: 51059
+2021-09-04 23:06:05.742584
+Time taken: 0:00:14.643901
+
+
+
+Count: 82
+
+
+2021-09-04 23:06:05.796247
+Number of programs: 20
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 19
+Size: 3 Evaluations: 68
+Size: 4 Evaluations: 207
+Size: 5 Evaluations: 1033
+Size: 6 Evaluations: 4765
+Size: 7 Evaluations: 26446
+Size: 8 Evaluations: 145789
+Size: 9 Evaluations: 852370
+Size: 10 Evaluations: 5150332
+Benchmark: strip-non-numeric-characters.sl
+Result: Fail
+Program: None
+Number of evaluations: 6181029
+2021-09-04 23:44:20.688841
+Time taken: 0:38:14.892557
+
+
+
+Count: 83
+
+
+2021-09-04 23:44:25.607178
+Number of programs: 18
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 18
+Size: 3 Evaluations: 62
+Size: 4 Evaluations: 183
+Size: 5 Evaluations: 830
+Size: 6 Evaluations: 3923
+Size: 7 Evaluations: 19870
+Size: 8 Evaluations: 113784
+Size: 9 Evaluations: 598563
+Size: 10 Evaluations: 3611683
+Benchmark: strip-numeric-characters-from-cell.sl
+Result: Fail
+Program: None
+Number of evaluations: 4348916
+2021-09-05 00:09:09.451801
+Time taken: 0:24:43.844560
+
+
+
+Count: 84
+
+
+2021-09-05 00:09:12.649615
+Number of programs: 9
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 15
+Size: 3 Evaluations: 39
+Size: 4 Evaluations: 119
+Size: 5 Evaluations: 432
+Size: 6 Evaluations: 1815
+Benchmark: univ_1.sl
+Result: Success
+Program: concat(col1, concat(",", concat(" ", col2)))
+Number of evaluations: 3214
+2021-09-05 00:09:13.397566
+Time taken: 0:00:00.747827
+
+
+
+Count: 85
+
+
+2021-09-05 00:09:13.403690
+Number of programs: 15
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 29
+Size: 3 Evaluations: 138
+Size: 4 Evaluations: 464
+Size: 5 Evaluations: 2208
+Size: 6 Evaluations: 12977
+Size: 7 Evaluations: 58698
+Size: 8 Evaluations: 379925
+Size: 9 Evaluations: 1941705
+Size: 10 Evaluations: 11856360
+Benchmark: univ_2.sl
+Result: Fail
+Program: None
+Number of evaluations: 14252504
+2021-09-05 02:34:41.215242
+Time taken: 2:25:27.811714
+
+Count: 86
+
+
+2021-09-05 04:30:57.543175
+Number of programs: 15
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 29
+Size: 3 Evaluations: 138
+Size: 4 Evaluations: 464
+Size: 5 Evaluations: 2208
+Size: 6 Evaluations: 12977
+Size: 7 Evaluations: 58698
+Size: 8 Evaluations: 379925
+Size: 9 Evaluations: 1941705
+Size: 10 Evaluations: 11856360
+Benchmark: univ_3.sl
+Result: Fail
+Program: None
+Number of evaluations: 14252504
+2021-09-05 06:54:21.788661
+Time taken: 2:23:24.245445
+
+Count: 87
+
+
+2021-09-05 12:12:27.460274
+Number of programs: 16
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 33
+Size: 3 Evaluations: 169
+Size: 4 Evaluations: 620
+Size: 5 Evaluations: 3057
+Size: 6 Evaluations: 20059
+Size: 7 Evaluations: 97789
+Size: 8 Evaluations: 678404
+Size: 9 Evaluations: 3855100
+Size: 10 Evaluations: 24627344
+Benchmark: univ_4.sl
+Result: Fail
+Program: None
+Number of evaluations: 29282575
+2021-09-05 17:39:16.084435
+Time taken: 5:26:48.624170
+
+Count: 88
+
+
+2021-09-05 19:58:06.436655
+Number of programs: 36
+Size: 0 Evaluations: 0
+Size: 1 Evaluations: 0
+Size: 2 Evaluations: 71
+Size: 3 Evaluations: 1007
+Size: 4 Evaluations: 3806
+Size: 5 Evaluations: 36924
+Size: 6 Evaluations: 289263
+Size: 7 Evaluations: 2036512
+Size: 8 Evaluations: 21179921
+Benchmark: univ_5.sl
+Result: Fail
+Program: None
+Number of evaluations: 23547504
+2021-09-06 05:58:06.436655
+Time taken: 10:00:00.624170
+

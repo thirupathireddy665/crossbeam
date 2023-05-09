@@ -1,0 +1,901 @@
+[Task: 2] Loading bustle model....
+[Task: 0] Loading bustle model....
+[Task: 1] Loading bustle model....
+[Task: 1] Count: 1
+[Task: 1] 
+
+[Task: 0] Count: 0
+[Task: 0] 
+
+[Task: 2] Count: 2
+[Task: 1] 2022-07-17 00:03:00.169826
+[Task: 2] 
+
+[Task: 1] Number of programs: 17
+[Task: 0] 2022-07-17 00:03:00.169994
+[Task: 1] Size: 0 Evaluations: 0
+[Task: 0] Number of programs: 17
+[Task: 1] Size: 1 Evaluations: 0
+[Task: 0] Size: 0 Evaluations: 0
+[Task: 2] 2022-07-17 00:03:00.170229
+[Task: 0] Size: 1 Evaluations: 0
+[Task: 2] Number of programs: 20
+[Task: 2] Size: 0 Evaluations: 0
+[Task: 2] Size: 1 Evaluations: 0
+[Task: 1] Size: 2 Evaluations: 18
+[Task: 2] Size: 2 Evaluations: 28
+[Task: 0] Size: 2 Evaluations: 19
+[Task: 1] Size: 3 Evaluations: 60
+[Task: 0] Size: 3 Evaluations: 62
+[Task: 2] Size: 3 Evaluations: 108
+[Task: 1] Size: 4 Evaluations: 92
+[Task: 0] Size: 4 Evaluations: 70
+[Task: 2] Size: 4 Evaluations: 139
+[Task: 1] Size: 5 Evaluations: 61
+[Task: 0] Size: 5 Evaluations: 71
+[Task: 2] Size: 5 Evaluations: 91
+[Task: 0] Size: 6 Evaluations: 252
+[Task: 1] Size: 6 Evaluations: 347
+[Task: 2] Size: 6 Evaluations: 225
+[Task: 2] Size: 7 Evaluations: 209
+[Task: 0] Size: 7 Evaluations: 508
+[Task: 2] Size: 8 Evaluations: 405
+[Task: 1] Size: 7 Evaluations: 959
+[Task: 2] Size: 9 Evaluations: 1102
+[Task: 0] Size: 8 Evaluations: 1714
+[Task: 1] Size: 8 Evaluations: 2244
+[Task: 1] Benchmark: addPlusSign
+[Task: 1] Result: Success
+[Task: 1] Program: concat((ifarg_0.Contain("-") then "" else "+"), arg_0)
+[Task: 1] Number of evaluations: 38375
+[Task: 1] 2022-07-17 00:03:02.657627
+[Task: 1] Time taken: 0:00:02.487788
+[Task: 1] 
+
+
+[Task: 2] Size: 10 Evaluations: 1800
+[Task: 0] Size: 9 Evaluations: 3222
+[Task: 0] Benchmark: addDecimal
+[Task: 0] Result: Success
+[Task: 0] Program: concat(arg_0, (ifarg_0.Contain(".") then "" else ".0"))
+[Task: 0] Number of evaluations: 56305
+[Task: 0] 2022-07-17 00:03:04.076174
+[Task: 0] Time taken: 0:00:03.906265
+[Task: 0] 
+
+
+[Task: 2] Size: 11 Evaluations: 4595
+[Task: 3] Loading bustle model....
+[Task: 3] Count: 3
+[Task: 3] 
+
+[Task: 3] 2022-07-17 00:03:07.171508
+[Task: 3] Number of programs: 15
+[Task: 3] Size: 0 Evaluations: 0
+[Task: 3] Size: 1 Evaluations: 0
+[Task: 3] Size: 2 Evaluations: 17
+[Task: 3] Size: 3 Evaluations: 53
+[Task: 3] Size: 4 Evaluations: 112
+[Task: 3] Size: 5 Evaluations: 133
+[Task: 3] Size: 6 Evaluations: 286
+[Task: 3] Size: 7 Evaluations: 393
+[Task: 3] Size: 8 Evaluations: 1167
+[Task: 3] Size: 9 Evaluations: 2003
+[Task: 2] Size: 12 Evaluations: 7093
+[Task: 2] Benchmark: appendAmOrPm
+[Task: 2] Result: Success
+[Task: 2] Program: concat(arg_0.Substr(0,-3), (ifEqual("morning",arg_1) then " AM" else " PM"))
+[Task: 2] Number of evaluations: 275094
+[Task: 2] 2022-07-17 00:03:11.906081
+[Task: 2] Time taken: 0:00:11.735893
+[Task: 2] 
+
+
+[Task: 3] Size: 10 Evaluations: 5935
+[Task: 3] Size: 11 Evaluations: 10727
+[Task: 3] Size: 12 Evaluations: 27871
+[Task: 3] Size: 13 Evaluations: 52255
+[Task: 3] Size: 14 Evaluations: 110702
+[Task: 8] Loading bustle model....
+[Task: 7] Loading bustle model....
+[Task: 6] Loading bustle model....
+[Task: 6] Count: 6
+[Task: 6] 
+
+[Task: 6] 2022-07-17 00:06:55.860437
+[Task: 6] Number of programs: 16
+[Task: 6] Size: 0 Evaluations: 0
+[Task: 6] Size: 1 Evaluations: 0
+[Task: 8] Count: 8
+[Task: 8] 
+
+[Task: 8] 2022-07-17 00:06:55.861464
+[Task: 8] Number of programs: 19
+[Task: 8] Size: 0 Evaluations: 0
+[Task: 8] Size: 1 Evaluations: 0
+[Task: 7] Count: 7
+[Task: 7] 
+
+[Task: 7] 2022-07-17 00:06:55.874884
+[Task: 7] Number of programs: 16
+[Task: 7] Size: 0 Evaluations: 0
+[Task: 7] Size: 1 Evaluations: 0
+[Task: 6] Size: 2 Evaluations: 20
+[Task: 8] Size: 2 Evaluations: 27
+[Task: 7] Size: 2 Evaluations: 20
+[Task: 6] Size: 3 Evaluations: 61
+[Task: 8] Size: 3 Evaluations: 84
+[Task: 7] Size: 3 Evaluations: 66
+[Task: 8] Size: 4 Evaluations: 203
+[Task: 6] Size: 4 Evaluations: 263
+[Task: 7] Size: 4 Evaluations: 210
+[Task: 9] Loading bustle model....
+[Task: 13] Loading bustle model....
+[Task: 8] Size: 5 Evaluations: 152
+[Task: 7] Size: 5 Evaluations: 274
+[Task: 9] Count: 9
+[Task: 9] 
+
+[Task: 9] 2022-07-17 00:06:56.439132
+[Task: 9] Number of programs: 16
+[Task: 9] Size: 0 Evaluations: 0
+[Task: 9] Size: 1 Evaluations: 0
+[Task: 8] Size: 6 Evaluations: 300
+[Task: 6] Size: 5 Evaluations: 317
+[Task: 13] Count: 13
+[Task: 13] 
+
+[Task: 13] 2022-07-17 00:06:56.474479
+[Task: 13] Number of programs: 17
+[Task: 13] Size: 0 Evaluations: 0
+[Task: 13] Size: 1 Evaluations: 0
+[Task: 9] Size: 2 Evaluations: 18
+[Task: 13] Size: 2 Evaluations: 20
+[Task: 9] Size: 3 Evaluations: 56
+[Task: 13] Size: 3 Evaluations: 63
+[Task: 9] Size: 4 Evaluations: 59
+[Task: 13] Size: 4 Evaluations: 119
+[Task: 9] Size: 5 Evaluations: 87
+[Task: 8] Size: 7 Evaluations: 709
+[Task: 9] Size: 6 Evaluations: 239
+[Task: 13] Size: 5 Evaluations: 212
+[Task: 9] Size: 7 Evaluations: 577
+[Task: 7] Size: 6 Evaluations: 2352
+[Task: 8] Size: 8 Evaluations: 1316
+[Task: 13] Size: 6 Evaluations: 1110
+[Task: 6] Size: 6 Evaluations: 2000
+[Task: 9] Size: 8 Evaluations: 1829
+[Task: 10] Loading bustle model....
+[Task: 10] Count: 10
+[Task: 10] 
+
+[Task: 10] 2022-07-17 00:06:58.485406
+[Task: 10] Number of programs: 17
+[Task: 10] Size: 0 Evaluations: 0
+[Task: 10] Size: 1 Evaluations: 0
+[Task: 10] Size: 2 Evaluations: 18
+[Task: 10] Size: 3 Evaluations: 63
+[Task: 10] Size: 4 Evaluations: 83
+[Task: 10] Size: 5 Evaluations: 128
+[Task: 10] Size: 6 Evaluations: 298
+[Task: 10] Benchmark: dateTransformation2
+[Task: 10] Result: Success
+[Task: 10] Program: arg_0.replace("-", "/").replace("-", "/")
+[Task: 10] Number of evaluations: 13980
+[Task: 10] 2022-07-17 00:06:59.121272
+[Task: 10] Time taken: 0:00:00.635853
+[Task: 10] 
+
+
+[Task: 13] Size: 7 Evaluations: 1678
+[Task: 8] Size: 9 Evaluations: 3857
+[Task: 7] Size: 7 Evaluations: 4848
+[Task: 6] Size: 7 Evaluations: 4111
+[Task: 9] Size: 9 Evaluations: 4239
+[Task: 4] Loading bustle model....
+[Task: 5] Loading bustle model....
+[Task: 4] Count: 4
+[Task: 4] 
+
+[Task: 5] Count: 5
+[Task: 4] 2022-07-17 00:07:01.575814
+[Task: 5] 
+
+[Task: 4] Number of programs: 15
+[Task: 4] Size: 0 Evaluations: 0
+[Task: 4] Size: 1 Evaluations: 0
+[Task: 5] 2022-07-17 00:07:01.576155
+[Task: 5] Number of programs: 16
+[Task: 5] Size: 0 Evaluations: 0
+[Task: 5] Size: 1 Evaluations: 0
+[Task: 4] Size: 2 Evaluations: 17
+[Task: 5] Size: 2 Evaluations: 20
+[Task: 5] Benchmark: containsString
+[Task: 5] Result: Success
+[Task: 5] Program: arg_0.Contain(arg_1)
+[Task: 5] Number of evaluations: 769
+[Task: 5] 2022-07-17 00:07:01.808276
+[Task: 5] Time taken: 0:00:00.232105
+[Task: 5] 
+
+
+[Task: 4] Size: 3 Evaluations: 50
+[Task: 4] Size: 4 Evaluations: 127
+[Task: 4] Size: 5 Evaluations: 184
+[Task: 4] Size: 6 Evaluations: 494
+[Task: 4] Size: 7 Evaluations: 799
+[Task: 12] Loading bustle model....
+[Task: 12] Count: 12
+[Task: 12] 
+
+[Task: 12] 2022-07-17 00:07:03.403490
+[Task: 12] Number of programs: 17
+[Task: 12] Size: 0 Evaluations: 0
+[Task: 12] Size: 1 Evaluations: 0
+[Task: 8] Size: 10 Evaluations: 7217
+[Task: 12] Size: 2 Evaluations: 20
+[Task: 12] Size: 3 Evaluations: 62
+[Task: 12] Size: 4 Evaluations: 77
+[Task: 12] Size: 5 Evaluations: 147
+[Task: 12] Size: 6 Evaluations: 476
+[Task: 4] Size: 8 Evaluations: 3634
+[Task: 12] Size: 7 Evaluations: 878
+[Task: 9] Size: 10 Evaluations: 9818
+[Task: 12] Size: 8 Evaluations: 2648
+[Task: 13] Size: 8 Evaluations: 10947
+[Task: 4] Size: 9 Evaluations: 6802
+[Task: 12] Size: 9 Evaluations: 6311
+[Task: 8] Size: 11 Evaluations: 16128
+[Task: 8] Benchmark: createEmailAddress
+[Task: 8] Result: Success
+[Task: 8] Program: concat(concat(concat(concat(arg_0.CharAt(0), arg_1), "@"), arg_2).lower(), ".com")
+[Task: 8] Number of evaluations: 352839
+[Task: 8] 2022-07-17 00:07:12.859021
+[Task: 8] Time taken: 0:00:16.997550
+[Task: 8] 
+
+
+[Task: 7] Size: 8 Evaluations: 21019
+[Task: 6] Size: 8 Evaluations: 21767
+[Task: 11] Loading bustle model....
+[Task: 11] Count: 11
+[Task: 11] 
+
+[Task: 11] 2022-07-17 00:07:18.168718
+[Task: 11] Number of programs: 17
+[Task: 11] Size: 0 Evaluations: 0
+[Task: 11] Size: 1 Evaluations: 0
+[Task: 11] Size: 2 Evaluations: 18
+[Task: 11] Size: 3 Evaluations: 62
+[Task: 11] Size: 4 Evaluations: 49
+[Task: 11] Size: 5 Evaluations: 43
+[Task: 11] Size: 6 Evaluations: 144
+[Task: 11] Size: 7 Evaluations: 204
+[Task: 11] Size: 8 Evaluations: 506
+[Task: 9] Size: 11 Evaluations: 22916
+[Task: 11] Size: 9 Evaluations: 1784
+[Task: 4] Size: 10 Evaluations: 22770
+[Task: 4] Benchmark: capitalizeSentence
+[Task: 4] Result: Success
+[Task: 4] Program: concat(arg_0.upper().CharAt(0), arg_0.lower().Substr(1,arg_0.Length()))
+[Task: 4] Number of evaluations: 348053
+[Task: 4] 2022-07-17 00:07:21.069370
+[Task: 4] Time taken: 0:00:19.493536
+[Task: 4] 
+
+
+[Task: 3] Size: 15 Evaluations: 228480
+[Task: 11] Size: 10 Evaluations: 3390
+[Task: 13] Size: 9 Evaluations: 22160
+[Task: 13] Benchmark: extractUrl2
+[Task: 13] Result: Success
+[Task: 13] Program: arg_0.Substr(arg_0.IndexOf("/",(-4 + -4)),arg_0.Length())
+[Task: 13] Number of evaluations: 618329
+[Task: 13] 2022-07-17 00:07:25.482941
+[Task: 13] Time taken: 0:00:29.008457
+[Task: 13] 
+
+
+[Task: 12] Size: 10 Evaluations: 19659
+[Task: 11] Size: 11 Evaluations: 10888
+[Task: 11] Benchmark: dateTransformation3
+[Task: 11] Result: Success
+[Task: 11] Program: arg_0.Substr((1 + 4),15).replace("-", "/")
+[Task: 11] Number of evaluations: 226560
+[Task: 11] 2022-07-17 00:07:29.232235
+[Task: 11] Time taken: 0:00:11.063506
+[Task: 11] 
+
+
+[Task: 7] Size: 9 Evaluations: 64421
+[Task: 9] Size: 12 Evaluations: 49486
+[Task: 6] Size: 9 Evaluations: 62050
+[Task: 12] Size: 11 Evaluations: 51911
+[Task: 9] Size: 13 Evaluations: 111047
+[Task: 12] Size: 12 Evaluations: 183138
+[Task: 7] Size: 10 Evaluations: 241338
+[Task: 16] Loading bustle model....
+[Task: 17] Loading bustle model....
+[Task: 15] Loading bustle model....
+[Task: 16] Count: 16
+[Task: 17] Count: 17
+[Task: 16] 
+
+[Task: 17] 
+
+[Task: 15] Count: 15
+[Task: 15] 
+
+[Task: 17] 2022-07-17 00:10:51.820099
+[Task: 16] 2022-07-17 00:10:51.820103
+[Task: 17] Number of programs: 20
+[Task: 16] Number of programs: 16
+[Task: 15] 2022-07-17 00:10:51.820301
+[Task: 17] Size: 0 Evaluations: 0
+[Task: 16] Size: 0 Evaluations: 0
+[Task: 17] Size: 1 Evaluations: 0
+[Task: 16] Size: 1 Evaluations: 0
+[Task: 15] Number of programs: 17
+[Task: 15] Size: 0 Evaluations: 0
+[Task: 15] Size: 1 Evaluations: 0
+[Task: 16] Size: 2 Evaluations: 20
+[Task: 15] Size: 2 Evaluations: 23
+[Task: 17] Size: 2 Evaluations: 29
+[Task: 16] Size: 3 Evaluations: 59
+[Task: 15] Size: 3 Evaluations: 67
+[Task: 17] Size: 3 Evaluations: 104
+[Task: 17] Size: 4 Evaluations: 59
+[Task: 15] Size: 4 Evaluations: 96
+[Task: 16] Size: 4 Evaluations: 237
+[Task: 15] Size: 5 Evaluations: 59
+[Task: 17] Size: 5 Evaluations: 178
+[Task: 15] Size: 6 Evaluations: 109
+[Task: 16] Size: 5 Evaluations: 313
+[Task: 17] Size: 6 Evaluations: 273
+[Task: 15] Size: 7 Evaluations: 401
+[Task: 17] Size: 7 Evaluations: 888
+[Task: 15] Size: 8 Evaluations: 887
+[Task: 16] Size: 6 Evaluations: 2123
+[Task: 21] Loading bustle model....
+[Task: 22] Loading bustle model....
+[Task: 18] Loading bustle model....
+[Task: 19] Loading bustle model....
+[Task: 23] Loading bustle model....
+[Task: 20] Loading bustle model....
+[Task: 23] Count: 23
+[Task: 21] Count: 21
+[Task: 22] Count: 22
+[Task: 19] Count: 19
+[Task: 20] Count: 20
+[Task: 23] 
+
+[Task: 21] 
+
+[Task: 22] 
+
+[Task: 19] 
+
+[Task: 20] 
+
+[Task: 18] Count: 18
+[Task: 18] 
+
+[Task: 21] 2022-07-17 00:10:54.005600
+[Task: 23] 2022-07-17 00:10:54.005594
+[Task: 20] 2022-07-17 00:10:54.005673
+[Task: 22] 2022-07-17 00:10:54.005707
+[Task: 21] Number of programs: 16
+[Task: 19] 2022-07-17 00:10:54.005723
+[Task: 23] Number of programs: 16
+[Task: 18] 2022-07-17 00:10:54.005741
+[Task: 20] Number of programs: 16
+[Task: 22] Number of programs: 16
+[Task: 21] Size: 0 Evaluations: 0
+[Task: 19] Number of programs: 16
+[Task: 23] Size: 0 Evaluations: 0
+[Task: 18] Number of programs: 18
+[Task: 20] Size: 0 Evaluations: 0
+[Task: 21] Size: 1 Evaluations: 0
+[Task: 22] Size: 0 Evaluations: 0
+[Task: 23] Size: 1 Evaluations: 0
+[Task: 19] Size: 0 Evaluations: 0
+[Task: 20] Size: 1 Evaluations: 0
+[Task: 18] Size: 0 Evaluations: 0
+[Task: 22] Size: 1 Evaluations: 0
+[Task: 19] Size: 1 Evaluations: 0
+[Task: 18] Size: 1 Evaluations: 0
+[Task: 17] Size: 8 Evaluations: 1871
+[Task: 15] Size: 9 Evaluations: 1830
+[Task: 23] Size: 2 Evaluations: 20
+[Task: 21] Size: 2 Evaluations: 18
+[Task: 22] Size: 2 Evaluations: 20
+[Task: 19] Size: 2 Evaluations: 20
+[Task: 20] Size: 2 Evaluations: 17
+[Task: 18] Size: 2 Evaluations: 19
+[Task: 23] Size: 3 Evaluations: 57
+[Task: 21] Size: 3 Evaluations: 53
+[Task: 22] Size: 3 Evaluations: 56
+[Task: 19] Size: 3 Evaluations: 57
+[Task: 20] Size: 3 Evaluations: 55
+[Task: 18] Size: 3 Evaluations: 69
+[Task: 23] Size: 4 Evaluations: 69
+[Task: 20] Size: 4 Evaluations: 54
+[Task: 19] Size: 4 Evaluations: 67
+[Task: 21] Size: 4 Evaluations: 151
+[Task: 18] Size: 4 Evaluations: 120
+[Task: 22] Size: 4 Evaluations: 228
+[Task: 23] Size: 5 Evaluations: 55
+[Task: 22] Benchmark: prefixRemainder
+[Task: 22] Result: Success
+[Task: 22] Program: arg_0.Substr(arg_1.Length(),15)
+[Task: 22] Number of evaluations: 2344
+[Task: 22] 2022-07-17 00:10:54.423820
+[Task: 22] Time taken: 0:00:00.418102
+[Task: 22] 
+
+
+[Task: 19] Size: 5 Evaluations: 88
+[Task: 20] Size: 5 Evaluations: 93
+[Task: 18] Size: 5 Evaluations: 101
+[Task: 23] Size: 6 Evaluations: 101
+[Task: 21] Size: 5 Evaluations: 177
+[Task: 23] Size: 7 Evaluations: 280
+[Task: 19] Size: 6 Evaluations: 386
+[Task: 20] Size: 6 Evaluations: 709
+[Task: 18] Size: 6 Evaluations: 562
+[Task: 21] Size: 6 Evaluations: 860
+[Task: 23] Size: 8 Evaluations: 438
+[Task: 20] Size: 7 Evaluations: 668
+[Task: 23] Size: 9 Evaluations: 1328
+[Task: 19] Size: 7 Evaluations: 1278
+[Task: 21] Size: 7 Evaluations: 1373
+[Task: 16] Size: 7 Evaluations: 5264
+[Task: 18] Size: 7 Evaluations: 1889
+[Task: 17] Size: 9 Evaluations: 3815
+[Task: 19] Size: 8 Evaluations: 1505
+[Task: 20] Size: 8 Evaluations: 3049
+[Task: 23] Size: 10 Evaluations: 3208
+[Task: 15] Size: 10 Evaluations: 6002
+[Task: 18] Size: 8 Evaluations: 5814
+[Task: 21] Size: 8 Evaluations: 8036
+[Task: 23] Size: 11 Evaluations: 7236
+[Task: 17] Size: 10 Evaluations: 7610
+[Task: 19] Size: 9 Evaluations: 7811
+[Task: 14] Loading bustle model....
+[Task: 14] Count: 14
+[Task: 14] 
+
+[Task: 14] 2022-07-17 00:11:03.192326
+[Task: 14] Number of programs: 16
+[Task: 14] Size: 0 Evaluations: 0
+[Task: 14] Size: 1 Evaluations: 0
+[Task: 14] Size: 2 Evaluations: 20
+[Task: 14] Size: 3 Evaluations: 58
+[Task: 14] Size: 4 Evaluations: 188
+[Task: 14] Size: 5 Evaluations: 259
+[Task: 14] Benchmark: firstNameSecondColumn
+[Task: 14] Result: Success
+[Task: 14] Program: arg_1.Substr(0,arg_1.IndexOf(" "))
+[Task: 14] Number of evaluations: 8165
+[Task: 14] 2022-07-17 00:11:04.476428
+[Task: 14] Time taken: 0:00:01.284087
+[Task: 14] 
+
+
+[Task: 20] Size: 9 Evaluations: 14199
+[Task: 21] Size: 9 Evaluations: 13561
+[Task: 15] Size: 11 Evaluations: 14250
+[Task: 16] Size: 8 Evaluations: 25592
+[Task: 18] Size: 9 Evaluations: 15581
+[Task: 16] Benchmark: lastNameFirstColumn
+[Task: 16] Result: Success
+[Task: 16] Program: arg_0.Substr((1 + arg_0.IndexOf(" ")),arg_0.Length())
+[Task: 16] Number of evaluations: 429833
+[Task: 16] 2022-07-17 00:11:10.356578
+[Task: 16] Time taken: 0:00:18.536446
+[Task: 16] 
+
+
+[Task: 23] Size: 12 Evaluations: 15282
+[Task: 17] Size: 11 Evaluations: 17590
+[Task: 15] Benchmark: isLowerCase
+[Task: 15] Result: Success
+[Task: 15] Program: (ifconcat(arg_0, concat("true", "false")).lower().Contain(arg_0) then "true" else "false")
+[Task: 15] Number of evaluations: 525831
+[Task: 15] 2022-07-17 00:11:16.261998
+[Task: 15] Time taken: 0:00:24.441680
+[Task: 15] 
+
+
+[Task: 20] Size: 10 Evaluations: 17087
+[Task: 19] Size: 10 Evaluations: 32063
+[Task: 23] Size: 13 Evaluations: 36499
+[Task: 17] Size: 12 Evaluations: 38768
+[Task: 18] Size: 10 Evaluations: 52411
+[Task: 21] Size: 10 Evaluations: 81555
+[Task: 20] Size: 11 Evaluations: 52693
+[Task: 17] Benchmark: multipleIfStatus
+[Task: 17] Result: Success
+[Task: 17] Program: arg_0.replace("100%", "Completed").replace(arg_0.replace("0%", "Not Yet Started"), "In Progress").replace("0%", "Not Yet Started")
+[Task: 17] Number of evaluations: 1507341
+[Task: 17] 2022-07-17 00:12:01.327017
+[Task: 17] Time taken: 0:01:09.506896
+[Task: 17] 
+
+
+[Task: 3] Size: 16 Evaluations: 456616
+[Task: 6] Size: 10 Evaluations: 261709
+[Task: 19] Size: 11 Evaluations: 52260
+[Task: 9] Size: 14 Evaluations: 235221
+[Task: 23] Size: 14 Evaluations: 88919
+[Task: 21] Size: 11 Evaluations: 156572
+[Task: 18] Size: 11 Evaluations: 156252
+[Task: 18] Benchmark: negativeInParentheses
+[Task: 18] Result: Success
+[Task: 18] Program: concat(arg_0.replace("-", "("), (ifarg_0.Contain("-") then ")" else ""))
+[Task: 18] Number of evaluations: 2860429
+[Task: 18] 2022-07-17 00:13:56.179237
+[Task: 18] Time taken: 0:03:02.173462
+[Task: 18] 
+
+
+[Task: 20] Size: 12 Evaluations: 165162
+[Task: 26] Loading bustle model....
+[Task: 25] Loading bustle model....
+[Task: 24] Loading bustle model....
+[Task: 26] Count: 26
+[Task: 26] 
+
+[Task: 26] 2022-07-17 00:14:36.694296
+[Task: 26] Number of programs: 17
+[Task: 26] Size: 0 Evaluations: 0
+[Task: 25] Count: 25
+[Task: 26] Size: 1 Evaluations: 0
+[Task: 25] 
+
+[Task: 24] Count: 24
+[Task: 24] 
+
+[Task: 25] 2022-07-17 00:14:36.694949
+[Task: 25] Number of programs: 15
+[Task: 25] Size: 0 Evaluations: 0
+[Task: 25] Size: 1 Evaluations: 0
+[Task: 24] 2022-07-17 00:14:36.695291
+[Task: 24] Number of programs: 19
+[Task: 24] Size: 0 Evaluations: 0
+[Task: 24] Size: 1 Evaluations: 0
+[Task: 26] Size: 2 Evaluations: 23
+[Task: 25] Size: 2 Evaluations: 17
+[Task: 24] Size: 2 Evaluations: 27
+[Task: 26] Size: 3 Evaluations: 74
+[Task: 25] Size: 3 Evaluations: 52
+[Task: 24] Size: 3 Evaluations: 95
+[Task: 26] Size: 4 Evaluations: 148
+[Task: 25] Size: 4 Evaluations: 139
+[Task: 24] Size: 4 Evaluations: 101
+[Task: 24] Size: 5 Evaluations: 57
+[Task: 26] Size: 5 Evaluations: 273
+[Task: 25] Size: 5 Evaluations: 221
+[Task: 24] Size: 6 Evaluations: 121
+[Task: 24] Size: 7 Evaluations: 332
+[Task: 26] Size: 6 Evaluations: 721
+[Task: 24] Size: 8 Evaluations: 313
+[Task: 25] Size: 6 Evaluations: 982
+[Task: 24] Size: 9 Evaluations: 1369
+[Task: 26] Size: 7 Evaluations: 2854
+[Task: 25] Size: 7 Evaluations: 2656
+[Task: 24] Size: 10 Evaluations: 3034
+[Task: 26] Size: 8 Evaluations: 8316
+[Task: 24] Size: 11 Evaluations: 4290
+[Task: 25] Size: 8 Evaluations: 9326
+[Task: 31] Loading bustle model....
+[Task: 32] Loading bustle model....
+[Task: 28] Loading bustle model....
+[Task: 33] Loading bustle model....
+[Task: 29] Loading bustle model....
+[Task: 30] Loading bustle model....
+[Task: 27] Loading bustle model....
+[Task: 27] Count: 27
+[Task: 32] Count: 32
+[Task: 29] Count: 29
+[Task: 30] Count: 30
+[Task: 33] Count: 33
+[Task: 27] 
+
+[Task: 28] Count: 28
+[Task: 32] 
+
+[Task: 29] 
+
+[Task: 30] 
+
+[Task: 33] 
+
+[Task: 28] 
+
+[Task: 27] 2022-07-17 00:14:46.564591
+[Task: 32] 2022-07-17 00:14:46.564635
+[Task: 27] Number of programs: 17
+[Task: 30] 2022-07-17 00:14:46.564735
+[Task: 29] 2022-07-17 00:14:46.564735
+[Task: 32] Number of programs: 15
+[Task: 33] 2022-07-17 00:14:46.564748
+[Task: 28] 2022-07-17 00:14:46.564761
+[Task: 27] Size: 0 Evaluations: 0
+[Task: 30] Number of programs: 18
+[Task: 29] Number of programs: 16
+[Task: 32] Size: 0 Evaluations: 0
+[Task: 27] Size: 1 Evaluations: 0
+[Task: 33] Number of programs: 16
+[Task: 28] Number of programs: 17
+[Task: 30] Size: 0 Evaluations: 0
+[Task: 32] Size: 1 Evaluations: 0
+[Task: 29] Size: 0 Evaluations: 0
+[Task: 33] Size: 0 Evaluations: 0
+[Task: 30] Size: 1 Evaluations: 0
+[Task: 28] Size: 0 Evaluations: 0
+[Task: 29] Size: 1 Evaluations: 0
+[Task: 33] Size: 1 Evaluations: 0
+[Task: 28] Size: 1 Evaluations: 0
+[Task: 31] Count: 31
+[Task: 31] 
+
+[Task: 31] 2022-07-17 00:14:46.565957
+[Task: 31] Number of programs: 18
+[Task: 31] Size: 0 Evaluations: 0
+[Task: 31] Size: 1 Evaluations: 0
+[Task: 33] Size: 2 Evaluations: 20
+[Task: 32] Size: 2 Evaluations: 17
+[Task: 28] Size: 2 Evaluations: 23
+[Task: 27] Size: 2 Evaluations: 22
+[Task: 29] Size: 2 Evaluations: 20
+[Task: 30] Size: 2 Evaluations: 26
+[Task: 31] Size: 2 Evaluations: 26
+[Task: 32] Benchmark: stringLength
+[Task: 32] Result: Success
+[Task: 32] Program: arg_0.Length().IntToStr()
+[Task: 32] Number of evaluations: 29
+[Task: 32] 2022-07-17 00:14:46.852579
+[Task: 32] Time taken: 0:00:00.287929
+[Task: 32] 
+
+
+[Task: 33] Size: 3 Evaluations: 58
+[Task: 27] Size: 3 Evaluations: 68
+[Task: 27] Benchmark: replaceInUrl
+[Task: 27] Result: Success
+[Task: 27] Program: arg_0.replace("com", "org")
+[Task: 27] Number of evaluations: 1084
+[Task: 27] 2022-07-17 00:14:46.911786
+[Task: 27] Time taken: 0:00:00.347187
+[Task: 27] 
+
+
+[Task: 29] Size: 3 Evaluations: 62
+[Task: 28] Size: 3 Evaluations: 68
+[Task: 30] Size: 3 Evaluations: 77
+[Task: 31] Size: 3 Evaluations: 78
+[Task: 29] Size: 4 Evaluations: 163
+[Task: 28] Size: 4 Evaluations: 166
+[Task: 33] Size: 4 Evaluations: 207
+[Task: 30] Size: 4 Evaluations: 147
+[Task: 31] Size: 4 Evaluations: 151
+[Task: 33] Size: 5 Evaluations: 172
+[Task: 31] Size: 5 Evaluations: 188
+[Task: 29] Size: 5 Evaluations: 237
+[Task: 28] Size: 5 Evaluations: 287
+[Task: 30] Size: 5 Evaluations: 255
+[Task: 28] Size: 6 Evaluations: 866
+[Task: 29] Size: 6 Evaluations: 991
+[Task: 31] Size: 6 Evaluations: 910
+[Task: 30] Size: 6 Evaluations: 935
+[Task: 24] Size: 12 Evaluations: 7651
+[Task: 33] Size: 6 Evaluations: 1571
+[Task: 33] Benchmark: suffixRemainder
+[Task: 33] Result: Success
+[Task: 33] Program: arg_0.Substr(0,(0 - arg_1.Length()))
+[Task: 33] Number of evaluations: 20483
+[Task: 33] 2022-07-17 00:14:47.956929
+[Task: 33] Time taken: 0:00:01.392139
+[Task: 33] 
+
+
+[Task: 30] Benchmark: stringEqual
+[Task: 30] Result: Success
+[Task: 30] Program: (ifEqual(arg_0,arg_1) then "yes" else "no")
+[Task: 30] Number of evaluations: 31859
+[Task: 30] 2022-07-17 00:14:48.280253
+[Task: 30] Time taken: 0:00:01.715504
+[Task: 30] 
+
+
+[Task: 28] Size: 7 Evaluations: 4005
+[Task: 29] Size: 7 Evaluations: 4430
+[Task: 31] Size: 7 Evaluations: 5507
+[Task: 28] Size: 8 Evaluations: 8191
+[Task: 26] Size: 9 Evaluations: 23956
+[Task: 28] Benchmark: secondStringIfFirstIsNone
+[Task: 28] Result: Success
+[Task: 28] Program: arg_0.replace(concat("NONE", arg_0.replace("NONE", "")), arg_1)
+[Task: 28] Number of evaluations: 193823
+[Task: 28] 2022-07-17 00:14:57.027832
+[Task: 28] Time taken: 0:00:10.463022
+[Task: 28] 
+
+
+[Task: 29] Size: 8 Evaluations: 12142
+[Task: 31] Size: 8 Evaluations: 10617
+[Task: 24] Size: 13 Evaluations: 15568
+[Task: 26] Benchmark: replaceAllCompany
+[Task: 26] Result: Success
+[Task: 26] Program: arg_0.replace("<COMPANY>", arg_1).replace("<COMPANY>", arg_1).replace("<COMPANY>", arg_1)
+[Task: 26] Number of evaluations: 488670
+[Task: 26] 2022-07-17 00:15:01.937702
+[Task: 26] Time taken: 0:00:25.243408
+[Task: 26] 
+
+
+[Task: 25] Size: 9 Evaluations: 27939
+[Task: 23] Size: 15 Evaluations: 221726
+[Task: 24] Size: 14 Evaluations: 28742
+[Task: 19] Size: 12 Evaluations: 216807
+[Task: 29] Size: 9 Evaluations: 44779
+[Task: 31] Size: 9 Evaluations: 43452
+[Task: 24] Size: 15 Evaluations: 53787
+[Task: 23] Benchmark: prependMr
+[Task: 23] Result: Success
+[Task: 23] Program: concat(arg_0.replace(" ", "Mr. "), " ").Substr(arg_0.IndexOf(" "),-1)
+[Task: 23] Number of evaluations: 5781030
+[Task: 23] 2022-07-17 00:16:15.149067
+[Task: 23] Time taken: 0:05:21.143442
+[Task: 23] 
+
+
+[Task: 25] Size: 10 Evaluations: 97422
+[Task: 12] Size: 13 Evaluations: 422636
+[Task: 29] Size: 10 Evaluations: 168412
+[Task: 24] Size: 16 Evaluations: 108694
+[Task: 31] Size: 10 Evaluations: 171429
+[Task: 35] Loading bustle model....
+[Task: 37] Loading bustle model....
+[Task: 36] Loading bustle model....
+[Task: 34] Loading bustle model....
+[Task: 34] Count: 34
+[Task: 34] 
+
+[Task: 35] Count: 35
+[Task: 35] 
+
+[Task: 34] 2022-07-17 00:18:28.709970
+[Task: 34] Number of programs: 15
+[Task: 34] Size: 0 Evaluations: 0
+[Task: 34] Size: 1 Evaluations: 0
+[Task: 35] 2022-07-17 00:18:28.710285
+[Task: 35] Number of programs: 16
+[Task: 35] Size: 0 Evaluations: 0
+[Task: 35] Size: 1 Evaluations: 0
+[Task: 36] Count: 36
+[Task: 36] 
+
+[Task: 36] 2022-07-17 00:18:28.711919
+[Task: 36] Number of programs: 15
+[Task: 36] Size: 0 Evaluations: 0
+[Task: 36] Size: 1 Evaluations: 0
+[Task: 37] Count: 37
+[Task: 37] 
+
+[Task: 37] 2022-07-17 00:18:28.712815
+[Task: 37] Number of programs: 15
+[Task: 37] Size: 0 Evaluations: 0
+[Task: 37] Size: 1 Evaluations: 0
+[Task: 35] Size: 2 Evaluations: 19
+[Task: 37] Size: 2 Evaluations: 17
+[Task: 36] Size: 2 Evaluations: 17
+[Task: 34] Size: 2 Evaluations: 17
+[Task: 37] Size: 3 Evaluations: 52
+[Task: 36] Size: 3 Evaluations: 52
+[Task: 35] Size: 3 Evaluations: 54
+[Task: 34] Size: 3 Evaluations: 49
+[Task: 37] Size: 4 Evaluations: 51
+[Task: 36] Size: 4 Evaluations: 51
+[Task: 35] Size: 4 Evaluations: 89
+[Task: 34] Size: 4 Evaluations: 123
+[Task: 37] Size: 5 Evaluations: 9
+[Task: 36] Size: 5 Evaluations: 14
+[Task: 37] Size: 6 Evaluations: 20
+[Task: 36] Size: 6 Evaluations: 25
+[Task: 35] Size: 5 Evaluations: 110
+[Task: 37] Size: 7 Evaluations: 22
+[Task: 34] Size: 5 Evaluations: 190
+[Task: 36] Size: 7 Evaluations: 75
+[Task: 37] Size: 8 Evaluations: 30
+[Task: 36] Size: 8 Evaluations: 123
+[Task: 35] Size: 6 Evaluations: 214
+[Task: 37] Size: 9 Evaluations: 281
+[Task: 36] Size: 9 Evaluations: 346
+[Task: 34] Size: 6 Evaluations: 725
+[Task: 37] Size: 10 Evaluations: 469
+[Task: 36] Size: 10 Evaluations: 600
+[Task: 35] Size: 7 Evaluations: 821
+[Task: 37] Size: 11 Evaluations: 1042
+[Task: 34] Size: 7 Evaluations: 1438
+[Task: 36] Size: 11 Evaluations: 1528
+[Task: 35] Size: 8 Evaluations: 2168
+[Task: 37] Size: 12 Evaluations: 1709
+[Task: 36] Size: 12 Evaluations: 2815
+[Task: 37] Size: 13 Evaluations: 2398
+[Task: 34] Size: 8 Evaluations: 6035
+[Task: 34] Benchmark: swapCase
+[Task: 34] Result: Success
+[Task: 34] Program: arg_0.lower().replace(concat(arg_0, "".lower()), arg_0.upper())
+[Task: 34] Number of evaluations: 104590
+[Task: 34] 2022-07-17 00:18:33.891316
+[Task: 34] Time taken: 0:00:05.181340
+[Task: 34] 
+
+
+[Task: 36] Size: 13 Evaluations: 4035
+[Task: 35] Size: 9 Evaluations: 5795
+[Task: 37] Size: 14 Evaluations: 4466
+[Task: 36] Size: 14 Evaluations: 9400
+[Task: 37] Size: 15 Evaluations: 11456
+[Task: 35] Size: 10 Evaluations: 15276
+[Task: 36] Size: 15 Evaluations: 18322
+[Task: 36] Benchmark: twoLetterAcronym
+[Task: 36] Result: Success
+[Task: 36] Program: concat(arg_0.CharAt(0), arg_0.CharAt((1 + arg_0.IndexOf(" "))))
+[Task: 36] Number of evaluations: 502657
+[Task: 36] 2022-07-17 00:18:54.697863
+[Task: 36] Time taken: 0:00:25.985939
+[Task: 36] 
+
+
+[Task: 37] Size: 16 Evaluations: 22215
+[Task: 35] Size: 11 Evaluations: 42518
+[Task: 20] Size: 13 Evaluations: 363342
+[Task: 37] Size: 17 Evaluations: 48128
+[Task: 9] Size: 15 Evaluations: 511712
+[Task: 24] Size: 17 Evaluations: 209115
+[Task: 25] Size: 11 Evaluations: 296613
+[Task: 35] Size: 12 Evaluations: 111086
+[Task: 7] Size: 11 Evaluations: 836786
+[Task: 37] Size: 18 Evaluations: 119193
+[Task: 37] Benchmark: twoLetterAcronymCapitalization
+[Task: 37] Result: Success
+[Task: 37] Program: arg_0.replace(" ", arg_0.CharAt(0)).upper().Substr(arg_0.IndexOf(" "),-2).Substr(0,2)
+[Task: 37] Number of evaluations: 4164814
+[Task: 37] 2022-07-17 00:22:24.994975
+[Task: 37] Time taken: 0:03:56.282163
+[Task: 37] 
+
+
+[Task: 21] Size: 12 Evaluations: 796251
+[Task: 3] Size: 17 Evaluations: 967912
+[Task: 31] Size: 11 Evaluations: 460362
+[Task: 29] Size: 11 Evaluations: 563200
+[Task: 6] Size: 11 Evaluations: 881363
+[Task: 35] Size: 13 Evaluations: 307290
+[Task: 24] Size: 18 Evaluations: 410023
+[Task: 19] Size: 13 Evaluations: 728842
+[Task: 25] Size: 12 Evaluations: 961811
+[Task: 20] Size: 14 Evaluations: 1070464
+[Task: 9] Size: 16 Evaluations: 1108559
+[Task: 24] Size: 19 Evaluations: 797565
+[Task: 35] Size: 14 Evaluations: 832936
+[Task: 3] Size: 18 Evaluations: 1872777
+[Task: 21] Size: 13 Evaluations: 1880673
+[Task: 12] Size: 14 Evaluations: 1758758
+[Task: 31] Size: 12 Evaluations: 1802178
+[Task: 29] Size: 12 Evaluations: 2062659
+[Task: 19] Size: 14 Evaluations: 1500534
+[Task: 24] Size: 20 Evaluations: 1619254
+[Task: 9] Size: 17 Evaluations: 2415294
+[Task: 9] Benchmark: dateTransformation1
+[Task: 9] Result: Success
+[Task: 9] Program: concat(arg_0.Substr(2,-4), concat("/", concat(arg_0.Substr(0,2), concat("/", arg_0.Substr(-4,15)))))
+[Task: 9] Number of evaluations: 79098605
+[Task: 9] 2022-07-17 01:15:43.152379
+[Task: 9] Time taken: 1:08:46.713251
+[Task: 9] 
+
+
